@@ -110,26 +110,39 @@ function initHeader() {
   function updateActiveNavLink() {
     const path = (window.location.pathname || '/').replace(/\/$/, '') || '/'
     const isHome = path === '' || path === '/' || path === '/index.html'
-    if (isHome) {
+    if (!isHome) {
       navLinks.forEach((link) => {
-        const h = link.getAttribute('href')
-        if (h === '/' || h === '/#hero') link.classList.add('active')
+        const href = link.getAttribute('href')
+        const linkPath = href && href.startsWith('/') && !href.startsWith('/#') ? (href.replace(/\/$/, '') || '/') : null
+        if (linkPath && path === linkPath) link.classList.add('active')
         else link.classList.remove('active')
       })
       return
     }
+    // Home: set active by scroll position (which section is in view)
+    navLinks.forEach((link) => link.classList.remove('active'))
     const sections = document.querySelectorAll('section[id]')
     const scrollPosition = window.scrollY + 100
+    let found = false
     sections.forEach((section) => {
       const sectionTop = section.offsetTop
       const sectionHeight = section.offsetHeight
       const sectionId = section.getAttribute('id')
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         navLinks.forEach((link) => {
-          if (link.getAttribute('href') === `/#${sectionId}`) link.classList.add('active')
+          if (link.getAttribute('href') === `/#${sectionId}`) {
+            link.classList.add('active')
+            found = true
+          }
         })
       }
     })
+    if (!found) {
+      navLinks.forEach((link) => {
+        const h = link.getAttribute('href')
+        if (h === '/' || h === '/#hero') link.classList.add('active')
+      })
+    }
   }
 
   updateActiveNavLink()
