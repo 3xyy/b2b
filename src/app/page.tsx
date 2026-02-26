@@ -563,7 +563,7 @@ export default function Home() {
                 whileHover={{ y: -5 }}
                 className="bg-white/5 rounded-2xl p-8 border border-white/10 flex flex-col h-full hover:bg-white/[0.07] transition-colors"
               >
-                <div className="text-[#8bc34a] text-4xl mb-4 font-serif">"</div>
+                <div className="text-[#8bc34a] text-4xl mb-4 font-serif">&quot;</div>
                 <p className="text-white/80 leading-relaxed mb-6 flex-grow italic">
                   {testimonial.text}
                 </p>
