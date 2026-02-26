@@ -1,5 +1,6 @@
-import Navbar from "../components/Navbar";
-import PartnersContent from "../components/PartnersContent.client";
+import Navbar from "@/components/header/Navbar";
+import Footer from "@/components/footer/Footer";
+import PartnersContent from "@/components/partners/PartnersContent";
 import { partnerLogos } from "@/data/partners";
 
 export default function Partners() {
@@ -13,11 +14,7 @@ export default function Partners() {
         </div>
       </main>
 
-      <footer className="bg-[#0d1a14] py-12 mt-12">
-        <div className="max-w-7xl mx-auto px-6 text-center text-white/60">
-          © 2026 Bin to Better. All rights reserved.
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

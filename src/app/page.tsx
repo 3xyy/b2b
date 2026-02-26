@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "./components/Navbar";
+import Navbar from "@/components/header/Navbar";
+import Footer from "@/components/footer/Footer";
+import { assetPath } from "@/lib/assetPath";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -240,7 +242,7 @@ export default function Home() {
                     className="relative w-full h-full"
                   >
                     <Image 
-                      src="/image7.png" 
+                      src={assetPath("/image7.png")} 
                       alt="Bin to Better" 
                       fill
                       className="object-contain"
@@ -563,7 +565,7 @@ export default function Home() {
                 whileHover={{ y: -5 }}
                 className="bg-white/5 rounded-2xl p-8 border border-white/10 flex flex-col h-full hover:bg-white/[0.07] transition-colors"
               >
-                <div className="text-[#8bc34a] text-4xl mb-4 font-serif">"</div>
+                <div className="text-[#8bc34a] text-4xl mb-4 font-serif">&quot;</div>
                 <p className="text-white/80 leading-relaxed mb-6 flex-grow italic">
                   {testimonial.text}
                 </p>
@@ -611,43 +613,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-[#0d1a14] py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-2xl font-bold"
-            >
-              <span className="text-[#8bc34a]">bin</span>{" "}
-              <span className="text-white/60">to</span>{" "}
-              <span className="text-[#8bc34a]">better</span>
-            </motion.div>
-
-            <div className="flex gap-6 text-white/50">
-              {["Instagram", "LinkedIn"].map((social) => (
-                <motion.a
-                  key={social}
-                  href={social === "LinkedIn" ? "https://www.linkedin.com/company/bin-to-better/posts/?feedView=all" : "https://www.instagram.com/bintobetter/"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, color: "#8bc34a" }}
-                  className="hover:text-[#8bc34a] transition-colors"
-                >
-                  {social}
-                </motion.a>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-12 pt-8 border-t border-white/10 text-center text-white/40 text-sm">
-            © 2026 Bin to Better. All rights reserved. Turning waste into
-            opportunity.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

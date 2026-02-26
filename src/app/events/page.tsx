@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/header/Navbar";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Events() {
   return (
@@ -215,7 +216,7 @@ export default function Events() {
                 className="relative w-48 h-28 md:w-64 md:h-36 transition-all duration-500"
               >
                 <Image
-                  src={sponsor.src}
+                  src={assetPath(sponsor.src)}
                   alt={sponsor.name}
                   fill
                   className="object-contain"
@@ -241,7 +242,7 @@ export default function Events() {
                 className="relative w-40 h-24 md:w-56 md:h-32 transition-all duration-500"
               >
                 <Image
-                  src={sponsor.src}
+                  src={assetPath(sponsor.src)}
                   alt={sponsor.name}
                   fill
                   className="object-contain"
@@ -271,7 +272,7 @@ export default function Events() {
                 className="relative w-32 h-20 md:w-44 md:h-24 transition-all duration-500"
               >
                 <Image
-                  src={sponsor.src}
+                  src={assetPath(sponsor.src)}
                   alt={sponsor.name}
                   fill
                   className="object-contain"
