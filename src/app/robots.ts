@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://bintobetter.org/sitemap.xml',
+    sitemap: 'https://FreeForCharity.github.io/FFC-EX-bintobetter.org/sitemap.xml',
   };
 }
