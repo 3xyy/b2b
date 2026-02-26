@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import Image from "next/image";
 
 export default function CorporatePartners() {
   return (
@@ -44,7 +45,14 @@ export default function CorporatePartners() {
                 </p>
               </div>
               <div className="flex-1 flex justify-center">
-                <img src="/partners-logos/sun-dragon-computers.png" alt="Sun Dragon Computers" className="max-w-xs object-contain" />
+                <Image 
+                  src="/partners-logos/sun-dragon-computers.png" 
+                  alt="Sun Dragon Computers" 
+                  width={320}
+                  height={160}
+                  className="max-w-xs object-contain" 
+                  unoptimized={true} // Keep unoptimized for static export flexibility
+                />
               </div>
             </div>
           </motion.div>

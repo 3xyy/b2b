@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function BounceBack() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -128,10 +129,12 @@ export default function BounceBack() {
                       onClick={() => setSelectedImage(img)}
                       className="relative overflow-hidden rounded-2xl border border-white/10 hover:border-[#8bc34a]/30 transition-colors w-[400px] aspect-video flex-shrink-0 shadow-lg shadow-black/30 cursor-pointer"
                     >
-                      <img 
+                      <Image 
                         src={`/bounce-back-logos/${img}`} 
                         alt="Gallery Image" 
-                        className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                        fill
+                        className="object-cover transform hover:scale-105 transition-transform duration-500"
+                        unoptimized={true}
                       />
                     </div>
                   ))}
@@ -171,10 +174,13 @@ export default function BounceBack() {
                   <path d="M18 6L6 18M6 6l12 12" />
                 </svg>
               </button>
-              <img
+              <Image
                 src={`/bounce-back-logos/${selectedImage}`}
                 alt="Enlarged gallery image"
+                width={1280}
+                height={720}
                 className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+                unoptimized={true}
               />
             </motion.div>
           </motion.div>

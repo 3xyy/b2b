@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function PartnersGrid({ logos }: { logos: string[] }) {
   return (
@@ -13,13 +14,13 @@ export default function PartnersGrid({ logos }: { logos: string[] }) {
     >
       {logos.map((src) => (
         <div key={src} className="flex items-center justify-center p-4 bg-white/3 rounded-xl border border-white/6">
-          <img
+          <Image
             src={src}
-            alt={src.split("/").pop()}
+            alt={src.split("/").pop() || "Partner Logo"}
+            width={160}
+            height={64}
             className="max-h-16 object-contain"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = "/partners-logos/placeholder.png";
-            }}
+            unoptimized={true}
           />
         </div>
       ))}

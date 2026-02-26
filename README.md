@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bin to Better
+
+Bin to Better is a nonprofit organization dedicated to waste reduction and environmental sustainability. This project is a Next.js 16 application that serves as the organization's primary website.
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technology Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
 
-## Learn More
+## CNCF-Compliant Open Source Project
 
-To learn more about Next.js, take a look at the following resources:
+This repository follows **Cloud Native Computing Foundation (CNCF)** standards for governance, security, and community practices. We are committed to transparency, inclusive participation, and professional project management.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Project Governance and Policies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- 📜 **[LICENSE](./LICENSE)** - Apache 2.0 open source license
+- 🤝 **[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)** - Community standards (Contributor Covenant 2.1)
+- ⚖️ **[GOVERNANCE.md](./GOVERNANCE.md)** - Decision-making processes
+- 👥 **[MAINTAINERS.md](./MAINTAINERS.md)** - Repository maintainers and their roles
+- 🎉 **[CONTRIBUTORS.md](./CONTRIBUTORS.md)** - Recognition of all contributors
+- 🔒 **[SECURITY.md](./SECURITY.md)** - Vulnerability reporting and security practices
+- 🛡️ **[THREAT-MODEL.md](./THREAT-MODEL.md)** - Security threat analysis
+- 🌟 **[ADOPTERS.md](./ADOPTERS.md)** - Organizations using this template
+- 🤝 **[CONTRIBUTING.md](./CONTRIBUTING.md)** - How to contribute
+- 💬 **[SUPPORT.md](./SUPPORT.md)** - How to get help
+- 🔗 **[EXTERNAL_DEPENDENCIES.md](./EXTERNAL_DEPENDENCIES.md)** - Third-party services
+- 📖 **[CITATION.cff](./CITATION.cff)** - Citation information for academic use
+- 📝 **[CHANGELOG.md](./CHANGELOG.md)** - Release notes and version history
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details on:
+- Code of Conduct
+- How to submit issues
+- How to submit pull requests
+- Coding standards
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](./LICENSE) file for details.
+
+## Historical Context
+
+This repository was originally a static HTML website and was migrated to a modern Next.js 16 application in February 2026 to improve maintainability, performance, and developer experience.

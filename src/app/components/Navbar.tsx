@@ -21,6 +21,7 @@ const navItems = [
 
 export default function Navbar({ activePage, topOffset = false }: { activePage?: string, topOffset?: boolean }) {
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <motion.header
@@ -40,6 +41,7 @@ export default function Navbar({ activePage, topOffset = false }: { activePage?:
           </motion.div>
         </Link>
 
+        {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => {
             const isActive = activePage === item.label;
@@ -72,6 +74,50 @@ export default function Navbar({ activePage, topOffset = false }: { activePage?:
             );
           })}
         </div>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="lg:hidden p-2 text-white/80 hover:text-white focus:outline-none"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {isMobileMenuOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            )}
+          </svg>
+        </button>
+
+        {/* Mobile Navigation */}
+        <motion.div
+          initial={false}
+          animate={isMobileMenuOpen ? "open" : "closed"}
+          variants={{
+            open: { opacity: 1, x: 0, display: "block" },
+            closed: { opacity: 0, x: "100%", transitionEnd: { display: "none" } }
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="fixed inset-0 top-[60px] bg-[#0d1a14] z-40 lg:hidden overflow-y-auto"
+        >
+          <div className="p-6 flex flex-col gap-4">
+            {navItems.map((item) => {
+              const isActive = activePage === item.label;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-lg font-medium py-2 border-b border-white/5 ${
+                    isActive ? "text-[#8bc34a]" : "text-white/80"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </div>
+        </motion.div>
       </nav>
     </motion.header>
   );

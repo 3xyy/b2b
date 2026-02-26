@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface PartnersContentProps {
   files: string[];
@@ -41,14 +42,13 @@ export default function PartnersContent({ files }: PartnersContentProps) {
             key={src}
             className="flex items-center justify-center p-4 bg-white/3 rounded-xl border border-white/6"
           >
-            <img
+            <Image
               src={src}
               alt="Partner logo"
+              width={160}
+              height={64}
               className="max-h-16 object-contain"
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src =
-                  "/partners-logos/placeholder.png";
-              }}
+              unoptimized={true}
             />
           </div>
         ))}
