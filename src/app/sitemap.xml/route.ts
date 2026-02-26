@@ -1,4 +1,4 @@
-export const revalidate = 3600;
+export const dynamic = "force-static";
 
 export async function GET() {
   const baseUrl = 'https://FreeForCharity.github.io/FFC-EX-bintobetter.org';
