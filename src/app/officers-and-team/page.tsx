@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/header/Navbar";
+import { assetPath } from "@/lib/assetPath";
 
 export default function OfficersAndTeam() {
   return (
@@ -128,7 +129,7 @@ export default function OfficersAndTeam() {
                     >
                       <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden border-2 border-[#8bc34a]/30">
                          <Image
-                          src={member.image}
+                          src={assetPath(member.image)}
                           alt={member.name}
                           fill
                           className="object-cover"

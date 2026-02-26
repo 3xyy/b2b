@@ -25,6 +25,21 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 
+## Deployment
+
+This site is automatically deployed to GitHub Pages when changes are pushed to the `main` branch.
+
+- **Production URL**: [https://FreeForCharity.github.io/FFC-EX-bintobetter.org/](https://FreeForCharity.github.io/FFC-EX-bintobetter.org/)
+- **Hosting**: GitHub Pages
+- **Deployment Strategy**: Static Export (`output: 'export'`)
+
+### GitHub Pages Configuration
+
+For developers replicating this setup:
+1. Ensure `next.config.ts` has `output: "export"`.
+2. Assets use the `assetPath` helper to handle the GitHub Pages subdirectory.
+3. The `.github/workflows/deploy.yml` handles the build and deployment process.
+
 ## CNCF-Compliant Open Source Project
 
 This repository follows **Cloud Native Computing Foundation (CNCF)** standards for governance, security, and community practices. We are committed to transparency, inclusive participation, and professional project management.

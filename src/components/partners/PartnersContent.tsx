@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 
 interface PartnersContentProps {
   files: string[];
@@ -43,7 +44,7 @@ export default function PartnersContent({ files }: PartnersContentProps) {
             className="flex items-center justify-center p-4 bg-white/3 rounded-xl border border-white/6"
           >
             <Image
-              src={src}
+              src={assetPath(src)}
               alt="Partner logo"
               width={160}
               height={64}

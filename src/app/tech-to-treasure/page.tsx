@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/header/Navbar";
 
 export default function TechToTreasure() {
   return (

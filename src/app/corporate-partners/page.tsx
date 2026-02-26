@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/header/Navbar";
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 
 export default function CorporatePartners() {
   return (
@@ -46,7 +46,7 @@ export default function CorporatePartners() {
               </div>
               <div className="flex-1 flex justify-center">
                 <Image 
-                  src="/partners-logos/sun-dragon-computers.png" 
+                  src={assetPath("/partners-logos/sun-dragon-computers.png")} 
                   alt="Sun Dragon Computers" 
                   width={320}
                   height={160}

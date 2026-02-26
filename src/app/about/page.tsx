@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
+import Navbar from "@/components/header/Navbar";
+import { assetPath } from "@/lib/assetPath";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -323,7 +324,7 @@ export default function About() {
                       >
                         <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full overflow-hidden border-4 border-[#8bc34a]/30 mb-4 shadow-xl shadow-black/30 group-hover:border-[#8bc34a] transition-all duration-300">
                           <Image
-                            src={founder.image}
+                            src={assetPath(founder.image)}
                             alt={founder.name}
                             fill
                             className="object-cover"

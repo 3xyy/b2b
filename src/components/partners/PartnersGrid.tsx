@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { assetPath } from "@/lib/assetPath";
 
 export default function PartnersGrid({ logos }: { logos: string[] }) {
   return (
@@ -15,7 +16,7 @@ export default function PartnersGrid({ logos }: { logos: string[] }) {
       {logos.map((src) => (
         <div key={src} className="flex items-center justify-center p-4 bg-white/3 rounded-xl border border-white/6">
           <Image
-            src={src}
+            src={assetPath(src)}
             alt={src.split("/").pop() || "Partner Logo"}
             width={160}
             height={64}
