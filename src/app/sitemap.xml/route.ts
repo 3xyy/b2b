@@ -1,7 +1,7 @@
 export const dynamic = "force-static";
 
 export async function GET() {
-  const baseUrl = 'https://FreeForCharity.github.io/FFC-EX-bintobetter.org';
+  const baseUrl = 'https://bintobetter.org';
   const routes = [
     '',
     '/about',
