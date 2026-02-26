@@ -1,238 +1,29 @@
-# BinToBetter Website
+# Bin to Better
 
-## 📄 Pure HTML Static Website
+Bin to Better is a nonprofit organization dedicated to waste reduction and environmental sustainability. This project is a Next.js 16 application that serves as the organization's primary website.
 
-This repository contains the **BinToBetter** website built with pure HTML, CSS, and JavaScript - no build process required!
+## Getting Started
 
-### Quick Links
-
-- 🌐 **[Live Site](https://bintobetter.org/)** - Production website
-- 📂 **[HTML Site Files](./html-site/)** - All website files
-- ♻️ **[GitHub Repository](https://github.com/FreeForCharity/FFC-EX-bintobetter.org)** - Source code
-
----
-
-## Organization
-
-**BinToBetter** is a youth-led nonprofit organization dedicated to reducing community waste and promoting environmental sustainability.
-
-**Mission**: BinToBetter transforms used tennis balls, e-waste, and hard-to-recycle plastics into valuable tools for schools, seniors, and students. Through hands-on recycling initiatives and educational workshops, we demonstrate that waste reduction isn't just possible—it's powerful.
-
-**Primary Contact**: info@bintobetter.org
-
----
-
-## Repository Structure
-
-```
-html-site/                      # Production website (deployed to GitHub Pages)
-├── index.html                 # Main homepage
-├── css/                       # Stylesheets
-│   └── styles.css            # All site styles
-├── js/                        # JavaScript files
-│   └── main.js               # Site functionality
-├── images/                    # Image assets (WebP optimized)
-├── svgs/                      # SVG icons
-├── videos/                    # Video files
-├── privacy-policy.html        # Privacy policy page
-├── cookie-policy.html         # Cookie policy page
-├── terms-of-service.html      # Terms of service page
-├── CNAME                      # Custom domain configuration (bintobetter.org)
-└── *.png, *.ico, *.webmanifest # Icons and manifest files
-
-tests/                         # Playwright E2E tests for HTML site
-├── *.spec.ts                 # Test files
-└── README.md                  # Testing documentation
-
-docs-backup/                   # Archived documentation
-└── *.md                       # Historical reference files
-```
-
----
-
-## Website Features
-
-### Homepage Sections
-- **Hero Section** - Welcome message with call-to-action buttons
-- **Mission Section** - Mission statement about waste reduction and youth empowerment
-- **Our Impact** - Impact numbers with animated counters (tennis balls repurposed, e-waste recycled, etc.)
-- **Community Impact** - Testimonials from schools and community partners
-- **Volunteer Section** - Call to action for youth volunteers
-- **Events Section** - Community events and collection drives
-- **Donate Section** - Support our recycling programs
-- **Why It Matters** - Environmental impact, community benefits, youth leadership
-- **Programs Section** - Tennis ball recycling, e-waste workshops, plastic repurposing
-- **FAQ Section** - Accordion-style questions about our recycling programs
-- **Team Section** - Youth leaders and volunteers
-
-### Navigation & Layout
-- **Sticky Header** - Navigation with mobile hamburger menu
-- **Mobile Menu** - Slide-out panel with overlay
-- **Footer** - Links, social media, contact info
-- **Smooth Scrolling** - To section anchors
-- **Active Nav Highlighting** - Based on scroll position
-
-### Policy Pages
-All legal and policy information is available on separate pages:
-- Privacy Policy
-- Cookie Policy
-- Terms of Service
-
----
-
-## Deployment
-
-The site is automatically deployed to the custom apex domain when changes are pushed to the `main` branch.
-
-- **Production URL**: https://bintobetter.org/
-- **Deployment**: Via GitHub Actions (`.github/workflows/deploy.yml`) to GitHub Pages with custom domain
-- **Custom Domain**: Configured via `CNAME` file in `html-site/` directory
-- **No Build Step**: Pure HTML files are served directly from the `html-site/` directory
-
-### 🔧 Troubleshooting 404 Errors
-
-If you see a **404 "Site not found - GitHub Pages"** error when visiting https://bintobetter.org/, this typically means GitHub Pages is not properly configured or deployed. Follow these steps:
-
-**Quick Fix:**
-
-1. **Check for root CNAME file (MOST COMMON ISSUE):**
-   - If you see "README" content instead of the website, there's likely a CNAME file in the repository root
-   - GitHub auto-creates this when you configure custom domain in Settings → Pages
-   - **FIX:** Delete the root CNAME file:
-     ```bash
-     git pull origin main
-     git rm CNAME  # Delete root CNAME
-     git commit -m "Remove auto-created root CNAME"
-     git push origin main
-     ```
-   - The CNAME should ONLY exist in `html-site/CNAME`, not in the root
-
-2. **Verify GitHub Pages is enabled:**
-   - Go to **Settings** → **Pages**
-   - Source should be: **GitHub Actions**
-   - Custom domain should be: `bintobetter.org`
-
-3. **Trigger a deployment:**
-   - Go to **Actions** tab
-   - Click "Deploy to GitHub Pages" workflow
-   - Click **Run workflow** → select `main` branch → **Run workflow**
-
-4. **Wait and verify:**
-   - Wait 1-2 minutes for deployment to complete
-   - Visit https://bintobetter.org in incognito mode
-
-**For detailed troubleshooting:**
-- Run the verification script: `bash verify-deployment.sh`
-- See [TROUBLESHOOTING_404.md](./TROUBLESHOOTING_404.md) for comprehensive troubleshooting guide
-- See [GITHUB_PAGES_SETUP.md](./GITHUB_PAGES_SETUP.md) for setup instructions
-- See [DEPLOYMENT.md](./DEPLOYMENT.md) for full deployment documentation
-
-### ⚠️ Custom Domain Dependency
-
-**Important**: This site has a critical dependency on the custom domain (bintobetter.org). All asset paths are root-relative (e.g., `/css/styles.css`, `/images/`), which requires the site to be served from a domain root.
-
-**Implications**:
-- The site will **NOT** work if accessed via the GitHub Pages subpath URL (https://freeforcharity.github.io/bintobetter.org/)
-- The `CNAME` file in `html-site/` is critical for proper deployment
-- If the custom domain expires, becomes misconfigured, or is removed, the site will be broken
-
-**Operational Requirements**:
-1. **Domain Renewal**: Ensure bintobetter.org domain renewal is monitored and automated
-2. **CNAME File**: Never remove or modify the `html-site/CNAME` file without updating asset paths
-3. **Monitoring**: Set up alerts for domain expiration and SSL certificate renewal
-
-**Contingency Plan**:
-If the custom domain becomes unavailable and the site needs to work on the GitHub Pages URL, you must:
-1. Restore the basePath prefix to all asset paths (revert to the commit before basePath removal, or manually add the prefix)
-2. Update all `/css/` → `/bintobetter.org/css/`
-3. Update all `/images/` → `/bintobetter.org/images/`
-4. Update all navigation `/#section` → `/bintobetter.org/#section`
-
----
-
-## Local Development
-
-No build process or dependencies required! Simply open the HTML files in your browser:
+First, install the dependencies:
 
 ```bash
-# Clone the repository
-git clone https://github.com/FreeForCharity/FFC-EX-bintobetter.org.git
-cd FFC-EX-bintobetter.org
-
-# Open in browser
-cd html-site
-open index.html  # macOS
-# or
-xdg-open index.html  # Linux
-# or just double-click index.html in Windows
-```
-
-### Using a Local HTTP Server (Optional)
-
-For testing features that require a web server (like cookies or CORS):
-
-```bash
-# Using Python (usually pre-installed)
-cd html-site
-python3 -m http.server 8000
-# Visit http://localhost:8000
-
-# Or using PHP (if installed)
-cd html-site
-php -S localhost:8000
-
-# Or using Node.js http-server (if you have Node installed)
-npx http-server html-site -p 8000
-```
-
----
-
-## Testing
-
-The repository includes Playwright E2E tests to validate HTML site functionality:
-
-```bash
-# Install dependencies (first time only)
 npm install
-
-# Run all tests
-npm test
-
-# Run tests with UI
-npm run test:ui
-
-# Run tests in headed mode (see browser)
-npm run test:headed
 ```
 
-Tests validate:
-- Page loading and navigation
-- Image rendering
-- Cookie consent functionality
-- Form functionality
-- Social media links
-- Copyright information
-- Mobile responsiveness
+Then, run the development server:
 
-See [tests/README.md](./tests/README.md) for detailed testing documentation.
+```bash
+npm run dev
+```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Making Changes
+## Technology Stack
 
-1. Edit HTML, CSS, or JavaScript files in the `html-site/` directory
-2. Test locally in your browser
-3. Commit and push to the `main` branch
-4. GitHub Actions will automatically deploy to GitHub Pages
-
-### File Organization
-
-- **HTML**: Main structure and content in `*.html` files
-- **CSS**: All styles in `html-site/css/styles.css`
-- **JavaScript**: Functionality in `html-site/js/main.js`
-- **Assets**: Images in `images/`, SVGs in `svgs/`, videos in `videos/`
-
----
+- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
 
 ## CNCF-Compliant Open Source Project
 
@@ -254,10 +45,6 @@ This repository follows **Cloud Native Computing Foundation (CNCF)** standards f
 - 📖 **[CITATION.cff](./CITATION.cff)** - Citation information for academic use
 - 📝 **[CHANGELOG.md](./CHANGELOG.md)** - Release notes and version history
 
-**Why CNCF Alignment?** Following CNCF standards strengthens project credibility, simplifies onboarding of contributors, and prepares us for cloud-native ecosystem integrations.
-
----
-
 ## Contributing
 
 We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details on:
@@ -266,14 +53,10 @@ We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md)
 - How to submit pull requests
 - Coding standards
 
----
-
 ## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](./LICENSE) file for details.
 
----
-
 ## Historical Context
 
-This repository was created using the Free For Charity website template and converted to serve the BinToBetter nonprofit organization. The template provides a professional, accessible, and performant static HTML website structure that was adapted for BinToBetter's mission of waste reduction and environmental sustainability.
+This repository was originally a static HTML website and was migrated to a modern Next.js 16 application in February 2026 to improve maintainability, performance, and developer experience.
