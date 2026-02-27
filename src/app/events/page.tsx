@@ -174,7 +174,7 @@ export default function Events() {
       </section>
 
       {/* Sponsors Section */}
-      <section className="relative py-24 bg-[#1a2e23] border-t border-white/5">
+      <section className="relative py-24 bg-white border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -182,7 +182,7 @@ export default function Events() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
               Backed by Global <span className="text-[#8bc34a]">Innovators</span>
             </h2>
             <div className="w-24 h-1 bg-[#8bc34a] mx-auto mt-4 rounded-full opacity-50" />
