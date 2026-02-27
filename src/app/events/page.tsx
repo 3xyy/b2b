@@ -95,19 +95,6 @@ export default function Events() {
                       </p>
                     </div>
 
-                    <div className="mt-8">
-                        <h4 className="text-xl font-bold mb-4 text-white">Tracks</h4>
-                        <ul className="space-y-3">
-                            {["Climate and Sustainability Tech", "AI for Good", "Community & Environmental Impact"].map((track, i) => (
-                                <li key={i} className="flex items-center gap-3">
-                                <span className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-[#8bc34a] text-sm font-bold border border-white/10">
-                                    {i + 1}
-                                </span>
-                                <span className="text-white/80">{track}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
                   </div>
                   
                   <div>
@@ -213,7 +200,7 @@ export default function Events() {
                 whileInView={{ opacity: 0.7 }}
                 whileHover={{ opacity: 1, scale: 1.1, filter: "brightness(1.2)" }}
                 viewport={{ once: true }}
-                className="relative w-48 h-28 md:w-64 md:h-36 transition-all duration-500"
+                className="relative w-64 h-36 md:w-80 md:h-48 transition-all duration-500"
               >
                 <Image
                   src={assetPath(sponsor.src)}
@@ -239,7 +226,7 @@ export default function Events() {
                 whileInView={{ opacity: 0.7 }}
                 whileHover={{ opacity: 1, scale: 1.1, filter: "brightness(1.2)" }}
                 viewport={{ once: true }}
-                className="relative w-40 h-24 md:w-56 md:h-32 transition-all duration-500"
+                className="relative w-56 h-32 md:w-72 md:h-40 transition-all duration-500"
               >
                 <Image
                   src={assetPath(sponsor.src)}
@@ -269,7 +256,7 @@ export default function Events() {
                 whileInView={{ opacity: 0.6 }}
                 whileHover={{ opacity: 1, scale: 1.05, filter: "brightness(1.1)" }}
                 viewport={{ once: true }}
-                className="relative w-32 h-20 md:w-44 md:h-24 transition-all duration-500"
+                className="relative w-40 h-24 md:w-56 md:h-32 transition-all duration-500"
               >
                 <Image
                   src={assetPath(sponsor.src)}

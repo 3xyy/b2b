@@ -175,7 +175,7 @@ export default function Home() {
                   </motion.button>
                 </Link>
 
-                <Link href="#contact">
+                <a href="mailto:outreach@bintobette.org">
                   <motion.button
                     whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
                     whileTap={{ scale: 0.95 }}
@@ -183,7 +183,7 @@ export default function Home() {
                   >
                     Get Involved
                   </motion.button>
-                </Link>
+                </a>
               </motion.div>
 
               {/* Stats */}
@@ -242,7 +242,7 @@ export default function Home() {
                     className="relative w-full h-full"
                   >
                     <Image 
-                      src={assetPath("/image7.png")} 
+                      src={assetPath("/Untitled_design-removebg-preview.webp")} 
                       alt="Bin to Better" 
                       fill
                       className="object-contain"
