@@ -200,7 +200,7 @@ export default function Events() {
                 whileInView={{ opacity: 0.7 }}
                 whileHover={{ opacity: 1, scale: 1.1, filter: "brightness(1.2)" }}
                 viewport={{ once: true }}
-                className="relative w-64 h-36 md:w-80 md:h-48 transition-all duration-500"
+                className="relative w-80 h-44 md:w-96 md:h-56 transition-all duration-500"
               >
                 <Image
                   src={assetPath(sponsor.src)}
