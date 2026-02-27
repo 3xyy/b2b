@@ -35,11 +35,11 @@ export default function Navbar({ activePage, topOffset = false }: { activePage?:
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative z-50 backdrop-blur-md bg-[#3d5a4e]/80 border-b border-white/10"
       >
-        <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-lg font-bold tracking-tight cursor-pointer mr-4"
+              className="text-2xl font-bold tracking-tight cursor-pointer mr-4"
             >
               <span className="text-[#8bc34a]">bin</span> to{" "}
               <span className="text-[#8bc34a]">better</span>
@@ -54,7 +54,7 @@ export default function Navbar({ activePage, topOffset = false }: { activePage?:
               return (
                 <Link key={item.label} href={item.href}>
                   <motion.span
-                    className={`relative px-2 py-1.5 text-xs font-medium transition-colors cursor-pointer block whitespace-nowrap ${
+                    className={`relative px-3 py-2 text-sm font-medium transition-colors cursor-pointer block whitespace-nowrap ${
                       isActive ? "text-[#8bc34a]" : "text-white/80 hover:text-white"
                     }`}
                     onHoverStart={() => setHoveredNav(item.label)}
@@ -81,10 +81,10 @@ export default function Navbar({ activePage, topOffset = false }: { activePage?:
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-white/80 hover:text-white focus:outline-none"
+            className="lg:hidden p-3 text-white/80 hover:text-white focus:outline-none"
           >
             <svg
-              className="w-6 h-6"
+              className="w-7 h-7"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
