@@ -173,6 +173,147 @@ export default function Events() {
         </div>
       </section>
 
+      {/* Additional Events */}
+      <section className="relative py-12 bg-[#07120d] border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-white mb-8 border-l-4 border-[#8bc34a] pl-4">
+            Upcoming Community Events
+          </h2>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-[#0d1a14] rounded-2xl p-8 md:p-12 border border-white/10"
+          >
+            <div className="md:flex md:items-start md:gap-8">
+              <div className="flex-shrink-0 mb-6 md:mb-0">
+                <div className="w-36 h-36 rounded-xl bg-gradient-to-br from-[#11401f] to-[#082815] flex items-center justify-center p-4">
+                  <svg role="img" aria-label="Tech to Treasure logo" viewBox="0 0 120 120" className="w-28 h-28" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0%" stopColor="#aee787" />
+                        <stop offset="100%" stopColor="#4caf50" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="12" y="44" width="96" height="44" rx="6" fill="#081a14" />
+                    <rect x="16" y="36" width="88" height="24" rx="4" fill="url(#g1)" />
+                    <rect x="28" y="54" width="8" height="12" rx="2" fill="#9be37a" />
+                    <rect x="44" y="54" width="8" height="12" rx="2" fill="#9be37a" />
+                    <rect x="60" y="54" width="8" height="12" rx="2" fill="#9be37a" />
+                    <circle cx="90" cy="36" r="12" fill="#0b2a1a" stroke="url(#g1)" strokeWidth="3" />
+                    <circle cx="90" cy="36" r="6" fill="url(#g1)" />
+                  </svg>
+                </div>
+              </div>
+
+              <div className="flex-1">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="inline-block px-3 py-1 bg-[#8bc34a]/20 text-[#8bc34a] text-xs font-semibold uppercase rounded-full border border-[#8bc34a]/30">
+                    March 1 • Fremont, CA
+                  </span>
+                  <div className="text-sm text-white/60">Patterson Ranch benches outside the red barn · 5298 Rancho Del Norte Dr, Fremont, CA 94555</div>
+                </div>
+
+                <h3 className="text-2xl font-bold text-white mb-2">Tech to Treasure Patterson Ranch</h3>
+                <p className="text-white/70 mb-4">A hands-on stations workshop for kids to touch parts, see how things work, and hear instructors explain each component.</p>
+
+                <div className="grid sm:grid-cols-2 gap-4 text-white/70 mb-6">
+                  <div className="bg-white/5 p-4 rounded-lg border border-white/6">
+                    <div className="font-semibold">When</div>
+                    <div className="text-sm">March 1 3:30 PM to 5:30 PM</div>
+                  </div>
+                  <div className="bg-white/5 p-4 rounded-lg border border-white/6">
+                    <div className="font-semibold">Age Group</div>
+                    <div className="text-sm">8–12 years</div>
+                  </div>
+                  <div className="bg-white/5 p-4 rounded-lg border border-white/6">
+                    <div className="font-semibold">Duration</div>
+                    <div className="text-sm">2–3 hours (event runs 3:30–5:30)</div>
+                  </div>
+                  <div className="bg-white/5 p-4 rounded-lg border border-white/6">
+                    <div className="font-semibold">Group Size</div>
+                    <div className="text-sm">7–8 kids per group</div>
+                  </div>
+                </div>
+
+                <div className="bg-[#1a2e23] p-4 rounded-lg border border-white/8 text-white/70">
+                  <div className="font-semibold mb-1">Format</div>
+                  <div className="text-sm">Children rotate through stations (~20 minutes per station). Instructors will demonstrate parts and explain how each one works while kids can touch and explore.</div>
+                </div>
+
+                {/* Stations */}
+                <div className="mt-6">
+                  <h4 className="text-xl font-bold text-white mb-3">Stations & Activities</h4>
+
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="bg-white/5 p-4 rounded-lg border border-white/6">
+                      <h5 className="font-semibold text-white mb-2">STATION 1 Inside Desktop Computer</h5>
+                      <div className="text-sm text-white/70 mb-2">Kids can interact with:</div>
+                      <ul className="list-disc ml-5 text-sm text-white/70 space-y-1">
+                        <li>RAM sticks (remove & insert)</li>
+                        <li>Hard drive / SSD</li>
+                        <li>Cooling fan</li>
+                        <li>Cables</li>
+                        <li>Expansion cards</li>
+                        <li>Motherboard</li>
+                      </ul>
+                      <div className="text-sm text-white/60 mt-3">Descriptions of these parts and short guided prompts:</div>
+                      <ul className="list-disc ml-5 text-xs text-white/60 mt-2 space-y-1">
+                        <li>Find the brain (CPU)</li>
+                        <li>Find memory vs. storage</li>
+                        <li>Trace a cable from power supply to part</li>
+                        <li>Spin fan why cooling matters</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-white/5 p-4 rounded-lg border border-white/6">
+                      <h5 className="font-semibold text-white mb-2">STATION 2 3D Printer</h5>
+                      <div className="text-sm text-white/70 mb-2">Kids can interact with:</div>
+                      <ul className="list-disc ml-5 text-sm text-white/70 space-y-1">
+                        <li>Stepper motors</li>
+                        <li>Belts and pulleys</li>
+                        <li>Metal rods</li>
+                        <li>Circuit board</li>
+                        <li>Connection cables</li>
+                        <li>Control board</li>
+                      </ul>
+                      <div className="text-sm text-white/60 mt-3">Activities:</div>
+                      <ul className="list-disc ml-5 text-xs text-white/60 mt-2 space-y-1">
+                        <li>Move print head by hand</li>
+                        <li>Follow wires from motors to circuit board</li>
+                        <li>Identify each motor’s purpose</li>
+                      </ul>
+                    </div>
+
+                    <div className="bg-white/5 p-4 rounded-lg border border-white/6">
+                      <h5 className="font-semibold text-white mb-2">STATION 3 Monitor</h5>
+                      <div className="text-sm text-white/70 mb-2">Kids can interact with:</div>
+                      <ul className="list-disc ml-5 text-sm text-white/70 space-y-1">
+                        <li>Back casing and control buttons</li>
+                        <li>Circuit boards (main board & button board)</li>
+                        <li>Ribbon cables</li>
+                        <li>Ports (HDMI, VGA, power)</li>
+                        <li>Screen layers (observe light touch only)</li>
+                      </ul>
+                      <div className="text-sm text-white/60 mt-3">Challenges:</div>
+                      <ul className="list-disc ml-5 text-xs text-white/60 mt-2 space-y-1">
+                        <li>Identify display parts (screen layers) vs. control parts (circuit boards)</li>
+                        <li>Compare ribbon cables vs. thicker power wires</li>
+                        <li>Which sends signals? Which sends power?</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  
+                </div>
+
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Sponsors Section */}
       <section className="relative py-24 bg-white border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
