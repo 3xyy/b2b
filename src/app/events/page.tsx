@@ -323,8 +323,8 @@ export default function Events() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-              Backed by Global <span className="text-[#8bc34a]">Innovators</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
+              Backed by Global <span className="text-black">Innovators</span>
             </h2>
             <div className="w-24 h-1 bg-[#8bc34a] mx-auto mt-4 rounded-full opacity-50" />
           </motion.div>
