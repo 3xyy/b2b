@@ -215,7 +215,7 @@ export default function Events() {
                   <div className="text-sm text-white/60">Patterson Ranch benches outside the red barn · 5298 Rancho Del Norte Dr, Fremont, CA 94555</div>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-2">Tech to Treasure Patterson Ranch</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">Tech to Treasure</h3>
                 <p className="text-white/70 mb-4">A hands-on stations workshop for kids to touch parts, see how things work, and hear instructors explain each component.</p>
 
                 <div className="grid sm:grid-cols-2 gap-4 text-white/70 mb-6">
