@@ -7,12 +7,12 @@ import { assetPath } from "@/lib/assetPath";
 
 export default function Events() {
   return (
-    <div className="min-h-screen bg-[#0d1a14] text-white font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-[#1b6338] text-white font-sans overflow-x-hidden">
       <Navbar activePage="Events" />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a2e23] to-[#0d1a14] opacity-50" />
+        <div className="absolute inset-0 bg-[#1b6338] opacity-50" />
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -34,7 +34,7 @@ export default function Events() {
       </section>
 
       {/* Featured Event: Hackathon */}
-      <section className="relative py-12 bg-[#1a2e23]">
+      <section className="relative py-12 bg-[#1b6338]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-3xl font-bold text-white mb-12 border-l-4 border-[#8bc34a] pl-4">
             Featured Event
@@ -173,149 +173,8 @@ export default function Events() {
         </div>
       </section>
 
-      {/* Additional Events */}
-      <section className="relative py-12 bg-[#07120d] border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white mb-8 border-l-4 border-[#8bc34a] pl-4">
-            Upcoming Community Events
-          </h2>
-
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-[#0d1a14] rounded-2xl p-8 md:p-12 border border-white/10"
-          >
-            <div className="md:flex md:items-start md:gap-8">
-              <div className="flex-shrink-0 mb-6 md:mb-0">
-                <div className="w-36 h-36 rounded-xl bg-gradient-to-br from-[#11401f] to-[#082815] flex items-center justify-center p-4">
-                  <svg role="img" aria-label="Tech to Treasure logo" viewBox="0 0 120 120" className="w-28 h-28" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0%" stopColor="#aee787" />
-                        <stop offset="100%" stopColor="#4caf50" />
-                      </linearGradient>
-                    </defs>
-                    <rect x="12" y="44" width="96" height="44" rx="6" fill="#081a14" />
-                    <rect x="16" y="36" width="88" height="24" rx="4" fill="url(#g1)" />
-                    <rect x="28" y="54" width="8" height="12" rx="2" fill="#9be37a" />
-                    <rect x="44" y="54" width="8" height="12" rx="2" fill="#9be37a" />
-                    <rect x="60" y="54" width="8" height="12" rx="2" fill="#9be37a" />
-                    <circle cx="90" cy="36" r="12" fill="#0b2a1a" stroke="url(#g1)" strokeWidth="3" />
-                    <circle cx="90" cy="36" r="6" fill="url(#g1)" />
-                  </svg>
-                </div>
-              </div>
-
-              <div className="flex-1">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="inline-block px-3 py-1 bg-[#8bc34a]/20 text-[#8bc34a] text-xs font-semibold uppercase rounded-full border border-[#8bc34a]/30">
-                    March 1 • Fremont, CA
-                  </span>
-                  <div className="text-sm text-white/60">Patterson Ranch benches outside the red barn · 5298 Rancho Del Norte Dr, Fremont, CA 94555</div>
-                </div>
-
-                <h3 className="text-2xl font-bold text-white mb-2">Tech to Treasure</h3>
-                <p className="text-white/70 mb-4">A hands-on stations workshop for kids to touch parts, see how things work, and hear instructors explain each component.</p>
-
-                <div className="grid sm:grid-cols-2 gap-4 text-white/70 mb-6">
-                  <div className="bg-white/5 p-4 rounded-lg border border-white/6">
-                    <div className="font-semibold">When</div>
-                    <div className="text-sm">March 1 3:30 PM to 5:30 PM</div>
-                  </div>
-                  <div className="bg-white/5 p-4 rounded-lg border border-white/6">
-                    <div className="font-semibold">Age Group</div>
-                    <div className="text-sm">8–12 years</div>
-                  </div>
-                  <div className="bg-white/5 p-4 rounded-lg border border-white/6">
-                    <div className="font-semibold">Duration</div>
-                    <div className="text-sm">2–3 hours (event runs 3:30–5:30)</div>
-                  </div>
-                  <div className="bg-white/5 p-4 rounded-lg border border-white/6">
-                    <div className="font-semibold">Group Size</div>
-                    <div className="text-sm">7–8 kids per group</div>
-                  </div>
-                </div>
-
-                <div className="bg-[#1a2e23] p-4 rounded-lg border border-white/8 text-white/70">
-                  <div className="font-semibold mb-1">Format</div>
-                  <div className="text-sm">Children rotate through stations (~20 minutes per station). Instructors will demonstrate parts and explain how each one works while kids can touch and explore.</div>
-                </div>
-
-                {/* Stations */}
-                <div className="mt-6">
-                  <h4 className="text-xl font-bold text-white mb-3">Stations & Activities</h4>
-
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="bg-white/5 p-4 rounded-lg border border-white/6">
-                      <h5 className="font-semibold text-white mb-2">STATION 1 Inside Desktop Computer</h5>
-                      <div className="text-sm text-white/70 mb-2">Kids can interact with:</div>
-                      <ul className="list-disc ml-5 text-sm text-white/70 space-y-1">
-                        <li>RAM sticks (remove & insert)</li>
-                        <li>Hard drive / SSD</li>
-                        <li>Cooling fan</li>
-                        <li>Cables</li>
-                        <li>Expansion cards</li>
-                        <li>Motherboard</li>
-                      </ul>
-                      <div className="text-sm text-white/60 mt-3">Descriptions of these parts and short guided prompts:</div>
-                      <ul className="list-disc ml-5 text-xs text-white/60 mt-2 space-y-1">
-                        <li>Find the brain (CPU)</li>
-                        <li>Find memory vs. storage</li>
-                        <li>Trace a cable from power supply to part</li>
-                        <li>Spin fan why cooling matters</li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-white/5 p-4 rounded-lg border border-white/6">
-                      <h5 className="font-semibold text-white mb-2">STATION 2 3D Printer</h5>
-                      <div className="text-sm text-white/70 mb-2">Kids can interact with:</div>
-                      <ul className="list-disc ml-5 text-sm text-white/70 space-y-1">
-                        <li>Stepper motors</li>
-                        <li>Belts and pulleys</li>
-                        <li>Metal rods</li>
-                        <li>Circuit board</li>
-                        <li>Connection cables</li>
-                        <li>Control board</li>
-                      </ul>
-                      <div className="text-sm text-white/60 mt-3">Activities:</div>
-                      <ul className="list-disc ml-5 text-xs text-white/60 mt-2 space-y-1">
-                        <li>Move print head by hand</li>
-                        <li>Follow wires from motors to circuit board</li>
-                        <li>Identify each motor’s purpose</li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-white/5 p-4 rounded-lg border border-white/6">
-                      <h5 className="font-semibold text-white mb-2">STATION 3 Monitor</h5>
-                      <div className="text-sm text-white/70 mb-2">Kids can interact with:</div>
-                      <ul className="list-disc ml-5 text-sm text-white/70 space-y-1">
-                        <li>Back casing and control buttons</li>
-                        <li>Circuit boards (main board & button board)</li>
-                        <li>Ribbon cables</li>
-                        <li>Ports (HDMI, VGA, power)</li>
-                        <li>Screen layers (observe light touch only)</li>
-                      </ul>
-                      <div className="text-sm text-white/60 mt-3">Challenges:</div>
-                      <ul className="list-disc ml-5 text-xs text-white/60 mt-2 space-y-1">
-                        <li>Identify display parts (screen layers) vs. control parts (circuit boards)</li>
-                        <li>Compare ribbon cables vs. thicker power wires</li>
-                        <li>Which sends signals? Which sends power?</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  
-                </div>
-
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Sponsors Section */}
-      <section className="relative py-24 bg-white border-t border-white/5">
+      <section className="relative py-24 bg-[#1b6338] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -323,91 +182,325 @@ export default function Events() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-              <h2 className="text-4xl md:text-5xl font-bold text-black leading-tight">
-              Backed by Global <span className="text-black">Innovators</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+              Backed by Global <span className="text-[#8bc34a]">Innovators</span>
             </h2>
             <div className="w-24 h-1 bg-[#8bc34a] mx-auto mt-4 rounded-full opacity-50" />
           </motion.div>
           
-          {/* Big Sponsors */}
-          <div className="grid grid-cols-2 gap-12 items-center justify-items-center mb-24 max-w-2xl mx-auto">
+          {/* Top Featured Sponsors - Glid & Wolfram */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center justify-items-center mb-16 max-w-6xl mx-auto px-4">
             {[
-              { name: "Glid", src: "/Glid.png" },
-              { name: "Wolfram", src: "/Wolfram.png" },
-            ].map((sponsor) => (
-              <motion.div
-                key={sponsor.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 0.7 }}
-                whileHover={{ opacity: 1, scale: 1.1, filter: "brightness(1.2)" }}
-                viewport={{ once: true }}
-                className="relative w-80 h-44 md:w-96 md:h-56 transition-all duration-500"
-              >
-                <Image
-                  src={assetPath(sponsor.src)}
-                  alt={sponsor.name}
-                  fill
-                  className="object-contain"
-                />
-              </motion.div>
-            ))}
+              { name: "Sponsor 8", src: "/Sponsors for Tech TO Treasure Hackathon/image8.png", link: "https://www.glidtech.us/" },
+              { name: "Sponsor 12", src: "/Sponsors for Tech TO Treasure Hackathon/image12.png", link: "https://www.wolfram.com/" },
+            ].map((sponsor) =>
+              sponsor.link ? (
+                <a
+                  key={sponsor.name}
+                  href={sponsor.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 0.9 }}
+                    whileHover={{ opacity: 1, scale: 1.05, filter: "brightness(1.2)" }}
+                    viewport={{ once: true }}
+                    className="relative w-[80vw] h-64 md:w-[48rem] md:h-[28rem] transition-all duration-500"
+                  >
+                    <Image
+                      src={assetPath(sponsor.src)}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </motion.div>
+                </a>
+              ) : null
+            )}
+          </div>
+
+          {/* Big Sponsors */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center justify-items-center mb-24 max-w-6xl mx-auto px-4">
+            {[
+              { name: "Sponsor 1", src: "/Sponsors for Tech TO Treasure Hackathon/image1.png", link: "https://nexos.ai" },
+              { name: "Sponsor 2", src: "/Sponsors for Tech TO Treasure Hackathon/image2.png", link: "https://saily.com" },
+            ].map((sponsor) =>
+              sponsor.link ? (
+                <a
+                  key={sponsor.name}
+                  href={sponsor.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 0.7 }}
+                    whileHover={{ opacity: 1, scale: 1.1, filter: "brightness(1.2)" }}
+                    viewport={{ once: true }}
+                    className="relative w-72 h-40 md:w-96 md:h-56 transition-all duration-500"
+                  >
+                    <Image
+                      src={assetPath(sponsor.src)}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </motion.div>
+                </a>
+              ) : (
+                <motion.div
+                  key={sponsor.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 0.7 }}
+                  whileHover={{ opacity: 1, scale: 1.1, filter: "brightness(1.2)" }}
+                  viewport={{ once: true }}
+                  className="relative w-72 h-40 md:w-96 md:h-56 transition-all duration-500"
+                >
+                  <Image
+                    src={assetPath(sponsor.src)}
+                    alt={sponsor.name}
+                    fill
+                    className="object-contain"
+                  />
+                </motion.div>
+              )
+            )}
           </div>
 
           {/* Medium Sponsors */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-16 items-center justify-items-center mb-20 max-w-6xl mx-auto px-4">
             {[
-              { name: "Code Crafters", src: "/Code Crafters.Ip.png" },
-              { name: "Momen", src: "/Momen.png" },
-              { name: "Featherless AI", src: "/Featherless.png" },
-              { name: "Mobbin", src: "/Mobbin.png" },
-            ].map((sponsor) => (
-              <motion.div
-                key={sponsor.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 0.7 }}
-                whileHover={{ opacity: 1, scale: 1.1, filter: "brightness(1.2)" }}
-                viewport={{ once: true }}
-                className="relative w-56 h-32 md:w-72 md:h-40 transition-all duration-500"
-              >
-                <Image
-                  src={assetPath(sponsor.src)}
-                  alt={sponsor.name}
-                  fill
-                  className="object-contain"
-                />
-              </motion.div>
-            ))}
+              { name: "Sponsor 3", src: "/Sponsors for Tech TO Treasure Hackathon/image3.png", link: "https://nordpass.com/" },
+              { name: "Sponsor 4", src: "/Sponsors for Tech TO Treasure Hackathon/image4.png", link: "https://mobbin.com" },
+              { name: "Sponsor 5", src: "/Sponsors for Tech TO Treasure Hackathon/image5.png", link: "https://momen.app/" },
+              { name: "Sponsor 6", src: "/Sponsors for Tech TO Treasure Hackathon/image6.png", link: "https://nordvpn.com/" },
+            ].map((sponsor) =>
+              sponsor.link ? (
+                <a
+                  key={sponsor.name}
+                  href={sponsor.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center"
+                >
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 0.7 }}
+                    whileHover={{ opacity: 1, scale: 1.1, filter: "brightness(1.2)" }}
+                    viewport={{ once: true }}
+                    className="relative w-72 h-40 md:w-80 md:h-48 transition-all duration-500"
+                  >
+                    <Image
+                      src={assetPath(sponsor.src)}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </motion.div>
+                </a>
+              ) : (
+                <motion.div
+                  key={sponsor.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 0.7 }}
+                  whileHover={{ opacity: 1, scale: 1.1, filter: "brightness(1.2)" }}
+                  viewport={{ once: true }}
+                  className="relative w-72 h-40 md:w-80 md:h-48 transition-all duration-500"
+                >
+                  <Image
+                    src={assetPath(sponsor.src)}
+                    alt={sponsor.name}
+                    fill
+                    className="object-contain"
+                  />
+                </motion.div>
+              )
+            )}
           </div>
 
           {/* Small Sponsors */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-10 items-center justify-items-center opacity-80 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-12 items-center justify-items-center opacity-80 max-w-6xl mx-auto px-4">
             {[
-              { name: "MongoDB", src: "/MongoDB.png" },
-              { name: "CleanShot", src: "/Clean Shot X.png" },
-              { name: "Nexos.ai", src: "/Nexos.png" },
-              { name: "NordVPN", src: "/NordVpn.png" },
-              { name: "NordPass", src: "/NordPass.png" },
-              { name: "Incogni", src: "/Incogni.png" },
-              { name: "Saily", src: "/Saily.png" },
-              { name: "Nexos.ai-2", src: "/Nexos.png" },
-            ].map((sponsor, index) => (
-              <motion.div
-                key={`${sponsor.name}-${index}`}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 0.6 }}
-                whileHover={{ opacity: 1, scale: 1.05, filter: "brightness(1.1)" }}
-                viewport={{ once: true }}
-                className="relative w-40 h-24 md:w-56 md:h-32 transition-all duration-500"
-              >
-                <Image
-                  src={assetPath(sponsor.src)}
-                  alt={sponsor.name}
-                  fill
-                  className="object-contain"
-                />
-              </motion.div>
-            ))}
+              { name: "Sponsor 7", src: "/Sponsors for Tech TO Treasure Hackathon/image7.png", link: "https://nexos.ai" },
+              { name: "Sponsor 9", src: "/Sponsors for Tech TO Treasure Hackathon/image9.png", link: "https://featherless.ai/" },
+              { name: "Sponsor 10", src: "/Sponsors for Tech TO Treasure Hackathon/image10.png", link: "https://codecrafters.io/" },
+              { name: "Sponsor 11", src: "/Sponsors for Tech TO Treasure Hackathon/image11.png", link: "https://incogni.com/" },
+              { name: "Sponsor 13", src: "/Sponsors for Tech TO Treasure Hackathon/image13.png", link: "https://www.yriscience.com" },
+              { name: "Sponsor 14", src: "/Sponsors for Tech TO Treasure Hackathon/image14.png", link: "https://nordprotect.com" },
+              { name: "Sponsor 16", src: "/Sponsors for Tech TO Treasure Hackathon/image16.png", link: "https://gen.xyz" },
+              { name: "Sponsor 17", src: "/Sponsors for Tech TO Treasure Hackathon/image17.png", link: "https://InterviewBuddy.net" },
+              { name: "Sponsor 18", src: "/Sponsors for Tech TO Treasure Hackathon/image18.png", link: "https://featherless.ai/" },
+              { name: "Sponsor 19", src: "/Sponsors for Tech TO Treasure Hackathon/image19.png", link: "https://relay.app" },
+              { name: "Sponsor 20", src: "/Sponsors for Tech TO Treasure Hackathon/image20.png", link: "https://cleanshot.com/" },
+            ].map((sponsor, index) => {
+              const sizeClass = "relative w-56 h-32 md:w-64 md:h-40 transition-all duration-500";
+              const wrapperClass = "w-full flex items-center justify-center";
+
+              if (sponsor.link) {
+                return (
+                  <a
+                    key={`${sponsor.name}-${index}`}
+                    href={sponsor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={wrapperClass}
+                  >
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 0.6 }}
+                      whileHover={{ opacity: 1, scale: 1.05, filter: "brightness(1.1)" }}
+                      viewport={{ once: true }}
+                      className={sizeClass}
+                    >
+                      <Image
+                        src={assetPath(sponsor.src)}
+                        alt={sponsor.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </motion.div>
+                  </a>
+                );
+              }
+
+              return (
+                <motion.div
+                  key={`${sponsor.name}-${index}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 0.6 }}
+                  whileHover={{ opacity: 1, scale: 1.05, filter: "brightness(1.1)" }}
+                  viewport={{ once: true }}
+                  className={sizeClass}
+                >
+                  <Image
+                    src={assetPath(sponsor.src)}
+                    alt={sponsor.name}
+                    fill
+                    className="object-contain"
+                  />
+                </motion.div>
+              );
+            })}
           </div>
+        </div>
+      </section>
+
+      {/* Past Events Section */}
+      <section className="relative py-24 bg-[#0d1a14] border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <h2 className="text-3xl font-bold text-white border-l-4 border-[#8bc34a] pl-4">
+              Past Events
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-[#1b6338]/30 rounded-3xl border border-white/10 overflow-hidden"
+          >
+            <div className="p-8 md:p-12">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
+                <div>
+                  <span className="inline-block px-4 py-1.5 bg-white/10 text-white/60 text-xs font-bold tracking-widest uppercase rounded-full border border-white/10 mb-4">
+                    March 1, 2026 • Fremont, CA
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 leading-tight">
+                    Tech to Treasure
+                  </h3>
+                  <p className="text-white/60 max-w-2xl">
+                    A hands-on stations workshop for kids to touch parts, see how things work, and hear instructors explain each component.
+                  </p>
+                  <p className="text-xs text-white/40 mt-2">📍 Patterson Ranch benches outside the red barn · 5298 Rancho Del Norte Dr, Fremont, CA 94555</p>
+                </div>
+                <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 text-white/50 text-sm font-semibold rounded-full border border-white/10 cursor-default select-none shrink-0">
+                  ✓ Completed
+                </span>
+              </div>
+
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-white/70 mb-8">
+                <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                  <div className="text-xs text-white/40 uppercase tracking-wider mb-1">When</div>
+                  <div className="text-sm font-semibold">March 1 · 3:30 PM – 5:30 PM</div>
+                </div>
+                <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                  <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Age Group</div>
+                  <div className="text-sm font-semibold">8–12 years</div>
+                </div>
+                <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                  <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Duration</div>
+                  <div className="text-sm font-semibold">2–3 hours</div>
+                </div>
+                <div className="bg-white/5 p-4 rounded-xl border border-white/10">
+                  <div className="text-xs text-white/40 uppercase tracking-wider mb-1">Group Size</div>
+                  <div className="text-sm font-semibold">7–8 kids per group</div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 p-4 rounded-xl border border-white/10 mb-8 text-sm text-white/60">
+                <span className="font-semibold text-white/80">Format: </span>Children rotate through stations (~20 minutes per station). Instructors demonstrate parts and explain how each one works while kids can touch and explore.
+              </div>
+
+              <h4 className="text-lg font-bold text-white mb-4">Stations &amp; Activities</h4>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-white/5 p-5 rounded-xl border border-white/10">
+                  <h5 className="font-bold text-white mb-3">Station 1: Desktop Computer</h5>
+                  <ul className="list-disc ml-4 text-sm text-white/60 space-y-1 mb-3">
+                    <li>RAM sticks (remove &amp; insert)</li>
+                    <li>Hard drive / SSD</li>
+                    <li>Cooling fan &amp; cables</li>
+                    <li>Expansion cards &amp; motherboard</li>
+                  </ul>
+                  <div className="text-xs text-white/40 font-semibold uppercase tracking-wider mb-1">Guided prompts</div>
+                  <ul className="list-disc ml-4 text-xs text-white/50 space-y-1">
+                    <li>Find the brain (CPU)</li>
+                    <li>Find memory vs. storage</li>
+                    <li>Trace a cable from power supply to part</li>
+                    <li>Spin fan — why cooling matters</li>
+                  </ul>
+                </div>
+                <div className="bg-white/5 p-5 rounded-xl border border-white/10">
+                  <h5 className="font-bold text-white mb-3">Station 2: 3D Printer</h5>
+                  <ul className="list-disc ml-4 text-sm text-white/60 space-y-1 mb-3">
+                    <li>Stepper motors</li>
+                    <li>Belts and pulleys</li>
+                    <li>Metal rods &amp; circuit board</li>
+                    <li>Connection &amp; control cables</li>
+                  </ul>
+                  <div className="text-xs text-white/40 font-semibold uppercase tracking-wider mb-1">Activities</div>
+                  <ul className="list-disc ml-4 text-xs text-white/50 space-y-1">
+                    <li>Move print head by hand</li>
+                    <li>Follow wires from motors to circuit board</li>
+                    <li>Identify each motor&apos;s purpose</li>
+                  </ul>
+                </div>
+                <div className="bg-white/5 p-5 rounded-xl border border-white/10">
+                  <h5 className="font-bold text-white mb-3">Station 3: Monitor</h5>
+                  <ul className="list-disc ml-4 text-sm text-white/60 space-y-1 mb-3">
+                    <li>Back casing &amp; control buttons</li>
+                    <li>Circuit boards (main &amp; button)</li>
+                    <li>Ribbon cables &amp; ports</li>
+                    <li>Screen layers (light touch only)</li>
+                  </ul>
+                  <div className="text-xs text-white/40 font-semibold uppercase tracking-wider mb-1">Challenges</div>
+                  <ul className="list-disc ml-4 text-xs text-white/50 space-y-1">
+                    <li>Display parts vs. control parts</li>
+                    <li>Ribbon cables vs. power wires</li>
+                    <li>Which sends signals? Which sends power?</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
