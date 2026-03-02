@@ -480,7 +480,7 @@ export default function Events() {
                   <ul className="list-disc ml-4 text-xs text-white/50 space-y-1">
                     <li>Move print head by hand</li>
                     <li>Follow wires from motors to circuit board</li>
-                    <li>Identify each motor's purpose</li>
+                    <li>Identify each motor&apos;s purpose</li>
                   </ul>
                 </div>
                 <div className="bg-white/5 p-5 rounded-xl border border-white/10">
