@@ -248,7 +248,7 @@ export default function Events() {
 
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="bg-white/5 p-4 rounded-lg border border-white/6">
-                      <h5 className="font-semibold text-white mb-2">STATION 1 Inside Desktop Computer</h5>
+                      <h5 className="font-semibold text-white mb-2">STATION 1:Inside Desktop Computer</h5>
                       <div className="text-sm text-white/70 mb-2">Kids can interact with:</div>
                       <ul className="list-disc ml-5 text-sm text-white/70 space-y-1">
                         <li>RAM sticks (remove & insert)</li>
@@ -268,7 +268,7 @@ export default function Events() {
                     </div>
 
                     <div className="bg-white/5 p-4 rounded-lg border border-white/6">
-                      <h5 className="font-semibold text-white mb-2">STATION 2 3D Printer</h5>
+                      <h5 className="font-semibold text-white mb-2">STATION 2:3D Printer</h5>
                       <div className="text-sm text-white/70 mb-2">Kids can interact with:</div>
                       <ul className="list-disc ml-5 text-sm text-white/70 space-y-1">
                         <li>Stepper motors</li>
@@ -287,7 +287,7 @@ export default function Events() {
                     </div>
 
                     <div className="bg-white/5 p-4 rounded-lg border border-white/6">
-                      <h5 className="font-semibold text-white mb-2">STATION 3 Monitor</h5>
+                      <h5 className="font-semibold text-white mb-2">STATION 3:Monitor</h5>
                       <div className="text-sm text-white/70 mb-2">Kids can interact with:</div>
                       <ul className="list-disc ml-5 text-sm text-white/70 space-y-1">
                         <li>Back casing and control buttons</li>
