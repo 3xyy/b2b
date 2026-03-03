@@ -12,6 +12,7 @@ const navItems = [
   { label: "Partners", href: "/partners" },
   { label: "Bounce Back", href: "/bounce-back" },
   { label: "Tech to Treasure", href: "/tech-to-treasure" },
+  { label: "Workshop", href: "/workshop" },
   { label: "Eco-filament", href: "/eco-filament" },
   { label: "Officers & Team", href: "/officers-and-team" },
   { label: "Events", href: "/events" },

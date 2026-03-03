@@ -38,7 +38,7 @@ export default function OfficersAndTeam() {
                 category: "Executives",
                 members: [
                   { name: "Lalit Batchu", role: "Co-Founder and Co-Prez", school: "American High School Grade 11", fact: "My full name has 6 words!", image: "/members/Lalit Batchu.png" },
-                  { name: "Rohan Babbellapati", role: "Co-Founder and Co-Prez", school: "American High School Grade 10", fact: "I can solve a Rubik’s cube in under 15 seconds!", image: "/members/Rohan Bablupatti.png" },
+                  { name: "Rohan Babbellapati", role: "Co-Founder and Co-Prez", school: "American High School Grade 10", fact: "I can solve a Rubik's cube in under 15 seconds!", image: "/members/Rohan Bablupatti.png", imagePosition: "center 20%" },
                   { name: "Pradyun Kanuparthi", role: "Vice President", school: "Mission San Jose High School Grade 11", fact: "I start on varsity basketball", image: "/members/Pradyun Kanuparthi.png" },
                 ]
               },
@@ -134,6 +134,7 @@ export default function OfficersAndTeam() {
                           alt={member.name}
                           fill
                           className="object-cover"
+                          style={member.imagePosition ? { objectPosition: member.imagePosition } : undefined}
                         />
                       </div>
                       <h4 className="text-lg font-bold text-white mb-1">{member.name}</h4>

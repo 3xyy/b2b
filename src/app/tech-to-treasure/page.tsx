@@ -44,7 +44,7 @@ export default function TechToTreasure() {
                 {[
                   { title: "Collection & Education", desc: "We gather unused devices and transform them into educational tools through free, interactive workshops." },
                   { title: "Hands‑On Learning", desc: "Students disassemble devices to learn about RAM, memory, circuit boards, and power systems." },
-                  { title: "Responsible Recycling", desc: "After sessions, all parts are responsibly recycled through Best Buy’s e‑waste program." }
+                  { title: "Responsible Recycling", desc: "After sessions, all parts are responsibly recycled through certified e‑waste programs." }
                 ].map((item, i) => (
                   <motion.li
                     key={item.title}
