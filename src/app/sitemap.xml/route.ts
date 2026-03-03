@@ -13,6 +13,7 @@ export async function GET() {
     '/officers-and-team',
     '/partners',
     '/tech-to-treasure',
+    '/workshop',
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
