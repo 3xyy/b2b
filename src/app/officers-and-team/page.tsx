@@ -42,7 +42,7 @@ export default function OfficersAndTeam() {
                 category: "Outreach",
                 members: [
                   { name: "Harmonie Lee", role: "Outreach Director", school: "American High School Grade 10", fact: "I get Chick-fil-A every week", image: "/members/Harmony Lee.png" },
-                  { name: "Deepam Kapadia", role: "Outreach Director", school: "American High School Grade 10", fact: "I am a top 5% Tetris player.", image: "/members/image.png" },
+                  { name: "Deepam Kapadia", role: "Outreach Director", school: "American High School Grade 10", fact: "I am a top 5% Tetris player.", image: "/members/Deepam Kapadia.png" },
                   { name: "Anika Batra", role: "Outreach  Officer", school: "American High School Grade 10", fact: "I have never broken a bone.", image: "/members/Anika Batra.png" },
                   { name: "Anwen Li", role: "Outreach Officer", school: "American High Grade 9", fact: "I can speak 4 languages", image: "/members/Anwen Li.jpg" },
                 ]
