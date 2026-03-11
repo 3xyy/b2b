@@ -6,7 +6,6 @@ export async function GET() {
     '',
     '/about',
     '/bounce-back',
-    '/corporate-partners',
     '/donate',
     '/eco-filament',
     '/events',

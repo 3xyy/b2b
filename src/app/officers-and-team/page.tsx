@@ -20,11 +20,6 @@ export default function OfficersAndTeam() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <motion.span 
-              className="inline-block mb-4 text-[#8bc34a] text-sm font-semibold tracking-widest uppercase"
-            >
-              Our People
-            </motion.span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Officers & Team</h1>
             <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
               Our organization is led by a dedicated group of students and volunteers. The officers work together across various teams to ensure the success of each program.
@@ -40,50 +35,49 @@ export default function OfficersAndTeam() {
                   { name: "Lalit Batchu", role: "Co-Founder and Co-Prez", school: "American High School Grade 11", fact: "My full name has 6 words!", image: "/members/Lalit Batchu.png" },
                   { name: "Rohan Babbellapati", role: "Co-Founder and Co-Prez", school: "American High School Grade 10", fact: "I can solve a Rubik's cube in under 15 seconds!", image: "/members/Rohan Bablupatti.png", imagePosition: "center 20%" },
                   { name: "Pradyun Kanuparthi", role: "Vice President", school: "Mission San Jose High School Grade 11", fact: "I start on varsity basketball", image: "/members/Pradyun Kanuparthi.png" },
+                  { name: "Hala Amer", role: "Vice President", school: "American High School Grade 10", fact: "I recently built a 3D printer.", image: "/members/Hala Amer.png" },
                 ]
               },
               {
                 category: "Outreach",
                 members: [
                   { name: "Harmonie Lee", role: "Outreach Director", school: "American High School Grade 10", fact: "I get Chick-fil-A every week", image: "/members/Harmony Lee.png" },
-                  { name: "Deepam Kapadia", role: "Director", school: "American High School Grade 10", fact: "I am a top 5% Tetris player.", image: "/members/image.png" },
-                  { name: "Anika Batra", role: "Outreach Lead", school: "American High School Grade 10", fact: "I have never broken a bone.", image: "/members/Anika Batra.png" },
-                  { name: "Anwen Li", role: "Outreach Lead", school: "American High Grade 9", fact: "I can speak 4 languages", image: "/members/Anwen Li.jpg" },
+                  { name: "Deepam Kapadia", role: "Outreach Director", school: "American High School Grade 10", fact: "I am a top 5% Tetris player.", image: "/members/image.png" },
+                  { name: "Anika Batra", role: "Outreach  Officer", school: "American High School Grade 10", fact: "I have never broken a bone.", image: "/members/Anika Batra.png" },
+                  { name: "Anwen Li", role: "Outreach Officer", school: "American High Grade 9", fact: "I can speak 4 languages", image: "/members/Anwen Li.jpg" },
                 ]
               },
               {
                 category: "Eco-Filament",
                 members: [
                   { name: "Saket Sandru", role: "Eco-Filament Director", school: "American High School Grade 10", fact: "I broke the bone in the human body thats hardest to heal", image: "/members/Saket Sandru.png" },
-                  { name: "Nameh Gupta", role: "Eco-Filament Lead", school: "American High School Grade 10", fact: "I like gardening in my free time.", image: "/members/Nameh Gupta.jpg" },
-                  { name: "Atiksh Jain", role: "Eco-Filament Lead", school: "American High School Grade 9", fact: "I have traveled to 15 countries.", image: "/members/Atiksh Jain.png" },
+                  { name: "Nameh Gupta", role: "Eco-Filament Officer", school: "American High School Grade 10", fact: "I like gardening in my free time.", image: "/members/Nameh Gupta.jpg" },
+                  { name: "Atiksh Jain", role: "Eco-Filament Officer", school: "American High School Grade 9", fact: "I have traveled to 15 countries.", image: "/members/Atiksh Jain.png" },
                 ]
               },
               {
                 category: "Fundraising",
                 members: [
                   { name: "Vihaan Sanghvi", role: "Fundraising Director", school: "American High School Grade 10", fact: "I love traveling", image: "/members/Vihaan Sanghvi.png" },
-                  { name: "Abhay Shankar", role: "Fundraising Lead", school: "Mission San Jose High School Grade 11", fact: "I have a labradoodle named Milo", image: "/members/Abhay Shankar.png" },
-                  { name: "Yuva Chandrachood", role: "Fundraising Lead", school: "American High School Grade 10", fact: "I am 6’1", image: "/members/Yuva Chandrachood.png" },
-                  { name: "Hala Amer", role: "Fundraising Lead", school: "American High School Grade 10", fact: "I recently built a 3D printer.", image: "/members/Hala Amer.png" },
+                  { name: "Abhay Shankar", role: "Fundraising Officer", school: "Mission San Jose High School Grade 11", fact: "I have a labradoodle named Milo", image: "/members/Abhay Shankar.png" },
+                  { name: "Yuva Chandrachood", role: "Fundraising Officer", school: "American High School Grade 10", fact: "I am 6'1", image: "/members/Yuva Chandrachood.png", imagePosition: "70% 25%" },
                 ]
               },
               {
                 category: "Tech to Treasure",
                 members: [
-                  { name: "Hala Amer", role: "Tech to Treasure Director", school: "American High School Grade 10", fact: "I recently built a 3D printer.", image: "/members/Hala Amer.png" },
+                  { name: "Sunny Yang", role: "Tech to Treasure Officer", school: "American High School Grade 10", fact: "I have two cats.", image: "/members/Sunny Yang.png" },
                   { name: "Clovis Zhang", role: "Tech to Treasure Lead", school: "American High School Grade 10", fact: "I’m addicted to Pokémon Go", image: "/members/Clovis Zhang.png" },
-                  { name: "Krishan Ranjan", role: "Tech to Treasure Lead", school: "American High School Grade 10", fact: "I’ve visited over 15 states in the US", image: "/members/Krishan Ranjan.jpg" },
-                  { name: "Deenadarrshan Sathiyamoorthi", role: "Tech to Treasure Lead", school: "American High School Grade 10", fact: "I like to play basketball", image: "/members/Deenadarrshan Sathiyamoorthi.jpg" },
-                  { name: "Sunny Yang", role: "Tech to Treasure Lead", school: "American High School Grade 10", fact: "I have two cats.", image: "/members/Sunny Yang.png" },
-                  { name: "Pranav Singh", role: "Tech to Treasure Lead", school: "American High School Grade 11", fact: "I run on 3 hours of sleep!", image: "/IMG_2032.jpg" },
+                  { name: "Krishan Ranjan", role: "Tech to Treasure Officer", school: "American High School Grade 10", fact: "I’ve visited over 15 states in the US", image: "/members/Krishan Ranjan.jpg" },
+                  { name: "Deenadarrshan Sathiyamoorthi", role: "Tech to Treasure Officer", school: "American High School Grade 10", fact: "I like to play basketball", image: "/members/Deenadarrshan Sathiyamoorthi.jpg" },
+                  { name: "Pranav Singh", role: "Tech to Treasure Officer", school: "American High School Grade 10", fact: "I run on 3 hours of sleep!", image: "/members/Pranav Singh.png" },
                 ]
               },
               {
                 category: "Bounce Back",
                 members: [
-                  { name: "Thomas Nguyen", role: "Team Member", school: "American High School Grade 10", fact: "I like sleeping", image: "/members/Thomas Nguyen.png" },
-                  { name: "Clovis Zhang", role: "Bounce Back Lead", school: "American High School Grade 10", fact: "I’m addicted to Pokémon Go", image: "/members/Clovis Zhang.png" },
+                  { name: "Clovis Zhang", role: "Bounce Back Director", school: "American High School Grade 10", fact: "I'm addicted to Pokémon Go", image: "/members/Clovis Zhang.png" },
+                  { name: "Thomas Nguyen", role: "Bounce Back Officer", school: "American High School Grade 10", fact: "I like sleeping", image: "/members/Thomas Nguyen.png" },
                 ]
               },
               {
@@ -100,13 +94,13 @@ export default function OfficersAndTeam() {
                 category: "Other Leadership", // Combined small sections
                 members: [
                   { name: "Linhan", role: "Publicist (PR)", school: "American High School Grade 9", fact: "I can count to 100 in Chinese in one breath.", image: "/members/Linhan.png" },
-                  { name: "Ashish Swaminathan", role: "Secretary", school: "Mission San Jose Grade 11", fact: "I am an eclectic person, liking academia while also liking sports and leadership.", image: "/members/Ashish Swaminathan.png" },
+                  { name: "Ashish Swaminathan", role: "Secretary", school: "Mission San Jose Grade 11", fact: "I am an eclectic person, liking academia while also liking sports and leadership.", image: "/members/Ashish Swaminathan.png", imagePosition: "center 25%" },
                 ]
               },
               {
                 category: "Website Management",
                 members: [
-                  { name: "Pranav Singh", role: "Website Manager", school: "American High School Grade 11", fact: "I run on 3 hours of sleep!", image: "/IMG_2032.jpg" },
+                  { name: "Pranav Singh", role: "Website Manager", school: "American High School Grade 10", fact: "I run on 3 hours of sleep!", image: "/members/Pranav Singh.png" },
                 ]
               },
             ].map((group, groupIndex) => (
