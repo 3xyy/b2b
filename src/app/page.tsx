@@ -32,50 +32,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#2d4a3e] font-sans text-white overflow-x-hidden">
-      {/* Top Banner Marquee */}
-      <div className="fixed top-0 left-0 w-full bg-[#8bc34a] py-2 overflow-hidden border-b border-[#1a2e23]/10 z-[60]">
-        <Link href="/events" className="flex whitespace-nowrap">
-          <motion.div
-            initial={{ x: 0 }}
-            animate={{ x: "-50%" }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="flex gap-12 text-sm md:text-base font-bold text-[#1a2e23] uppercase tracking-wider items-center shrink-0"
-          >
-            {[...Array(8)].map((_, i) => (
-              <span key={i} className="flex items-center gap-12">
-                <span>Check out the events tab for our latest hackathon</span>
-                <span className="text-[#1a2e23]/40">✦</span>
-              </span>
-            ))}
-          </motion.div>
-          <motion.div
-            initial={{ x: 0 }}
-            animate={{ x: "-50%" }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-            className="flex gap-12 text-sm md:text-base font-bold text-[#1a2e23] uppercase tracking-wider items-center shrink-0"
-          >
-            {[...Array(8)].map((_, i) => (
-              <span key={i} className="flex items-center gap-12">
-                <span>Check out the events tab for our latest hackathon</span>
-                <span className="text-[#1a2e23]/40">✦</span>
-              </span>
-            ))}
-          </motion.div>
-        </Link>
-      </div>
-
-      <Navbar activePage="Home" topOffset={true} />
+      <Navbar activePage="Home" />
 
       {/* Hero Section with Diagonal Split */}
-      <section className="relative min-h-screen flex items-center overflow-hidden pt-[140px]">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-[100px]">
         {/* Diagonal Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#3d5a4e] to-[#2d4a3e]" />
@@ -252,26 +212,6 @@ export default function Home() {
             </motion.div>
           </div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2"
-          >
-            <motion.div
-              animate={{ opacity: [1, 0, 1], y: [0, 8, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-1.5 h-1.5 bg-white/50 rounded-full"
-            />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* Mission Section */}
@@ -310,7 +250,7 @@ export default function Home() {
             className="space-y-8 text-lg text-white/70 leading-relaxed max-w-3xl mx-auto"
           >
             <p>
-              At Bin to Better, we believe that waste isn&apos;t just trash—it&apos;s
+              At Bin to Better, we believe that waste isn&apos;t just trash, it&apos;s
               opportunity. Every year, countless items with value and potential
               end up in landfills simply because they no longer serve their
               original purpose. Our mission is to change that narrative.
@@ -337,7 +277,7 @@ export default function Home() {
               Through education, partnerships, and hands-on initiatives, Bin to
               Better empowers people to rethink waste and become part of a more
               sustainable, circular future. Together, we can turn what would&apos;ve
-              been thrown away into something better—for people, for
+              been thrown away into something better, for people, for
               communities, and for the planet.
             </p>
           </motion.div>
@@ -565,7 +505,7 @@ export default function Home() {
                 whileHover={{ y: -5 }}
                 className="bg-white/5 rounded-2xl p-8 border border-white/10 flex flex-col h-full hover:bg-white/[0.07] transition-colors"
               >
-                <div className="text-[#8bc34a] text-4xl mb-4 font-serif">&quot;</div>
+                <div className="text-[#8bc34a] text-4xl mb-4 font-sans">&quot;</div>
                 <p className="text-white/80 leading-relaxed mb-6 flex-grow italic">
                   {testimonial.text}
                 </p>

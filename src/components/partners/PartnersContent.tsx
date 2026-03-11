@@ -55,7 +55,56 @@ export default function PartnersContent({ files }: PartnersContentProps) {
         ))}
       </motion.div>
 
-      {/* Remaining content (lists and contact CTA) */}
+      {/* Corporate Partners Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="p-8 bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl mb-12"
+      >
+        <h3 className="text-xl font-semibold text-white mb-4">Why partner with us</h3>
+        <ul className="text-white/70 list-disc list-inside space-y-3">
+          <li>Make a measurable impact by redirecting usable materials to communities in need.</li>
+          <li>Support education and sustainability through hands-on initiatives and workshops.</li>
+          <li>Increase corporate social responsibility visibility and employee engagement.</li>
+        </ul>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        className="mb-12"
+      >
+        <h2 className="text-2xl font-bold mb-6 text-center">Our Corporate Partners</h2>
+        <div className="flex flex-col md:flex-row gap-8 items-center bg-gradient-to-br from-white/[0.02] to-transparent border border-white/10 rounded-2xl p-8">
+          <div className="flex-1">
+            <h3 className="text-xl font-semibold text-white mb-4">Business Partners</h3>
+            <ul className="text-white/70 list-disc list-inside space-y-3 mb-6">
+              <li>Sun Dragon Computers</li>
+            </ul>
+            <p className="text-white/60 text-sm italic">
+              Interested in becoming a corporate partner? Contact us at{' '}
+              <a className="text-[#8bc34a]" href="mailto:outreach@bintobetter.org">outreach@bintobetter.org</a>{' '}
+              to learn how your organization can support Bin to Better and be featured as a partner.
+            </p>
+          </div>
+          <div className="flex-1 flex justify-center">
+            <Image
+              src={assetPath("/partners-logos/sun-dragon-computers.png")}
+              alt="Sun Dragon Computers"
+              width={320}
+              height={160}
+              className="max-w-xs object-contain"
+              unoptimized={true}
+            />
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Partner lists */}
       <section className="grid md:grid-cols-2 gap-10 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

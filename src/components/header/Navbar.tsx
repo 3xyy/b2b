@@ -8,7 +8,6 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Programs", href: "/#programs" },
-  { label: "Corporate Partners", href: "/corporate-partners" },
   { label: "Partners", href: "/partners" },
   { label: "Bounce Back", href: "/bounce-back" },
   { label: "Tech to Treasure", href: "/tech-to-treasure" },
@@ -42,8 +41,8 @@ export default function Navbar({ activePage, topOffset = false }: { activePage?:
               whileHover={{ scale: 1.05 }}
               className="text-2xl font-bold tracking-tight cursor-pointer mr-4"
             >
-              <span className="text-[#8bc34a]">bin</span> to{" "}
-              <span className="text-[#8bc34a]">better</span>
+              <span className="text-[#8bc34a]">BIN</span> TO{" "}
+              <span className="text-[#8bc34a]">BETTER</span>
             </motion.div>
           </Link>
 

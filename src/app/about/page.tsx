@@ -114,7 +114,7 @@ export default function About() {
                 variants={fadeInUp}
                 className="text-lg text-white/70 leading-relaxed"
               >
-                At Bin to Better, we believe that waste isn&apos;t just trash—it&apos;s an
+                At Bin to Better, we believe that waste isn&apos;t just trash, it&apos;s an
                 opportunity. Countless items with value end up in landfills each
                 year simply because they no longer serve their original purpose.
                 We are committed to changing that narrative by promoting reuse,
@@ -265,7 +265,7 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5 }}
-                className="absolute -top-6 left-8 text-8xl text-[#8bc34a]/20 font-serif"
+                className="absolute -top-6 left-8 text-8xl text-[#8bc34a]/20 font-sans"
               >
                 &ldquo;
               </motion.div>
@@ -273,7 +273,7 @@ export default function About() {
               <div className="grid md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
                   <p className="text-lg text-white/80 leading-relaxed">
-                    Bin to Better was founded by two high school students—
+                    Bin to Better was founded by two high school students,{" "}
                     <span className="text-[#8bc34a] font-semibold">
                       Lalit Sreekar Batchu
                     </span>{" "}
@@ -281,7 +281,7 @@ export default function About() {
                     <span className="text-[#8bc34a] font-semibold">
                       Rohan Sashank Babbellapati
                     </span>
-                    —who witnessed firsthand the scale of everyday waste.
+                    , who witnessed firsthand the scale of everyday waste.
                   </p>
 
                   <p className="text-lg text-white/70 leading-relaxed">
@@ -382,7 +382,7 @@ export default function About() {
                 icon: "🔧",
                 title: "Hands-on Initiatives",
                 description:
-                  "Our projects provide tangible ways for volunteers to participate—collecting tennis balls, disassembling electronics, or repurposing plastic waste into building materials.",
+                  "Our projects provide tangible ways for volunteers to participate: collecting tennis balls, disassembling electronics, or repurposing plastic waste into building materials.",
                 color: "from-[#66bb6a]/20 to-[#66bb6a]/5",
               },
             ].map((approach, i) => (
