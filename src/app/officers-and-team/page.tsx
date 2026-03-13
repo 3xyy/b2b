@@ -20,6 +20,17 @@ export default function OfficersAndTeam() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
+            <p className="mb-4 text-sm md:text-base text-white/75">
+              Interested in being an officer?{" "}
+              <a
+                href="https://forms.gle/Pf9kCT1HbYm9Nobt7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#8bc34a] underline underline-offset-4 hover:text-[#a6db67] transition-colors"
+              >
+                Apply here
+              </a>
+            </p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Officers & Team</h1>
             <p className="text-xl text-white/70 max-w-3xl mx-auto font-light">
               Our organization is led by a dedicated group of students and volunteers. The officers work together across various teams to ensure the success of each program.
@@ -42,7 +53,7 @@ export default function OfficersAndTeam() {
                 category: "Outreach",
                 members: [
                   { name: "Harmonie Lee", role: "Outreach Director", school: "American High School Grade 10", fact: "I get Chick-fil-A every week", image: "/members/Harmony Lee.png" },
-                  { name: "Deepam Kapadia", role: "Outreach Director", school: "American High School Grade 10", fact: "I am a top 5% Tetris player.", image: "/members/Deepam Kapadia.png" },
+                  { name: "Deepam Kapadia", role: "Outreach Director", school: "American High School Grade 10", fact: "I am a top 5% Tetris player.", image: "/members/Deepam.png" },
                   { name: "Anika Batra", role: "Outreach  Officer", school: "American High School Grade 10", fact: "I have never broken a bone.", image: "/members/Anika Batra.png" },
                   { name: "Anwen Li", role: "Outreach Officer", school: "American High Grade 9", fact: "I can speak 4 languages", image: "/members/Anwen Li.jpg" },
                 ]
