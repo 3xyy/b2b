@@ -135,7 +135,7 @@ export default function Home() {
                   </motion.button>
                 </Link>
 
-                <a href="mailto:outreach@bintobette.org">
+                <a href="mailto:outreach@bintobetter.org">
                   <motion.button
                     whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
                     whileTap={{ scale: 0.95 }}
