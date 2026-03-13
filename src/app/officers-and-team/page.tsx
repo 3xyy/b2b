@@ -1,4 +1,5 @@
 "use client";
+// PR: role changes — non-functional comment to force commit for PR
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -77,8 +78,8 @@ export default function OfficersAndTeam() {
               {
                 category: "Tech to Treasure",
                 members: [
-                  { name: "Sunny Yang", role: "Tech to Treasure Officer", school: "American High School Grade 10", fact: "I have two cats.", image: "/members/Sunny Yang.png" },
-                  { name: "Clovis Zhang", role: "Tech to Treasure Lead", school: "American High School Grade 10", fact: "I’m addicted to Pokémon Go", image: "/members/Clovis Zhang.png" },
+                  { name: "Sunny Yang", role: "Tech to Treasure Director", school: "American High School Grade 10", fact: "I have two cats.", image: "/members/Sunny Yang.png" },
+                  { name: "Clovis Zhang", role: "Tech to Treasure Officer", school: "American High School Grade 10", fact: "I’m addicted to Pokémon Go", image: "/members/Clovis Zhang.png" },
                   { name: "Krishan Ranjan", role: "Tech to Treasure Officer", school: "American High School Grade 10", fact: "I’ve visited over 15 states in the US", image: "/members/Krishan Ranjan.jpg" },
                   { name: "Deenadarrshan Sathiyamoorthi", role: "Tech to Treasure Officer", school: "American High School Grade 10", fact: "I like to play basketball", image: "/members/Deenadarrshan Sathiyamoorthi.jpg" },
                   { name: "Pranav Singh", role: "Tech to Treasure Officer", school: "American High School Grade 10", fact: "I run on 3 hours of sleep!", image: "/members/Pranav Singh.png" },
