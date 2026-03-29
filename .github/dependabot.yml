@@ -21,6 +21,9 @@ updates:
       - dependency-name: 'eslint'
         update-types:
           - 'version-update:semver-major'
+      - dependency-name: 'typescript'
+        update-types:
+          - 'version-update:semver-major'
     groups:
       # Group all npm production dependencies together
       # Note: Major version updates are excluded and handled individually
