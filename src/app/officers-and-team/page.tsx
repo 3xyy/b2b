@@ -45,8 +45,7 @@ export default function OfficersAndTeam() {
                 category: "Executives",
                 members: [
                   { name: "Lalit Batchu", role: "Co-Founder and Co-Prez", school: "American High School Grade 11", fact: "My full name has 6 words!", image: "/members/Lalit Batchu.png" },
-                  { name: "Rohan Babbellapati", role: "Co-Founder and Co-Prez", school: "American High School Grade 10", fact: "I can solve a Rubik's cube in under 15 seconds!", image: "/members/Rohan Bablupatti.png", imagePosition: "center 20%" },
-                  { name: "Pradyun Kanuparthi", role: "Vice President", school: "Mission San Jose High School Grade 11", fact: "I start on varsity basketball", image: "/members/Pradyun Kanuparthi.png" },
+                  { name: "Pradyun Kanuparthi", role: "Co-Founder and Co-Prez", school: "Mission San Jose High School Grade 11", fact: "I start on varsity basketball", image: "/members/Pradyun Kanuparthi.png" },
                   { name: "Hala Amer", role: "Vice President", school: "American High School Grade 10", fact: "I recently built a 3D printer.", image: "/members/Hala Amer.png" },
                 ]
               },
