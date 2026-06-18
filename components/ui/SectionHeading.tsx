@@ -1,9 +1,11 @@
 "use client";
 
+import type { ReactNode } from "react";
+
 interface SectionHeadingProps {
   eyebrow?: string;
   title: string;
-  subtitle?: string;
+  subtitle?: ReactNode;
   align?: "left" | "center" | "right";
 }
 
