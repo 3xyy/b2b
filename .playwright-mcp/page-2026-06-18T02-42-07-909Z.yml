@@ -1,0 +1,158 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "Bin to Better" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - img "Bin to Better" [ref=e5]
+      - generic [ref=e6]:
+        - link "About" [ref=e7] [cursor=pointer]:
+          - /url: /about
+        - button "Programs" [ref=e9]
+        - link "Partners" [ref=e10] [cursor=pointer]:
+          - /url: /partners
+        - link "Team" [ref=e11] [cursor=pointer]:
+          - /url: /officers-and-team
+        - link "Events" [ref=e12] [cursor=pointer]:
+          - /url: /events
+        - link "Donate" [ref=e13] [cursor=pointer]:
+          - /url: /donate
+  - generic [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e19]: ♻️ Sustainable Future
+      - heading "Bin to Better" [level=1] [ref=e21]
+      - paragraph [ref=e23]: Turning waste into opportunity. One item at a time, one community at a time.
+      - generic [ref=e25]:
+        - link "Explore Our Projects" [ref=e26] [cursor=pointer]:
+          - /url: "#programs"
+        - link "Get Involved" [ref=e27] [cursor=pointer]:
+          - /url: mailto:outreach@bintobetter.org
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - paragraph [ref=e31]: 50K+
+          - paragraph [ref=e32]: Items Recycled
+        - generic [ref=e33]:
+          - paragraph [ref=e34]: 200+
+          - paragraph [ref=e35]: Partners
+        - generic [ref=e36]:
+          - paragraph [ref=e37]: "15"
+          - paragraph [ref=e38]: Communities
+    - img "Bin to Better logo" [ref=e42]
+  - generic [ref=e44]:
+    - generic [ref=e46]:
+      - paragraph [ref=e47]: Our Mission
+      - heading "Turning Waste into Opportunity" [level=2] [ref=e48]
+    - generic [ref=e50]:
+      - paragraph [ref=e51]: At Bin to Better, we believe that waste isn't just trash, it's opportunity. Every year, countless items with value and potential end up in landfills simply because they no longer serve their original purpose. Our mission is to change that narrative.
+      - paragraph [ref=e52]: "We're driven by a simple yet powerful idea: that one person's excess can be another's solution. Whether it's used tennis balls, old electronics, or other overlooked resources, we aim to connect those who have with those who need. By building bridges between individuals, communities, and organizations, we promote a culture of reuse and responsible recycling."
+      - paragraph [ref=e53]: Through education, partnerships, and hands-on initiatives, Bin to Better empowers people to rethink waste and become part of a more sustainable, circular future. Together, we can turn what would've been thrown away into something better, for people, for communities, and for the planet.
+  - generic [ref=e55]:
+    - generic [ref=e57]:
+      - paragraph [ref=e58]: What We Do
+      - heading "Projects Preview" [level=2] [ref=e59]
+      - paragraph [ref=e60]: Below are snapshots of our three main projects. Click “View More” on each card to dive deeper into the details.
+    - generic [ref=e61]:
+      - link "🎾 Bounce Back Collects used tennis balls from clubs and repurposes them for schools (chair legs to reduce noise), animal shelters, and assisted living centers (walker feet). View More →" [ref=e63] [cursor=pointer]:
+        - /url: /bounce-back
+        - generic [ref=e64]:
+          - generic [ref=e66]: 🎾
+          - heading "Bounce Back" [level=3] [ref=e67]
+          - paragraph [ref=e68]: Collects used tennis balls from clubs and repurposes them for schools (chair legs to reduce noise), animal shelters, and assisted living centers (walker feet).
+          - generic [ref=e69]: View More →
+      - link "💻 Tech to Treasure Collects old devices and turns them into educational tools before responsibly recycling all parts through an e-waste program. View More →" [ref=e71] [cursor=pointer]:
+        - /url: /tech-to-treasure
+        - generic [ref=e72]:
+          - generic [ref=e74]: 💻
+          - heading "Tech to Treasure" [level=3] [ref=e75]
+          - paragraph [ref=e76]: Collects old devices and turns them into educational tools before responsibly recycling all parts through an e-waste program.
+          - generic [ref=e77]: View More →
+      - link "🧵 Eco-filament Repurposing plastic waste into 3D printer filament for tools and toys. View More →" [ref=e79] [cursor=pointer]:
+        - /url: /eco-filament
+        - generic [ref=e80]:
+          - generic [ref=e82]: 🧵
+          - heading "Eco-filament" [level=3] [ref=e83]
+          - paragraph [ref=e84]: Repurposing plastic waste into 3D printer filament for tools and toys.
+          - generic [ref=e85]: View More →
+  - generic [ref=e87]:
+    - generic [ref=e89]:
+      - paragraph [ref=e90]: Community Voice
+      - heading "What People Say" [level=2] [ref=e91]
+      - paragraph [ref=e92]: See how our initiatives are making a real difference in classrooms and communities.
+    - region "Testimonials" [ref=e94]:
+      - blockquote [ref=e96]:
+        - paragraph [ref=e97]: “Thank you very much for your donation of 140 gently used tennis balls to my third grade Spanish immersion classroom at Blacow Elementary School. Cutting each individual ball so that it can fit each student leg chair must have been a lot of work! We are so appreciative of your time and effort in giving the tennis balls a new second life instead of throwing then into the landfill. Your donation has been well received by my students. Their chairs are way gentler on the waxed floors and is saving the floors from being scratched. Most importantly classroom activity transitions are so much more quiet as the students get up from or come to sit in their chairs.”
+        - generic [ref=e98]:
+          - paragraph [ref=e99]: Andrea MacKenzie
+          - paragraph [ref=e100]: 3rd grade Spanish Immersion Teacher, Blacow Elementary
+      - generic [ref=e101]:
+        - button "Previous testimonial" [ref=e102]:
+          - img [ref=e103]
+        - generic [ref=e105]:
+          - button "Go to testimonial 1" [ref=e106]
+          - button "Go to testimonial 2" [ref=e107]
+          - button "Go to testimonial 3" [ref=e108]
+          - button "Go to testimonial 4" [ref=e109]
+          - button "Go to testimonial 5" [ref=e110]
+        - button "Next testimonial" [ref=e111]:
+          - img [ref=e112]
+  - generic [ref=e116]:
+    - heading "Contact Us" [level=2] [ref=e118]
+    - paragraph [ref=e120]: We would love to hear from you! Whether you have questions, want to donate materials or are interested in volunteering, please get in touch.
+    - generic [ref=e122]:
+      - link "Email outreach@bintobetter.org" [ref=e123] [cursor=pointer]:
+        - /url: mailto:outreach@bintobetter.org
+        - paragraph [ref=e124]: Email
+        - paragraph [ref=e125]: outreach@bintobetter.org
+      - link "Instagram @bintobetter" [ref=e126] [cursor=pointer]:
+        - /url: https://instagram.com/bintobetter
+        - paragraph [ref=e127]: Instagram
+        - paragraph [ref=e128]: "@bintobetter"
+    - paragraph [ref=e130]: You can also fill out our contact form on the website for specific inquiries.
+  - contentinfo [ref=e131]:
+    - generic [ref=e132]:
+      - generic [ref=e133]:
+        - img "Bin to Better" [ref=e134]
+        - paragraph [ref=e135]: Turning waste into opportunity. One item at a time, one community at a time.
+      - generic [ref=e136]:
+        - heading "Explore" [level=4] [ref=e137]
+        - list [ref=e138]:
+          - listitem [ref=e139]:
+            - link "About" [ref=e140] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e141]:
+            - link "Partners" [ref=e142] [cursor=pointer]:
+              - /url: /partners
+          - listitem [ref=e143]:
+            - link "Team" [ref=e144] [cursor=pointer]:
+              - /url: /officers-and-team
+          - listitem [ref=e145]:
+            - link "Events" [ref=e146] [cursor=pointer]:
+              - /url: /events
+          - listitem [ref=e147]:
+            - link "Bounce Back" [ref=e148] [cursor=pointer]:
+              - /url: /bounce-back
+          - listitem [ref=e149]:
+            - link "Tech to Treasure" [ref=e150] [cursor=pointer]:
+              - /url: /tech-to-treasure
+          - listitem [ref=e151]:
+            - link "Eco-filament" [ref=e152] [cursor=pointer]:
+              - /url: /eco-filament
+          - listitem [ref=e153]:
+            - link "Workshop" [ref=e154] [cursor=pointer]:
+              - /url: /workshop
+          - listitem [ref=e155]:
+            - link "Donate" [ref=e156] [cursor=pointer]:
+              - /url: /donate
+      - generic [ref=e157]:
+        - heading "Contact" [level=4] [ref=e158]
+        - list [ref=e159]:
+          - listitem [ref=e160]:
+            - link "outreach@bintobetter.org" [ref=e161] [cursor=pointer]:
+              - /url: mailto:outreach@bintobetter.org
+          - listitem [ref=e162]:
+            - link "Instagram" [ref=e163] [cursor=pointer]:
+              - /url: https://www.instagram.com/bintobetter/
+          - listitem [ref=e164]:
+            - link "LinkedIn" [ref=e165] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/bin-to-better/posts/?feedView=all
+    - generic [ref=e166]: © 2026 Bin to Better. All rights reserved. Turning waste into opportunity.
+  - alert [ref=e167]

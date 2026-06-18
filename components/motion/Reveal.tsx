@@ -21,19 +21,40 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
     const el = ref.current;
     if (!el) return;
 
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const reveal = () => {
+      timer = setTimeout(() => setVisible(true), delay);
+    };
+
+    // Already in (or above) the viewport on mount → reveal immediately so
+    // above-the-fold content never waits for a scroll.
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+      reveal();
+      return () => {
+        if (timer) clearTimeout(timer);
+      };
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          const timer = setTimeout(() => setVisible(true), delay);
+          reveal();
           observer.disconnect();
-          return () => clearTimeout(timer);
         }
       },
       { threshold: 0.1 }
     );
-
     observer.observe(el);
-    return () => observer.disconnect();
+
+    // Failsafe: never leave content permanently hidden if the observer
+    // somehow never fires.
+    const failsafe = setTimeout(() => setVisible(true), 2000);
+
+    return () => {
+      observer.disconnect();
+      if (timer) clearTimeout(timer);
+      clearTimeout(failsafe);
+    };
   }, [delay, reduced]);
 
   if (reduced) {
