@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { about } from "@/content/about";
+
+export const metadata: Metadata = {
+  title: "About | Bin to Better",
+  description: "Learn about our mission, origin story, and the approach that drives our community recycling programs.",
+};
 
 export default function About() {
   return (

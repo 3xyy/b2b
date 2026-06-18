@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { donate } from "@/content/donate";
+
+export const metadata: Metadata = {
+  title: "Donate | Bin to Better",
+  description: "Support Bin to Better by donating or registering for our sports classes — every dollar fuels our programs.",
+};
 
 export default function Donate() {
   return (

@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { partnerLogos } from "@/content/partners";
+
+export const metadata: Metadata = {
+  title: "Partners | Bin to Better",
+  description: "Meet the organizations and sponsors who help Bin to Better create lasting environmental impact.",
+};
 
 export default function Partners() {
   return (

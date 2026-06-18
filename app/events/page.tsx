@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { events } from "@/content/events";
+
+export const metadata: Metadata = {
+  title: "Events | Bin to Better",
+  description: "Find upcoming Bin to Better hackathons, community workshops, and volunteer events near you.",
+};
 
 export default function Events() {
   return (

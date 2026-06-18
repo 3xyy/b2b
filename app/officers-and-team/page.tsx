@@ -1,9 +1,15 @@
+import type { Metadata } from "next";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { PhotoSlot } from "@/components/ui/PhotoSlot";
 import { team } from "@/content/team";
+
+export const metadata: Metadata = {
+  title: "Officers & Team | Bin to Better",
+  description: "Get to know the dedicated officers and volunteers who power the Bin to Better mission.",
+};
 
 export default function Team() {
   return (

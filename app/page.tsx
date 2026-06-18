@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -9,6 +10,11 @@ import { Card } from "@/components/ui/Card";
 import { ProgramCard } from "@/components/ui/ProgramCard";
 import { stats, programsPreview, testimonials, mission } from "@/content/home";
 import { partnerLogos } from "@/content/partners";
+
+export const metadata: Metadata = {
+  title: "Home | Bin to Better",
+  description: "Turning waste into opportunity — one item at a time, one community at a time.",
+};
 
 export default function Home() {
   return (
