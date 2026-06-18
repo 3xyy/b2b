@@ -43,7 +43,7 @@ export function Lightbox({ src, alt = "", onClose }: LightboxProps) {
           ref={closeRef}
           aria-label="Close"
           onClick={onClose}
-          className="absolute -right-3 -top-3 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-paper text-ink shadow-lg transition hover:bg-lime focus:outline-none focus:ring-2 focus:ring-emerald"
+          className="absolute -right-3 -top-3 z-10 flex h-8 w-8 items-center justify-center rounded-[3px] bg-paper text-ink shadow-lg transition hover:bg-lime focus:outline-none focus:ring-2 focus:ring-emerald"
         >
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />

@@ -13,6 +13,88 @@ export const metadata: Metadata = {
     "Join Bin to Better at our upcoming hackathons, workshops, and community events. See the Tech to Treasure Hackathon and our sponsors.",
 };
 
+/* Inline SVG icons — decorative, aria-hidden */
+function CalendarIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className="shrink-0"
+    >
+      <rect x="3" y="4" width="18" height="18" rx="2" />
+      <path d="M16 2v4M8 2v4M3 10h18" />
+    </svg>
+  );
+}
+
+function ClockIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className="shrink-0"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 3" />
+    </svg>
+  );
+}
+
+function PinIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className="shrink-0"
+    >
+      <path d="M12 21C12 21 5 13.5 5 8.5a7 7 0 0 1 14 0c0 5-7 12.5-7 12.5z" />
+      <circle cx="12" cy="8.5" r="2.5" />
+    </svg>
+  );
+}
+
+function MicIcon() {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="9" y="2" width="6" height="11" rx="3" />
+      <path d="M5 10a7 7 0 0 0 14 0M12 19v3M9 22h6" />
+    </svg>
+  );
+}
+
+const infoIcons = [<CalendarIcon key="cal" />, <ClockIcon key="clk" />, <PinIcon key="pin" />];
+
 const tierGridCols: Record<string, string> = {
   xl: "grid-cols-1 sm:grid-cols-2",
   lg: "grid-cols-2 sm:grid-cols-3 md:grid-cols-5",
@@ -20,11 +102,12 @@ const tierGridCols: Record<string, string> = {
   sm: "grid-cols-3",
 };
 
-const tierImgSize: Record<string, string> = {
-  xl: "h-36 sm:h-48",
-  lg: "h-24 sm:h-32",
-  md: "h-16 sm:h-20",
-  sm: "h-14 sm:h-16",
+/* Height of logo container by tier — bigger and prominent */
+const tierImgHeight: Record<string, string> = {
+  xl: "h-40 sm:h-56",
+  lg: "h-28 sm:h-36",
+  md: "h-20 sm:h-28",
+  sm: "h-16 sm:h-20",
 };
 
 export default function Events() {
@@ -33,53 +116,58 @@ export default function Events() {
       <Nav />
 
       {/* ── Hero ── */}
-      <Section className="bg-emerald/5">
-        <Reveal className="text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-emerald">
-            Get Involved
-          </p>
-          <h1 className="font-serif text-5xl font-bold text-ink sm:text-6xl">Events</h1>
-          <p className="mt-4 text-lg text-ink/60">
+      <Section className="bg-canvas">
+        <Reveal>
+          <div className="flex items-center gap-3 mb-4">
+            <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+              Get Involved
+            </p>
+          </div>
+          <h1 className="font-display text-[clamp(2.75rem,7vw,5rem)] font-bold leading-[0.95] tracking-tight text-paper text-wrap-balance">
+            Events
+          </h1>
+          <p className="mt-5 text-lg text-paper/70 max-w-2xl">
             Join us at our upcoming hackathons, workshops, and community events.
           </p>
         </Reveal>
       </Section>
 
       {/* ── Featured Event ── */}
-      <Section>
-        <SectionHeading eyebrow="Spotlight" title="Featured Event" align="left" />
+      <Section className="bg-paper">
+        <SectionHeading eyebrow="Spotlight" title="Featured Event" align="left" tone="light" />
 
         <Reveal>
-          <div className="overflow-hidden rounded-3xl border border-emerald/20 bg-ink shadow-xl shadow-ink/10">
-            {/* Header band */}
-            <div className="relative bg-gradient-to-br from-forest to-ink px-8 py-12 text-center">
-              <span className="inline-block rounded-full border border-lime/40 bg-lime/10 px-5 py-1.5 text-sm font-bold uppercase tracking-widest text-lime">
+          <div className="border border-ink/10 rounded-md overflow-hidden">
+
+            {/* Header band — canvas (dark) */}
+            <div className="bg-canvas px-8 py-12">
+              {/* Mono date tag — no pill */}
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court mb-6">
                 {hackathon.datePill}
-              </span>
-              <h3 className="mt-6 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl">
+              </p>
+              <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-tight text-paper text-wrap-balance">
                 Tech to Treasure{" "}
-                <span className="text-emerald">Hackathon</span>
-              </h3>
-              <p className="mt-4 text-lg font-light text-white/70 sm:text-xl">
+                <span className="text-court">Hackathon</span>
+              </h2>
+              <p className="mt-4 text-lg text-paper/70 max-w-2xl">
                 {hackathon.tagline}
               </p>
 
-              {/* Info pills */}
-              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
-                {hackathon.infoPills.map((pill) => (
+              {/* Info rows — mono, no pills */}
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                {hackathon.infoPills.map((pill, i) => (
                   <div
                     key={pill.label}
-                    className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-sm text-white/70"
+                    className="flex items-center gap-2 text-paper/80"
                   >
-                    <span className="text-xl">{pill.icon}</span>
-                    <span>
-                      {pill.sublabel ? (
-                        <>
-                          <span className="font-semibold text-white">{pill.label}</span>
-                          <span className="ml-1 text-xs text-white/50">{pill.sublabel}</span>
-                        </>
-                      ) : (
-                        pill.label
+                    {infoIcons[i]}
+                    <span className="font-mono text-xs uppercase tracking-[0.08em]">
+                      {pill.label}
+                      {pill.sublabel && (
+                        <span className="ml-1 text-paper/50 normal-case tracking-normal font-sans text-sm">
+                          {pill.sublabel}
+                        </span>
                       )}
                     </span>
                   </div>
@@ -87,12 +175,14 @@ export default function Events() {
               </div>
             </div>
 
-            {/* Details body */}
-            <div className="grid gap-10 bg-ink/95 p-8 md:grid-cols-2 md:p-12">
+            {/* Details body — field (dark green) */}
+            <div className="grid gap-10 bg-field p-8 md:grid-cols-2 md:p-12">
               {/* About */}
               <div>
-                <h4 className="font-serif text-2xl font-bold text-white">About the Event</h4>
-                <div className="mt-4 space-y-4 leading-relaxed text-white/70">
+                <h3 className="font-display text-2xl font-bold text-paper mb-4">
+                  About the Event
+                </h3>
+                <div className="space-y-4 leading-relaxed text-paper/70">
                   {hackathon.aboutParagraphs.map((para, i) => (
                     <p key={i}>{para}</p>
                   ))}
@@ -101,14 +191,22 @@ export default function Events() {
 
               {/* Mission */}
               <div>
-                <h4 className="font-serif text-xl font-bold text-white">Our Mission</h4>
-                <div className="mt-4 space-y-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+                <h3 className="font-display text-xl font-bold text-paper mb-4">
+                  Our Mission
+                </h3>
+                <div className="space-y-4 border border-paper/10 bg-canvas/40 p-6 rounded-md">
                   {hackathon.mission.map((m) => (
-                    <div key={m.title} className="flex gap-4">
-                      <span className="text-2xl">{m.icon}</span>
+                    <div key={m.title} className="flex gap-4 items-start">
+                      {/* Court-colored dash mark in place of emoji */}
+                      <span
+                        className="mt-1 h-px w-4 shrink-0 bg-court translate-y-[0.45em]"
+                        aria-hidden="true"
+                      />
                       <div>
-                        <p className="text-sm font-bold text-white">{m.title}</p>
-                        <p className="text-xs leading-snug text-white/60">{m.desc}</p>
+                        <p className="font-mono text-xs font-medium uppercase tracking-[0.10em] text-court">
+                          {m.title}
+                        </p>
+                        <p className="mt-0.5 text-sm leading-snug text-paper/60">{m.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -116,35 +214,36 @@ export default function Events() {
               </div>
             </div>
 
-            {/* Prizes */}
-            <div className="bg-ink/90 px-8 pb-8 md:px-12 md:pb-12">
-              <h4 className="mb-6 text-center font-serif text-2xl font-bold text-white">
+            {/* Prizes — canvas */}
+            <div className="bg-canvas px-8 pb-10 pt-8 md:px-12 md:pb-12">
+              <h3 className="mb-2 font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
                 Prizes
-              </h4>
+              </h3>
+              <div className="mb-6 h-px bg-court/30" aria-hidden="true" />
 
               {/* Top 3 podium */}
               <div className="mb-6 grid grid-cols-3 items-end gap-4">
                 {hackathon.prizes.top3.map((prize) => (
                   <div
                     key={prize.place}
-                    className={`rounded-xl border p-5 text-center ${
+                    className={`border p-5 text-center rounded-sm ${
                       prize.style === "gold"
-                        ? "border-lime/40 bg-gradient-to-b from-lime/20 to-transparent md:-translate-y-4 md:py-7"
-                        : "border-white/10 bg-white/5"
+                        ? "border-court/50 bg-court/10 md:-translate-y-4 md:py-7"
+                        : "border-paper/10 bg-paper/5"
                     }`}
                   >
                     <div
-                      className={`text-lg font-bold sm:text-xl ${
+                      className={`font-mono text-sm font-medium uppercase tracking-[0.10em] ${
                         prize.style === "gold"
-                          ? "text-lime"
+                          ? "text-court"
                           : prize.style === "silver"
-                            ? "text-white/70"
-                            : "text-clay"
+                            ? "text-paper/70"
+                            : "text-paper/50"
                       }`}
                     >
                       {prize.place}
                     </div>
-                    <div className="mt-1 text-xs text-white/60 sm:text-sm">{prize.award}</div>
+                    <div className="mt-1 font-display text-base font-bold text-paper">{prize.award}</div>
                   </div>
                 ))}
               </div>
@@ -154,36 +253,47 @@ export default function Events() {
                 {hackathon.prizes.rest.map((prize) => (
                   <div
                     key={prize.place}
-                    className="rounded-xl border border-white/5 bg-white/[0.03] p-4 text-center"
+                    className="border border-paper/5 bg-paper/[0.03] p-4 text-center rounded-sm"
                   >
-                    <div className="text-sm font-bold text-white/80">{prize.place}</div>
-                    <div className="mt-1 text-xs text-white/40">{prize.award}</div>
+                    <div className="font-mono text-xs font-medium uppercase tracking-[0.10em] text-paper/70">
+                      {prize.place}
+                    </div>
+                    <div className="mt-1 text-sm font-bold text-paper/50">{prize.award}</div>
                   </div>
                 ))}
-                <div className="col-span-2 flex items-center gap-4 rounded-xl border border-white/5 bg-white/[0.03] p-4">
-                  <span className="text-3xl">{hackathon.prizes.wolfram.icon}</span>
+                {/* Wolfram Award — no emoji, use mono label */}
+                <div className="col-span-2 flex items-start gap-4 border border-paper/5 bg-paper/[0.03] p-4 rounded-sm">
                   <div>
-                    <div className="text-sm font-bold text-white/90">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.10em] text-court">
                       {hackathon.prizes.wolfram.title}
-                    </div>
-                    <div className="text-xs leading-tight text-white/50">
+                    </p>
+                    <p className="mt-0.5 text-xs leading-tight text-paper/50">
                       {hackathon.prizes.wolfram.desc}
-                    </div>
+                    </p>
                   </div>
                 </div>
               </div>
 
-              <p className="mt-5 text-center text-sm text-white/40">
+              <p className="mt-6 text-sm text-paper/50">
                 Plus{" "}
-                <span className="font-bold text-emerald">$1000+</span>{" "}
+                <span className="font-bold text-court">$1,000+</span>{" "}
                 in platform credits &amp; subscriptions for all participants!
               </p>
 
-              {/* Keynote */}
-              <div className="mt-10 rounded-2xl border border-dashed border-white/10 bg-white/[0.02] p-8 text-center">
-                <div className="text-4xl">🎤</div>
-                <h4 className="mt-2 font-serif text-xl font-bold text-white">Keynote Speakers</h4>
-                <p className="mt-1 text-white/50">To be announced soon</p>
+              {/* Keynote — no emoji, minimal SVG icon */}
+              <div className="mt-10 border border-dashed border-paper/10 bg-paper/[0.02] p-8 rounded-sm">
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
+                  <span className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+                    Keynote Speakers
+                  </span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MicIcon />
+                  <p className="font-display text-xl font-bold text-paper">
+                    To be announced soon
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -191,10 +301,11 @@ export default function Events() {
       </Section>
 
       {/* ── Sponsors ── */}
-      <Section className="bg-emerald/5">
+      <Section className="bg-canvas">
         <SectionHeading
           eyebrow="Our Supporters"
           title="Backed by Global Innovators"
+          tone="dark"
         />
 
         <div className="space-y-14">
@@ -207,16 +318,16 @@ export default function Events() {
                       href={sponsor.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex w-full items-center justify-center rounded-2xl bg-white p-4 shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:ring-emerald/30"
+                      className="group flex w-full items-center justify-center border border-ink/10 bg-paper p-5 rounded-sm transition-colors duration-200 hover:border-court/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
                       aria-label={sponsor.name}
                     >
-                      <div className={`relative w-full ${tierImgSize[tier.size]}`}>
+                      <div className={`relative w-full ${tierImgHeight[tier.size]}`}>
                         <Image
                           src={sponsor.src}
                           alt={sponsor.name}
                           fill
                           className="object-contain"
-                          sizes="(max-width: 640px) 45vw, (max-width: 1024px) 25vw, 18vw"
+                          sizes="(max-width: 640px) 80vw, (max-width: 1024px) 30vw, 20vw"
                         />
                       </div>
                     </a>

@@ -5,9 +5,9 @@ export const about = {
   missionPara2:
     "Our goal is to empower individuals and communities to rethink waste and realize that what seems like rubbish can become a resource for someone else. By connecting people with excess to those with needs, we bridge gaps and foster a culture of giving and sustainability.",
   badges: [
-    { icon: "♻️", label: "Circular Economy" },
-    { icon: "🌱", label: "Sustainability" },
-    { icon: "🤝", label: "Community" },
+    { label: "Circular Economy" },
+    { label: "Sustainability" },
+    { label: "Community" },
   ],
   originHeading: "Origin Story",
   originPara1:
@@ -18,12 +18,12 @@ export const about = {
     "Together they launched Bin to Better to give new purpose to what others might throw away.",
   founders: [
     {
-      name: "Lalit",
+      name: "Lalit Batchu",
       role: "Co-Founder",
       photo: "/members/Lalit Batchu.png",
     },
     {
-      name: "Rohan",
+      name: "Rohan Bablupatti",
       role: "Co-Founder",
       photo: "/members/Rohan Bablupatti.png",
     },
@@ -31,19 +31,16 @@ export const about = {
   approachHeading: "Our Approach",
   approaches: [
     {
-      icon: "📚",
       title: "Education",
       description:
         "Through workshops and outreach we teach communities about the importance of reuse, recycling, and sustainability.",
     },
     {
-      icon: "🤝",
       title: "Partnerships",
       description:
         "We collaborate with tennis clubs, schools, animal shelters, and other organizations to collect unused materials and distribute them to those in need.",
     },
     {
-      icon: "🔧",
       title: "Hands-on Initiatives",
       description:
         "Our projects provide tangible ways for volunteers to participate: collecting tennis balls, disassembling electronics, or repurposing plastic waste into building materials.",

@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { teamGroups } from "@/content/team";
 
@@ -18,76 +17,136 @@ export default function OfficersAndTeam() {
     <>
       <Nav />
 
-      {/* Hero */}
-      <Section className="bg-mint">
+      {/* Hero — dark canvas band */}
+      <Section className="bg-canvas">
         <Reveal>
-          <div className="text-center">
-            <p className="mb-4 text-sm text-ink/70">
-              Interested in being an officer?{" "}
-              <a
-                href="https://forms.gle/Pf9kCT1HbYm9Nobt7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-emerald underline underline-offset-4 hover:text-forest transition-colors"
-              >
-                Apply here
-              </a>
+          <p className="mb-6 font-mono text-xs uppercase tracking-[0.12em] text-paper/60">
+            Interested in being an officer?{" "}
+            <a
+              href="https://forms.gle/Pf9kCT1HbYm9Nobt7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-court underline underline-offset-4 hover:brightness-90 transition-[filter]"
+            >
+              Apply here
+            </a>
+          </p>
+
+          {/* Eyebrow hairline + h1 */}
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+              Officers &amp; Team
             </p>
-            <SectionHeading
-              title="Officers & Team"
-              subtitle="Our organization is led by a dedicated group of students and volunteers. The officers work together across various teams to ensure the success of each program."
-            />
           </div>
+          <h1 className="font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight text-paper text-wrap-balance">
+            Officers &amp; Team
+          </h1>
+          <p className="mt-5 max-w-2xl text-base sm:text-lg text-paper/70 leading-relaxed">
+            Our organization is led by a dedicated group of students and
+            volunteers. The officers work together across various teams to ensure
+            the success of each program.
+          </p>
         </Reveal>
       </Section>
 
-      {/* Team Groups */}
-      <Section>
-        <div className="grid gap-12">
-          {teamGroups.map((group, groupIndex) => (
-            <Reveal key={group.category} delay={groupIndex * 50}>
-              <div className="rounded-3xl bg-white ring-1 ring-ink/5 shadow-sm p-8">
-                <h3 className="font-serif text-2xl font-bold text-emerald mb-6 border-b border-ink/10 pb-4">
+      {/* Team groups — alternating bg-paper / bg-field bands */}
+      {teamGroups.map((group, groupIndex) => {
+        const isDark = groupIndex % 2 === 1;
+        const bandBg = isDark ? "bg-field" : "bg-paper";
+
+        return (
+          <Section key={group.category} className={bandBg}>
+            <Reveal delay={60}>
+              {/* Category header: mono eyebrow + hairline + display heading */}
+              <div className="mb-10">
+                <div className="mb-3 flex items-center gap-3">
+                  <span
+                    className={`h-px w-6 shrink-0 ${isDark ? "bg-court" : "bg-sage"}`}
+                    aria-hidden="true"
+                  />
+                  <p
+                    className={`font-mono text-xs font-medium uppercase tracking-[0.12em] ${isDark ? "text-court" : "text-sage"}`}
+                  >
+                    {group.category}
+                  </p>
+                </div>
+                <h2
+                  className={`font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-tight tracking-tight text-wrap-balance ${isDark ? "text-paper" : "text-ink"}`}
+                >
                   {group.category}
-                </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {group.members.map((m) => (
+                </h2>
+              </div>
+
+              {/* Member grid */}
+              <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+                {group.members.map((m) => (
+                  <Reveal key={`${group.category}-${m.name}`} delay={80}>
                     <div
-                      key={`${group.category}-${m.name}`}
-                      className="flex flex-col items-center text-center rounded-xl bg-mint/50 p-5 ring-1 ring-emerald/10"
+                      className={`flex flex-col items-start border p-5 rounded-[3px] ${
+                        isDark
+                          ? "border-paper/15 bg-canvas/40"
+                          : "border-ink/10 bg-paper"
+                      }`}
                     >
-                      <div className="relative w-32 h-32 mb-4 rounded-full overflow-hidden ring-2 ring-emerald/30">
+                      {/* Large circular photo */}
+                      <div className="relative mb-5 h-44 w-44 overflow-hidden rounded-full self-center shrink-0">
                         <Image
                           src={m.photo}
                           alt={m.name}
-                          fill
-                          className="object-cover"
+                          width={176}
+                          height={176}
+                          className="h-full w-full object-cover"
                           style={
                             m.imagePosition
                               ? { objectPosition: m.imagePosition }
-                              : undefined
+                              : { objectPosition: "center top" }
                           }
                         />
                       </div>
-                      <h4 className="font-serif text-lg font-bold text-ink mb-1">
+
+                      {/* Name */}
+                      <h3
+                        className={`font-display text-lg font-bold leading-snug tracking-tight text-wrap-balance ${isDark ? "text-paper" : "text-ink"}`}
+                      >
                         {m.name}
-                      </h4>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-emerald mb-2">
+                      </h3>
+
+                      {/* Role — DM Mono uppercase court */}
+                      <p className="mt-1 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-court">
                         {m.role}
                       </p>
-                      <p className="text-sm text-ink/60 mb-3">{m.school}</p>
-                      <p className="text-xs italic text-ink/50">
-                        <span className="not-italic mr-1">💡</span>
-                        {m.fact}
+
+                      {/* School */}
+                      <p
+                        className={`mt-1 text-sm leading-snug ${isDark ? "text-paper/55" : "text-ink/55"}`}
+                      >
+                        {m.school}
                       </p>
+
+                      {/* Fun fact — no emoji; hairline divider + "FACT" mono label */}
+                      <div
+                        className={`mt-4 w-full border-t pt-4 ${isDark ? "border-paper/10" : "border-ink/8"}`}
+                      >
+                        <p
+                          className={`font-mono text-[10px] uppercase tracking-[0.12em] mb-1 ${isDark ? "text-court/70" : "text-sage"}`}
+                        >
+                          Fact
+                        </p>
+                        <p
+                          className={`text-sm italic leading-snug ${isDark ? "text-paper/60" : "text-ink/55"}`}
+                        >
+                          {m.fact}
+                        </p>
+                      </div>
                     </div>
-                  ))}
-                </div>
+                  </Reveal>
+                ))}
               </div>
             </Reveal>
-          ))}
-        </div>
-      </Section>
+          </Section>
+        );
+      })}
 
       <Footer />
     </>

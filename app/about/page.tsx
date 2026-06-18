@@ -21,20 +21,23 @@ export default function About() {
       <Nav />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <Section className="bg-gradient-to-b from-forest to-emerald/70 text-paper">
-        <div className="mx-auto max-w-3xl text-center">
+      <Section className="bg-canvas text-paper">
+        <div className="max-w-3xl">
           <Reveal>
-            <span className="mb-4 inline-block rounded-full border border-lime/40 bg-lime/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-lime">
-              About Us
-            </span>
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+                About Us
+              </p>
+            </div>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-4 font-serif text-5xl font-bold leading-tight text-paper sm:text-6xl">
+            <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-tight tracking-tight text-paper text-balance">
               Our Story
             </h1>
           </Reveal>
           <Reveal delay={160}>
-            <p className="mt-5 text-lg text-paper/70">
+            <p className="mt-5 text-lg text-paper/70 max-w-xl">
               Our mission, story, and how we work.
             </p>
           </Reveal>
@@ -42,48 +45,48 @@ export default function About() {
       </Section>
 
       {/* ── Mission & Vision ─────────────────────────────────── */}
-      <Section className="bg-mint">
+      <Section className="bg-field">
         <Reveal>
           <SectionHeading
             eyebrow="Our Purpose"
             title={about.missionHeading}
             align="left"
+            tone="dark"
           />
         </Reveal>
 
         <div className="grid gap-12 lg:grid-cols-2">
           <div className="space-y-5">
             <Reveal delay={80}>
-              <p className="text-base leading-relaxed text-ink/75">
+              <p className="text-base leading-relaxed text-paper/80">
                 {about.missionPara1}
               </p>
             </Reveal>
             <Reveal delay={160}>
-              <p className="text-base leading-relaxed text-ink/75">
+              <p className="text-base leading-relaxed text-paper/80">
                 {about.missionPara2}
               </p>
             </Reveal>
             <Reveal delay={240}>
-              <div className="mt-6 flex flex-wrap gap-4">
+              <div className="mt-8 flex flex-wrap gap-3">
                 {about.badges.map((badge) => (
-                  <div
+                  <span
                     key={badge.label}
-                    className="flex flex-col items-center gap-2 rounded-2xl border border-emerald/10 bg-white px-5 py-4 shadow-sm"
+                    className="border border-court/40 px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-[0.10em] text-court"
                   >
-                    <span className="text-3xl">{badge.icon}</span>
-                    <span className="text-xs font-semibold text-ink/60">
-                      {badge.label}
-                    </span>
-                  </div>
+                    {badge.label}
+                  </span>
                 ))}
               </div>
             </Reveal>
           </div>
 
-          {/* Visual accent */}
-          <Reveal delay={120} className="hidden lg:flex items-center justify-center">
-            <div className="flex h-64 w-64 items-center justify-center rounded-full bg-emerald/10 ring-4 ring-emerald/20">
-              <span className="text-8xl">🌍</span>
+          {/* Decorative column — large rule accent */}
+          <Reveal delay={120} className="hidden lg:flex items-start justify-end pt-2">
+            <div className="flex flex-col gap-4">
+              <div className="h-1 w-20 bg-court" aria-hidden="true" />
+              <div className="h-1 w-12 bg-court/40" aria-hidden="true" />
+              <div className="h-1 w-8 bg-court/20" aria-hidden="true" />
             </div>
           </Reveal>
         </div>
@@ -95,10 +98,12 @@ export default function About() {
           <SectionHeading
             eyebrow="How It Started"
             title={about.originHeading}
+            align="left"
+            tone="light"
           />
         </Reveal>
 
-        <div className="mx-auto max-w-4xl">
+        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 items-start">
           <Reveal delay={80}>
             <div className="space-y-5 text-base leading-relaxed text-ink/75">
               <p>{about.originPara1}</p>
@@ -107,23 +112,28 @@ export default function About() {
             </div>
           </Reveal>
 
-          {/* Founder portraits */}
+          {/* Founder portraits — large and prominent */}
           <Reveal delay={160}>
-            <div className="mt-12 flex flex-wrap justify-center gap-10">
+            <div className="flex flex-wrap gap-10 lg:justify-end">
               {about.founders.map((founder) => (
-                <div key={founder.name} className="flex flex-col items-center gap-3">
-                  <div className="relative h-36 w-36 overflow-hidden rounded-full ring-4 ring-emerald/30 sm:h-44 sm:w-44">
+                <div key={founder.name} className="flex flex-col items-center gap-4">
+                  <div className="relative h-52 w-52 overflow-hidden rounded-full ring-4 ring-court/60 ring-offset-4 ring-offset-paper sm:h-64 sm:w-64">
                     <Image
                       src={founder.photo}
                       alt={founder.name}
                       fill
+                      sizes="(max-width: 640px) 208px, 256px"
                       className="object-cover"
                     />
                   </div>
-                  <p className="font-semibold text-ink">{founder.name}</p>
-                  <p className="text-sm font-medium text-emerald">
-                    {founder.role}
-                  </p>
+                  <div className="text-center">
+                    <p className="font-display text-lg font-semibold text-ink">
+                      {founder.name}
+                    </p>
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.10em] text-sage mt-1">
+                      {founder.role}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -132,27 +142,27 @@ export default function About() {
       </Section>
 
       {/* ── Our Approach ─────────────────────────────────────── */}
-      <Section className="bg-emerald/5">
+      <Section className="bg-canvas">
         <Reveal>
           <SectionHeading
             eyebrow="How We Work"
             title={about.approachHeading}
+            align="left"
+            tone="dark"
           />
         </Reveal>
 
         <div className="grid gap-6 sm:grid-cols-3">
           {about.approaches.map((a, i) => (
             <Reveal key={a.title} delay={i * 80}>
-              <Card className="relative flex h-full flex-col gap-3">
-                {/* Number badge */}
-                <span className="absolute -right-3 -top-3 flex h-9 w-9 items-center justify-center rounded-full bg-emerald text-sm font-bold text-paper shadow">
-                  {i + 1}
-                </span>
-                <span className="text-4xl">{a.icon}</span>
-                <h3 className="font-serif text-xl font-semibold text-ink">
+              <Card tone="dark" className="relative flex h-full flex-col gap-4">
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3 className="font-display text-xl font-semibold text-paper">
                   {a.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-ink/70">
+                <p className="text-sm leading-relaxed text-paper/70">
                   {a.description}
                 </p>
               </Card>
@@ -162,19 +172,19 @@ export default function About() {
       </Section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <Section className="bg-forest text-paper">
-        <div className="mx-auto max-w-2xl text-center">
+      <Section className="bg-field text-paper">
+        <div className="max-w-2xl">
           <Reveal>
-            <h2 className="font-serif text-3xl font-bold text-paper sm:text-4xl">
+            <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-tight text-paper text-balance">
               {about.ctaHeading}
             </h2>
           </Reveal>
           <Reveal delay={80}>
-            <p className="mt-4 text-base text-paper/70">{about.ctaPara}</p>
+            <p className="mt-4 text-base text-paper/70 max-w-lg">{about.ctaPara}</p>
           </Reveal>
           <Reveal delay={160}>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button href="mailto:outreach@bintobetter.org" variant="light">
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button href="mailto:outreach@bintobetter.org" variant="primary">
                 Get Involved
               </Button>
               <Button href="/" variant="onDark">

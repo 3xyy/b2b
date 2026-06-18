@@ -17,53 +17,52 @@ export default function EcoFilamentPage() {
     <>
       <Nav />
 
-      <Section className="bg-emerald/5">
+      {/* Hero — dark canvas band */}
+      <Section className="bg-canvas">
         <Reveal>
           <SectionHeading
             eyebrow="Project Spotlight"
             title="Eco-filament"
             subtitle="Repurposing plastic waste into 3D printer filament for tools and toys."
             align="left"
+            tone="dark"
           />
         </Reveal>
       </Section>
 
-      {/* The New Building Blocks of Society */}
-      <Section>
+      {/* The New Building Blocks of Society — light paper band */}
+      <Section className="bg-paper">
         <Reveal>
-          <div className="mx-auto max-w-3xl space-y-6">
-            <div className="rounded-2xl border border-ink/10 bg-paper p-8 shadow-sm">
-              <h3 className="font-serif text-2xl font-semibold text-ink mb-3">
-                The New Building Blocks of Society
-              </h3>
-              <p className="text-ink/70 leading-relaxed mb-6">
-                Eco-filament repurposes plastic waste (collected from trash
-                cleanups in local parks) into 3D printer filament used to
-                develop toys and tools for kids with special needs. It&apos;s a
-                simple yet effective way to keep plastic out of landfills and
-                give it a second life.
+          <div className="max-w-3xl">
+            <h2 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-tight tracking-tight text-ink mb-5 text-balance">
+              The New Building Blocks of Society
+            </h2>
+            <p className="text-ink/70 leading-relaxed text-base sm:text-lg mb-8">
+              Eco-filament repurposes plastic waste (collected from trash
+              cleanups in local parks) into 3D printer filament used to
+              develop toys and tools for kids with special needs. It&apos;s a
+              simple yet effective way to keep plastic out of landfills and
+              give it a second life.
+            </p>
+
+            {/* Discord callout — bordered block, no pill */}
+            <div className="border border-ink/10 bg-paper p-6 mb-8">
+              <p className="text-ink/80 text-base">
+                If you are interested in attending volunteering events (you
+                will get volunteer hours) to clean up our parks, please join
+                our Discord:{" "}
+                <a
+                  href="https://tinyurl.com/b2bdisc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-ink underline underline-offset-2 hover:text-canvas"
+                >
+                  https://tinyurl.com/b2bdisc
+                </a>
               </p>
-
-              <div className="rounded-xl border border-emerald/30 bg-emerald/10 p-6">
-                <p className="text-ink/80">
-                  If you are interested in attending volunteering events (you
-                  will get volunteer hours) to clean up our parks, please join
-                  our Discord:{" "}
-                  <a
-                    href="https://tinyurl.com/b2bdisc"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-emerald underline-offset-2 hover:underline"
-                  >
-                    https://tinyurl.com/b2bdisc
-                  </a>
-                </p>
-              </div>
             </div>
 
-            <div className="flex justify-center">
-              <DiscordButton href="https://tinyurl.com/b2bdisc" />
-            </div>
+            <DiscordButton href="https://tinyurl.com/b2bdisc" />
           </div>
         </Reveal>
       </Section>

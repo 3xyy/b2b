@@ -9,13 +9,15 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-3">
         {/* Brand */}
         <div>
-          <Image
-            src="/logo-white.png"
-            alt="Bin to Better"
-            width={140}
-            height={44}
-            className="h-auto w-[140px]"
-          />
+          <span className="inline-flex rounded-md bg-paper p-2">
+            <Image
+              src="/logo.webp"
+              alt="Bin to Better"
+              width={120}
+              height={30}
+              className="h-[30px] w-auto"
+            />
+          </span>
           <p className="mt-4 max-w-xs text-sm text-paper/60 leading-relaxed">
             {site.tagline}
           </p>

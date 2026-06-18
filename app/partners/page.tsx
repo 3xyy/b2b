@@ -25,32 +25,42 @@ export default function Partners() {
     <>
       <Nav />
 
-      {/* Hero */}
-      <Section className="bg-mint">
+      {/* ── Hero ──────────────────────────────────────────────── */}
+      <Section className="bg-canvas text-paper">
         <Reveal>
           <SectionHeading
             eyebrow="Our Partners"
             title="Partners"
             subtitle="Our mission wouldn't be possible without the support of our partners. We collaborate with tennis clubs, academies, schools, and animal shelters to collect materials and ensure they are put to good use."
+            tone="dark"
+            align="left"
           />
         </Reveal>
       </Section>
 
-      {/* Partner logo grid */}
-      <Section>
+      {/* ── Partner logo grid ─────────────────────────────────── */}
+      <Section className="bg-paper">
         <Reveal>
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 items-center">
+          <div className="mb-8 flex items-center gap-3">
+            <span className="h-px w-6 shrink-0 bg-sage" aria-hidden="true" />
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
+              Our Partners
+            </p>
+          </div>
+        </Reveal>
+        <Reveal delay={80}>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {partnerLogos.map((src) => (
               <div
                 key={src}
-                className="flex items-center justify-center rounded-xl bg-white p-4 ring-1 ring-ink/5 shadow-sm"
+                className="flex items-center justify-center border border-ink/10 bg-paper p-5 rounded-[3px]"
               >
                 <Image
                   src={src}
                   alt="Partner logo"
-                  width={160}
-                  height={64}
-                  className="max-h-16 w-auto object-contain"
+                  width={200}
+                  height={100}
+                  className="max-h-24 w-auto object-contain"
                 />
               </div>
             ))}
@@ -58,74 +68,97 @@ export default function Partners() {
         </Reveal>
       </Section>
 
-      {/* Why partner with us */}
-      <Section className="bg-emerald/5">
+      {/* ── Why partner with us ───────────────────────────────── */}
+      <Section className="bg-field">
         <Reveal>
-          <div className="mx-auto max-w-3xl rounded-2xl bg-white p-8 ring-1 ring-emerald/20 shadow-sm">
-            <h3 className="font-serif text-xl font-semibold text-ink mb-4">
-              Why partner with us
-            </h3>
-            <ul className="space-y-3 text-ink/70">
-              {whyPartner.map((bullet) => (
-                <li key={bullet} className="flex gap-3">
-                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-emerald" />
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <SectionHeading
+            eyebrow="Why Partner"
+            title="Why partner with us"
+            tone="dark"
+            align="left"
+          />
+        </Reveal>
+        <Reveal delay={80}>
+          <ul className="mt-2 flex flex-col gap-5 max-w-2xl">
+            {whyPartner.map((bullet, i) => (
+              <li key={i} className="flex gap-4 border-t border-paper/10 pt-5">
+                <span className="font-mono text-xs font-medium tabular-nums text-court mt-0.5 shrink-0">
+                  0{i + 1}
+                </span>
+                <p className="text-base leading-relaxed text-paper/80">{bullet}</p>
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </Section>
 
-      {/* Business Partners */}
-      <Section>
+      {/* ── Business Partners ─────────────────────────────────── */}
+      <Section className="bg-paper">
         <Reveal>
-          <SectionHeading title="Business Partners" align="center" />
+          <SectionHeading
+            eyebrow="Corporate Partners"
+            title="Business Partners"
+            tone="light"
+            align="left"
+          />
         </Reveal>
+
         {corporatePartners.map((partner, i) => (
           <Reveal key={partner.name} delay={i * 100}>
-            <div className="mx-auto max-w-3xl rounded-2xl bg-white p-8 ring-1 ring-emerald/20 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+            <div className="mt-6 flex flex-col gap-10 border border-ink/10 rounded-[3px] p-8 md:flex-row md:items-center">
+              {/* Logo — large and prominent */}
+              <div className="flex shrink-0 items-center justify-center md:w-80">
+                <Image
+                  src={partner.logo}
+                  alt={partner.name}
+                  width={360}
+                  height={200}
+                  className="max-w-full object-contain"
+                />
+              </div>
+
+              {/* Text */}
               <div className="flex-1">
-                <h3 className="font-serif text-xl font-semibold text-ink mb-4">
+                <h3 className="font-display text-2xl font-bold text-ink">
                   {partner.name}
                 </h3>
-                <p className="text-sm italic text-ink/60">
+                <p className="mt-4 text-sm leading-relaxed text-ink/60 italic">
                   {partner.note.split("outreach@bintobetter.org")[0]}
                   <a
                     href="mailto:outreach@bintobetter.org"
-                    className="text-emerald hover:underline"
+                    className="text-ink underline underline-offset-4 hover:text-canvas transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
                   >
                     outreach@bintobetter.org
                   </a>
                   {partner.note.split("outreach@bintobetter.org")[1]}
                 </p>
               </div>
-              <div className="flex-1 flex justify-center">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  width={320}
-                  height={160}
-                  className="max-w-xs object-contain"
-                />
-              </div>
             </div>
           </Reveal>
         ))}
       </Section>
 
-      {/* Tennis Clubs & Animal Shelters */}
-      <Section className="bg-mint">
-        <div className="grid md:grid-cols-2 gap-10">
+      {/* ── Tennis Clubs & Animal Shelters ────────────────────── */}
+      <Section className="bg-canvas text-paper">
+        <div className="grid gap-10 md:grid-cols-2">
+          {/* Tennis Clubs */}
           <Reveal>
-            <div className="rounded-2xl bg-white p-8 ring-1 ring-emerald/20 shadow-sm h-full">
-              <h3 className="font-serif text-2xl font-semibold text-ink mb-4">
+            <div className="border border-paper/10 rounded-[3px] p-8 h-full">
+              <div className="mb-6 flex items-center gap-3">
+                <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+                  Collection Partners
+                </p>
+              </div>
+              <h3 className="font-display text-2xl font-bold text-paper mb-6">
                 Tennis Clubs &amp; Academies
               </h3>
-              <ul className="space-y-3 text-ink/70 text-sm">
+              <ul className="flex flex-col divide-y divide-paper/10">
                 {tennisClubs.map((club) => (
-                  <li key={club} className="flex gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-lime" />
+                  <li
+                    key={club}
+                    className="py-3 text-sm leading-relaxed text-paper/70"
+                  >
                     {club}
                   </li>
                 ))}
@@ -133,15 +166,24 @@ export default function Partners() {
             </div>
           </Reveal>
 
+          {/* Animal Shelters */}
           <Reveal delay={100}>
-            <div className="rounded-2xl bg-white p-8 ring-1 ring-emerald/20 shadow-sm h-full">
-              <h3 className="font-serif text-2xl font-semibold text-ink mb-4">
+            <div className="border border-paper/10 rounded-[3px] p-8 h-full">
+              <div className="mb-6 flex items-center gap-3">
+                <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+                  Distribution Partners
+                </p>
+              </div>
+              <h3 className="font-display text-2xl font-bold text-paper mb-6">
                 Animal Shelters &amp; Pet Services
               </h3>
-              <ul className="space-y-3 text-ink/70 text-sm">
+              <ul className="flex flex-col divide-y divide-paper/10">
                 {animalShelters.map((shelter) => (
-                  <li key={shelter} className="flex gap-3">
-                    <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-lime" />
+                  <li
+                    key={shelter}
+                    className="py-3 text-sm leading-relaxed text-paper/70"
+                  >
                     {shelter}
                   </li>
                 ))}
@@ -151,26 +193,34 @@ export default function Partners() {
         </div>
       </Section>
 
-      {/* CTA */}
-      <Section>
+      {/* ── CTA ───────────────────────────────────────────────── */}
+      <Section className="bg-field">
         <Reveal>
-          <div className="mx-auto max-w-xl rounded-2xl bg-emerald p-10 text-center text-paper">
-            <h4 className="font-serif text-2xl font-semibold mb-3">
+          <div className="border border-paper/10 rounded-[3px] p-10 max-w-2xl">
+            <div className="mb-4 flex items-center gap-3">
+              <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+                Get Involved
+              </p>
+            </div>
+            <h2 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-paper leading-tight text-balance">
               Interested in partnering with us?
-            </h4>
-            <p className="mb-6 text-paper/80">
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-paper/70">
               Contact us at{" "}
               <a
                 href="mailto:bintobetter@gmail.com"
-                className="underline underline-offset-4 hover:text-lime transition-colors"
+                className="text-paper underline underline-offset-4 hover:text-court transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
               >
                 bintobetter@gmail.com
               </a>{" "}
               to learn how your organization can join the movement.
             </p>
-            <Button href="mailto:bintobetter@gmail.com" variant="secondary">
-              Get in Touch
-            </Button>
+            <div className="mt-8">
+              <Button href="mailto:bintobetter@gmail.com" variant="light">
+                Get in Touch
+              </Button>
+            </div>
           </div>
         </Reveal>
       </Section>

@@ -11,7 +11,7 @@ export function DiscordButton({ href, children = "Join Discord" }: DiscordButton
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 rounded-full bg-emerald px-6 py-3 font-semibold text-paper shadow-sm transition hover:bg-forest focus:outline-none focus:ring-2 focus:ring-emerald focus:ring-offset-2"
+      className="inline-flex items-center gap-2 rounded-[3px] bg-emerald px-6 py-3 font-semibold text-paper shadow-sm transition hover:bg-forest focus:outline-none focus:ring-2 focus:ring-emerald focus:ring-offset-2"
     >
       {/* Discord SVG glyph */}
       <svg

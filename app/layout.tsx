@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Inter, DM_Mono } from "next/font/google";
+import { Hanken_Grotesk, Inter, DM_Mono } from "next/font/google";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
-  variable: "--font-bricolage",
+  variable: "--font-hanken",
   display: "swap",
   weight: ["400", "500", "600", "700", "800"],
 });
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${bricolage.variable} ${inter.variable} ${dmMono.variable}`}
+      className={`${hanken.variable} ${inter.variable} ${dmMono.variable}`}
     >
       <body>{children}</body>
     </html>

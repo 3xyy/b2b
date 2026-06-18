@@ -3,18 +3,18 @@ export const hackathon = {
   title: "Tech to Treasure Hackathon",
   tagline: "Turning ideas into impact. 8 Hours. Infinite Possibilities.",
   infoPills: [
-    { icon: "🗓️", label: "March 28, 2026" },
-    { icon: "⏰", label: "10:00 AM - 6:00 PM" },
-    { icon: "📍", label: "Tully Library", sublabel: "880 Tully Rd, San Jose, CA 95111" },
+    { label: "March 28, 2026", sublabel: undefined as string | undefined },
+    { label: "10:00 AM - 6:00 PM", sublabel: undefined as string | undefined },
+    { label: "Tully Library", sublabel: "880 Tully Rd, San Jose, CA 95111" },
   ],
   aboutParagraphs: [
     "Tech to Treasure Hackathon is an environmental hackathon powered by Bin to Better, where builders turn ideas into impact in 8 hours. From AI agents to data-driven platforms, participants work together to tackle sustainability challenges using technology.",
     "Through hands-on mentorship, workshops led by industry engineers, and real startup-level tools, join us as we build what's next!",
   ],
   mission: [
-    { icon: "🌍", title: "Accessible Tech", desc: "Environmental innovation shouldn't be limited to experts." },
-    { icon: "🛠️", title: "Empower Builders", desc: "Tools, mentorship, and space to turn ideas into prototypes." },
-    { icon: "🌱", title: "Grow Community", desc: "Connecting creators to build lasting impact together." },
+    { title: "Accessible Tech", desc: "Environmental innovation shouldn't be limited to experts." },
+    { title: "Empower Builders", desc: "Tools, mentorship, and space to turn ideas into prototypes." },
+    { title: "Grow Community", desc: "Connecting creators to build lasting impact together." },
   ],
   prizes: {
     top3: [
@@ -26,7 +26,7 @@ export const hackathon = {
       { place: "4th Place", award: "$50+ credits" },
       { place: "5th Place", award: "$50+ credits" },
     ],
-    wolfram: { icon: "🐺", title: "Wolfram Award", desc: "WolframOne + Scholarship Check" },
+    wolfram: { title: "Wolfram Award", desc: "WolframOne + Scholarship Check" },
     allNote: "Plus $1000+ in platform credits & subscriptions for all participants!",
   },
 };

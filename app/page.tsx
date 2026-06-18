@@ -14,6 +14,7 @@ import {
   programsPreview,
   testimonials,
   mission,
+  projectsBlurb,
   contactPara,
   contactFootnote,
 } from "@/content/home";
@@ -33,12 +34,12 @@ export default function Home() {
       <Section className="bg-canvas text-paper">
         <Reveal>
           <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
-            Nonprofit&nbsp;&nbsp;·&nbsp;&nbsp;Waste → Worth
+            Sustainable Future
           </p>
         </Reveal>
 
         <Reveal delay={80}>
-          <h1 className="mt-5 max-w-3xl text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight">
+          <h1 className="mt-5 max-w-3xl font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight">
             Turning waste into{" "}
             <span className="text-court">opportunity.</span>
           </h1>
@@ -46,18 +47,17 @@ export default function Home() {
 
         <Reveal delay={160}>
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-paper/70">
-            One item at a time, one community at a time — we connect waste with
-            the people who can give it a second life.
+            One item at a time, one community at a time.
           </p>
         </Reveal>
 
         <Reveal delay={240}>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="#programs" variant="light">
-              Explore the work
+              Explore Our Projects
             </Button>
             <Button href="mailto:outreach@bintobetter.org" variant="onDark">
-              Get involved
+              Get Involved
             </Button>
           </div>
         </Reveal>
@@ -105,29 +105,29 @@ export default function Home() {
         <Reveal>
           <SectionHeading
             eyebrow="What We Do"
-            title="Our Programs"
+            title="Projects Preview"
             tone="dark"
             align="left"
           />
         </Reveal>
 
-        <div className="mt-4 flex flex-col gap-4">
+        <Reveal delay={40}>
+          <p className="mt-2 max-w-prose text-sm leading-relaxed text-paper/70">
+            {projectsBlurb}
+          </p>
+        </Reveal>
+
+        <div className="mt-6 flex flex-col gap-4">
           {programsPreview.map((p, i) => (
             <Reveal key={p.href} delay={i * 80}>
               <Card tone="dark" className="flex flex-col gap-3">
-                {/* Transform line */}
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.1em] text-paper/50">
-                  {p.transform.split("→")[0].trim()}
-                  <span className="mx-2 text-court">→</span>
-                  {p.transform.split("→")[1].trim()}
-                </p>
                 <h3 className="text-xl font-bold text-paper">{p.title}</h3>
                 <p className="text-sm leading-relaxed text-paper/70">{p.blurb}</p>
                 <Link
                   href={p.href}
                   className="mt-1 inline-flex items-center gap-1 font-mono text-xs font-medium text-court hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
                 >
-                  View more →
+                  View More &rarr;
                 </Link>
               </Card>
             </Reveal>
