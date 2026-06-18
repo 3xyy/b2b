@@ -15,7 +15,7 @@ export default function Partners() {
     <>
       <Nav />
       <Section>
-        <h1 className="font-display text-4xl font-semibold text-ink">Our Partners</h1>
+        <h1 className="font-serif text-4xl font-semibold text-ink">Our Partners</h1>
         <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4">
           {partnerLogos.map((src) => (
             <div

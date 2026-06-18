@@ -15,7 +15,7 @@ export default function Events() {
     <>
       <Nav />
       <Section>
-        <h1 className="font-display text-4xl font-semibold text-ink">Events</h1>
+        <h1 className="font-serif text-4xl font-semibold text-ink">Events</h1>
         <p className="mt-4 text-ink/70">
           Join us at our upcoming hackathons, workshops, and community events.
         </p>
@@ -28,7 +28,7 @@ export default function Events() {
                 {ev.date && (
                   <p className="mb-2 text-sm font-semibold text-emerald">{ev.date}</p>
                 )}
-                <h2 className="font-display text-xl font-semibold text-ink">{ev.title}</h2>
+                <h2 className="font-serif text-xl font-semibold text-ink">{ev.title}</h2>
                 <p className="mt-3 text-sm text-ink/70 leading-relaxed">{ev.description}</p>
               </Card>
             ))}

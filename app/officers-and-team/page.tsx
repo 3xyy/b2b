@@ -16,7 +16,7 @@ export default function Team() {
     <>
       <Nav />
       <Section>
-        <h1 className="font-display text-4xl font-semibold text-ink">Officers &amp; Team</h1>
+        <h1 className="font-serif text-4xl font-semibold text-ink">Officers &amp; Team</h1>
         <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
           {team.map((m) => (
             <Card key={`${m.name}-${m.role}`} className="p-0 overflow-hidden">

@@ -15,13 +15,13 @@ export default function Donate() {
     <>
       <Nav />
       <Section>
-        <h1 className="font-display text-4xl font-semibold text-ink">Support Our Mission</h1>
+        <h1 className="font-serif text-4xl font-semibold text-ink">Support Our Mission</h1>
         <p className="mt-4 max-w-2xl text-ink/70">{donate.classesIntro}</p>
 
         <div className="mt-10 grid gap-8 md:grid-cols-2">
           {/* Basketball */}
           <Card className="flex flex-col">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="font-serif text-2xl font-semibold text-ink">
               {donate.basketball.title}
             </h2>
             <p className="mt-3 flex-1 text-sm text-ink/70 leading-relaxed">
@@ -40,7 +40,7 @@ export default function Donate() {
 
           {/* Tennis */}
           <Card className="flex flex-col">
-            <h2 className="font-display text-2xl font-semibold text-ink">
+            <h2 className="font-serif text-2xl font-semibold text-ink">
               {donate.tennis.title}
             </h2>
             <p className="mt-3 flex-1 text-sm text-ink/70 leading-relaxed">
@@ -61,7 +61,7 @@ export default function Donate() {
 
       <Section className="bg-paper">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-semibold text-ink">{donate.donateHeading}</h2>
+          <h2 className="font-serif text-3xl font-semibold text-ink">{donate.donateHeading}</h2>
           <p className="mt-4 text-ink/70 leading-relaxed">{donate.donatePara}</p>
           <a
             href={donate.donateHref}
