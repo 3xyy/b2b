@@ -207,7 +207,7 @@ export default function Events() {
                       href={sponsor.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-center rounded-2xl bg-white p-4 shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:ring-emerald/30"
+                      className="group flex w-full items-center justify-center rounded-2xl bg-white p-4 shadow-sm ring-1 ring-ink/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:ring-emerald/30"
                       aria-label={sponsor.name}
                     >
                       <div className={`relative w-full ${tierImgSize[tier.size]}`}>

@@ -174,10 +174,10 @@ export default function About() {
           </Reveal>
           <Reveal delay={160}>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button href="mailto:outreach@bintobetter.org">
+              <Button href="mailto:outreach@bintobetter.org" variant="light">
                 Get Involved
               </Button>
-              <Button href="/" variant="secondary">
+              <Button href="/" variant="onDark">
                 Back to Home
               </Button>
             </div>

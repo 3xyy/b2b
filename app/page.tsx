@@ -60,8 +60,8 @@ export default function Home() {
 
             <Reveal delay={240}>
               <div className="mt-8 flex flex-wrap gap-4">
-                <Button href="#programs">Explore Our Projects</Button>
-                <Button href="mailto:outreach@bintobetter.org" variant="secondary">
+                <Button href="#programs" variant="light">Explore Our Projects</Button>
+                <Button href="mailto:outreach@bintobetter.org" variant="onDark">
                   Get Involved
                 </Button>
               </div>
