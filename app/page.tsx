@@ -1,65 +1,131 @@
 import Image from "next/image";
+import { Nav } from "@/components/layout/Nav";
+import { Footer } from "@/components/layout/Footer";
+import { Section } from "@/components/ui/Section";
+import { Button } from "@/components/ui/Button";
+import { Stat } from "@/components/ui/Stat";
+import { PhotoSlot } from "@/components/ui/PhotoSlot";
+import { Card } from "@/components/ui/Card";
+import { ProgramCard } from "@/components/ui/ProgramCard";
+import { stats, programsPreview, testimonials, mission } from "@/content/home";
+import { partnerLogos } from "@/content/partners";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <>
+      <Nav />
+
+      {/* Hero */}
+      <Section className="bg-paper">
+        <div className="grid items-center gap-12 md:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col">
+            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-emerald">
+              Nonprofit · Est. 2023
+            </span>
+            <h1 className="font-serif text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
+              Turning waste into&nbsp;opportunity.
+            </h1>
+            <p className="mt-5 max-w-md text-lg leading-relaxed text-ink/70">
+              One item at a time, one community at a time.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Button href="#programs">Explore Our Projects</Button>
+              <Button href="/donate" variant="secondary">Get Involved</Button>
+            </div>
+          </div>
+          <div className="relative">
+            <PhotoSlot
+              alt="Bin to Better volunteers"
+              className="aspect-[4/3] w-full overflow-hidden rounded-3xl ring-4 ring-emerald/10"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </Section>
+
+      {/* Mission */}
+      <Section className="bg-emerald/5">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-serif text-2xl font-semibold text-ink sm:text-3xl">Our Mission</h2>
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-ink/75">
+            {mission.split("\n\n").map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Stats band */}
+      <Section className="bg-paper">
+        <div className="mx-auto grid max-w-2xl grid-cols-3 gap-6 divide-x divide-ink/10">
+          {stats.map((s) => (
+            <Stat key={s.label} value={s.value} label={s.label} />
+          ))}
+        </div>
+      </Section>
+
+      {/* Programs */}
+      <Section id="programs" className="bg-emerald/5">
+        <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <h2 className="font-serif text-3xl font-semibold text-ink">What We Do</h2>
+          <p className="text-sm text-ink/60">Hands-on programs making real impact</p>
+        </div>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+          {programsPreview.map((p) => (
+            <ProgramCard key={p.href} title={p.title} blurb={p.blurb} href={p.href} />
+          ))}
+        </div>
+      </Section>
+
+      {/* Testimonials */}
+      <Section className="bg-paper">
+        <h2 className="font-serif text-3xl font-semibold text-ink">What People Say</h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {testimonials.map((t, i) => (
+            <Card key={i} className="flex flex-col justify-between">
+              <p className="text-base leading-relaxed text-ink/80">
+                &ldquo;{t.quote}&rdquo;
+              </p>
+              <p className="mt-5 text-sm font-semibold text-emerald">— {t.author}</p>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
+      {/* Partner logos */}
+      <Section className="bg-emerald/5">
+        <p className="mb-8 text-center text-sm font-semibold uppercase tracking-widest text-ink/40">
+          Trusted Partners
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-8 opacity-75">
+          {partnerLogos.map((src) => (
+            <Image
+              key={src}
+              src={src}
+              alt="Partner logo"
+              width={120}
+              height={60}
+              className="h-12 w-auto object-contain grayscale transition-all hover:grayscale-0"
+            />
+          ))}
+        </div>
+      </Section>
+
+      {/* Closing CTA */}
+      <Section className="bg-ink">
+        <div className="text-center">
+          <h2 className="font-serif text-3xl font-semibold text-paper sm:text-4xl">
+            Ready to make a difference?
+          </h2>
+          <p className="mt-4 text-base text-paper/70">
+            Your contribution makes a direct difference for communities, classrooms, and the planet.
+          </p>
+          <div className="mt-8 flex justify-center">
+            <Button href="/donate">Donate</Button>
+          </div>
+        </div>
+      </Section>
+
+      <Footer />
+    </>
   );
 }
