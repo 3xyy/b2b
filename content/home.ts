@@ -1,32 +1,38 @@
 export const stats: { value: string; label: string }[] = [
-  { value: "50K+", label: "Items Recycled" },
+  { value: "50,000+", label: "Items" },
   { value: "200+", label: "Partners" },
   { value: "15", label: "Communities" },
 ];
 
-export const programsPreview: { slug: string; emoji: string; title: string; blurb: string; href: string }[] = [
+export const programsPreview: {
+  slug: string;
+  title: string;
+  blurb: string;
+  href: string;
+  transform: string;
+}[] = [
   {
     slug: "bounce-back",
-    emoji: "🎾",
     title: "Bounce Back",
     blurb:
       "Collects used tennis balls from clubs and repurposes them for schools (chair legs to reduce noise), animal shelters, and assisted living centers (walker feet).",
     href: "/bounce-back",
+    transform: "Used tennis balls → quieter classrooms, shelter toys, walker feet",
   },
   {
     slug: "tech-to-treasure",
-    emoji: "💻",
     title: "Tech to Treasure",
     blurb:
       "Collects old devices and turns them into educational tools before responsibly recycling all parts through an e-waste program.",
     href: "/tech-to-treasure",
+    transform: "Old devices → hands-on learning, then certified recycling",
   },
   {
     slug: "eco-filament",
-    emoji: "🧵",
     title: "Eco-filament",
     blurb: "Repurposing plastic waste into 3D printer filament for tools and toys.",
     href: "/eco-filament",
+    transform: "Plastic waste → 3D-printer filament for assistive tools",
   },
 ];
 
@@ -66,7 +72,7 @@ export const testimonials: { quote: string; author: string; role: string }[] = [
 export const mission: string[] = [
   "At Bin to Better, we believe that waste isn't just trash, it's opportunity. Every year, countless items with value and potential end up in landfills simply because they no longer serve their original purpose. Our mission is to change that narrative.",
   "We're driven by a simple yet powerful idea: that one person's excess can be another's solution. Whether it's used tennis balls, old electronics, or other overlooked resources, we aim to connect those who have with those who need. By building bridges between individuals, communities, and organizations, we promote a culture of reuse and responsible recycling.",
-  "Through education, partnerships, and hands-on initiatives, Bin to Better empowers people to rethink waste and become part of a more sustainable, circular future. Together, we can turn what would've been thrown away into something better, for people, for communities, and for the planet.",
+  "Through education, partnerships, and hands-on initiatives, Bin to Better empowers people to rethink waste and become part of a more sustainable, circular future. Together, we can turn what would've been thrown away into something better—for people, for communities, and for the planet.",
 ];
 
 export const projectsBlurb =

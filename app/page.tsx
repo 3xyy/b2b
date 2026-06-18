@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -15,7 +14,6 @@ import {
   programsPreview,
   testimonials,
   mission,
-  projectsBlurb,
   contactPara,
   contactFootnote,
 } from "@/content/home";
@@ -31,84 +29,70 @@ export default function Home() {
     <>
       <Nav />
 
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      <Section className="bg-gradient-to-br from-forest to-emerald/80 text-paper">
-        <div className="grid items-center gap-12 md:grid-cols-2 lg:gap-20">
-          {/* Left */}
-          <div className="flex flex-col">
-            <Reveal>
-              <span className="mb-4 inline-block rounded-full border border-lime/40 bg-lime/10 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-lime">
-                ♻️ Sustainable Future
-              </span>
-            </Reveal>
+      {/* ── Hero ──────────────────────────────────────────────── */}
+      <Section className="bg-canvas text-paper">
+        <Reveal>
+          <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+            Nonprofit&nbsp;&nbsp;·&nbsp;&nbsp;Waste → Worth
+          </p>
+        </Reveal>
 
-            <Reveal delay={80}>
-              <h1 className="font-serif text-5xl font-bold leading-none tracking-tight sm:text-6xl lg:text-7xl">
-                <span className="text-paper">Bin to</span>{" "}
-                <span className="text-lime">Better</span>
-              </h1>
-            </Reveal>
+        <Reveal delay={80}>
+          <h1 className="mt-5 max-w-3xl text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight">
+            Turning waste into{" "}
+            <span className="text-court">opportunity.</span>
+          </h1>
+        </Reveal>
 
-            <Reveal delay={160}>
-              <p className="mt-5 max-w-md text-lg leading-relaxed text-paper/80">
-                Turning waste into opportunity.{" "}
-                <span className="text-paper/60">
-                  One item at a time, one community at a time.
-                </span>
-              </p>
-            </Reveal>
+        <Reveal delay={160}>
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-paper/70">
+            One item at a time, one community at a time — we connect waste with
+            the people who can give it a second life.
+          </p>
+        </Reveal>
 
-            <Reveal delay={240}>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Button href="#programs" variant="light">Explore Our Projects</Button>
-                <Button href="mailto:outreach@bintobetter.org" variant="onDark">
-                  Get Involved
-                </Button>
-              </div>
-            </Reveal>
-
-            {/* Stats strip */}
-            <Reveal delay={320}>
-              <div className="mt-10 flex gap-10 border-t border-paper/10 pt-8">
-                {stats.map((s) => (
-                  <div key={s.label} className="text-center">
-                    <p className="text-2xl font-bold text-lime sm:text-3xl">
-                      <AnimatedCounter value={s.value} />
-                    </p>
-                    <p className="mt-0.5 text-xs text-paper/60">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
+        <Reveal delay={240}>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="#programs" variant="light">
+              Explore the work
+            </Button>
+            <Button href="mailto:outreach@bintobetter.org" variant="onDark">
+              Get involved
+            </Button>
           </div>
+        </Reveal>
 
-          {/* Right — logo with emerald ring accent */}
-          <Reveal delay={120} className="flex justify-center lg:justify-end">
-            <div className="relative flex h-72 w-72 items-center justify-center rounded-full ring-4 ring-lime/20 sm:h-96 sm:w-96">
-              <div className="absolute inset-0 rounded-full bg-paper/5" />
-              <Image
-                src="/logo.webp"
-                alt="Bin to Better logo"
-                width={320}
-                height={320}
-                priority
-                className="relative z-10 h-auto w-64 object-contain drop-shadow-lg sm:w-80"
-              />
+        {/* Impact row */}
+        <Reveal delay={320}>
+          <div className="mt-12 border-t border-paper/10 pt-8">
+            <div className="flex flex-wrap gap-10">
+              {stats.map((s) => (
+                <div key={s.label}>
+                  <p className="font-mono text-2xl font-medium tabular-nums text-court sm:text-3xl">
+                    <AnimatedCounter value={s.value} />
+                  </p>
+                  <p className="mt-1 font-mono text-xs text-paper/50 uppercase tracking-[0.1em]">
+                    {s.label}
+                  </p>
+                </div>
+              ))}
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </Section>
 
-      {/* ── Mission ──────────────────────────────────────────── */}
-      <Section className="bg-mint">
+      {/* ── Mission ───────────────────────────────────────────── */}
+      <Section className="bg-paper">
         <Reveal>
           <SectionHeading
             eyebrow="Our Mission"
             title="Turning Waste into Opportunity"
+            tone="light"
+            align="left"
           />
         </Reveal>
         <Reveal delay={80}>
-          <div className="mx-auto max-w-3xl space-y-5 text-base leading-relaxed text-ink/75">
+          <div className="max-w-prose space-y-5 text-base leading-relaxed text-ink/80">
             {mission.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
@@ -116,47 +100,49 @@ export default function Home() {
         </Reveal>
       </Section>
 
-      {/* ── Projects Preview ─────────────────────────────────── */}
-      <Section id="programs" className="bg-paper">
+      {/* ── Programs ──────────────────────────────────────────── */}
+      <Section id="programs" className="bg-field">
         <Reveal>
           <SectionHeading
             eyebrow="What We Do"
-            title="Projects Preview"
-            subtitle={projectsBlurb}
+            title="Our Programs"
+            tone="dark"
+            align="left"
           />
         </Reveal>
 
-        <div className="mt-4 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <div className="mt-4 flex flex-col gap-4">
           {programsPreview.map((p, i) => (
             <Reveal key={p.href} delay={i * 80}>
-              <Link href={p.href} className="group block h-full">
-                <Card className="flex h-full flex-col gap-4 transition hover:ring-2 hover:ring-emerald/40">
-                  <div className="flex h-24 w-full items-center justify-center rounded-xl bg-emerald/5">
-                    <span className="text-5xl">{p.emoji}</span>
-                  </div>
-                  <h3 className="font-serif text-xl font-semibold text-ink group-hover:text-emerald">
-                    {p.title}
-                  </h3>
-                  <p className="flex-grow text-sm leading-relaxed text-ink/70">
-                    {p.blurb}
-                  </p>
-                  <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-emerald">
-                    View More →
-                  </span>
-                </Card>
-              </Link>
+              <Card tone="dark" className="flex flex-col gap-3">
+                {/* Transform line */}
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.1em] text-paper/50">
+                  {p.transform.split("→")[0].trim()}
+                  <span className="mx-2 text-court">→</span>
+                  {p.transform.split("→")[1].trim()}
+                </p>
+                <h3 className="text-xl font-bold text-paper">{p.title}</h3>
+                <p className="text-sm leading-relaxed text-paper/70">{p.blurb}</p>
+                <Link
+                  href={p.href}
+                  className="mt-1 inline-flex items-center gap-1 font-mono text-xs font-medium text-court hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
+                >
+                  View more →
+                </Link>
+              </Card>
             </Reveal>
           ))}
         </div>
       </Section>
 
-      {/* ── Testimonials ─────────────────────────────────────── */}
-      <Section id="testimonials" className="bg-emerald/5">
+      {/* ── Testimonials ──────────────────────────────────────── */}
+      <Section id="testimonials" className="bg-paper">
         <Reveal>
           <SectionHeading
             eyebrow="Community Voice"
             title="What People Say"
-            subtitle="See how our initiatives are making a real difference in classrooms and communities."
+            tone="light"
+            align="left"
           />
         </Reveal>
         <Reveal delay={80}>
@@ -164,54 +150,58 @@ export default function Home() {
         </Reveal>
       </Section>
 
-      {/* ── Contact ──────────────────────────────────────────── */}
-      <Section id="contact" className="bg-paper">
-        <div className="mx-auto max-w-2xl text-center">
-          <Reveal>
-            <h2 className="font-serif text-3xl font-bold text-ink sm:text-4xl">
-              Contact Us
-            </h2>
-          </Reveal>
-          <Reveal delay={80}>
-            <p className="mt-4 text-base leading-relaxed text-ink/70">
-              {contactPara}
-            </p>
-          </Reveal>
+      {/* ── Contact ───────────────────────────────────────────── */}
+      <Section id="contact" className="bg-canvas text-paper">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Get in Touch"
+            title="Contact Us"
+            tone="dark"
+            align="left"
+          />
+        </Reveal>
 
-          <Reveal delay={160}>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <a
-                href="mailto:outreach@bintobetter.org"
-                className="group block rounded-2xl bg-emerald/5 p-6 text-left ring-1 ring-emerald/10 transition hover:bg-emerald/10 hover:ring-emerald/30"
-              >
-                <p className="text-xs font-semibold uppercase tracking-widest text-emerald">
-                  Email
-                </p>
-                <p className="mt-2 font-medium text-ink group-hover:underline">
-                  outreach@bintobetter.org
-                </p>
-              </a>
+        <Reveal delay={80}>
+          <p className="max-w-prose text-base leading-relaxed text-paper/70">
+            {contactPara}
+          </p>
+        </Reveal>
 
-              <a
-                href="https://instagram.com/bintobetter"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block rounded-2xl bg-emerald/5 p-6 text-left ring-1 ring-emerald/10 transition hover:bg-emerald/10 hover:ring-emerald/30"
-              >
-                <p className="text-xs font-semibold uppercase tracking-widest text-emerald">
-                  Instagram
-                </p>
-                <p className="mt-2 font-medium text-ink group-hover:underline">
-                  @bintobetter
-                </p>
-              </a>
-            </div>
-          </Reveal>
+        <Reveal delay={160}>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            {/* Email */}
+            <a
+              href="mailto:outreach@bintobetter.org"
+              className="group flex flex-col gap-1.5 border border-paper/15 px-6 py-5 rounded-[3px] hover:border-court transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
+            >
+              <span className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
+                Email
+              </span>
+              <span className="text-sm font-medium text-paper group-hover:text-court transition-colors">
+                outreach@bintobetter.org
+              </span>
+            </a>
 
-          <Reveal delay={240}>
-            <p className="mt-10 text-xs text-ink/40">{contactFootnote}</p>
-          </Reveal>
-        </div>
+            {/* Instagram */}
+            <a
+              href="https://instagram.com/bintobetter"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col gap-1.5 border border-paper/15 px-6 py-5 rounded-[3px] hover:border-court transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
+            >
+              <span className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
+                Instagram
+              </span>
+              <span className="text-sm font-medium text-paper group-hover:text-court transition-colors">
+                @bintobetter
+              </span>
+            </a>
+          </div>
+        </Reveal>
+
+        <Reveal delay={240}>
+          <p className="mt-10 font-mono text-xs text-paper/30">{contactFootnote}</p>
+        </Reveal>
       </Section>
 
       <Footer />

@@ -2,26 +2,32 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 const variantStyles: Record<string, string> = {
-  primary: "bg-emerald text-paper hover:bg-emerald/90 focus-visible:outline-emerald",
-  secondary: "border-2 border-emerald text-emerald hover:bg-emerald/10 focus-visible:outline-emerald",
-  light: "bg-paper text-emerald hover:bg-paper/90 focus-visible:outline-paper",
-  onDark: "border-2 border-paper/70 text-paper hover:bg-paper/10 focus-visible:outline-paper",
+  primary:
+    "bg-court text-ink hover:brightness-95 focus-visible:outline-court",
+  secondary:
+    "border border-ink/25 text-ink hover:border-ink focus-visible:outline-ink",
+  light:
+    "bg-paper text-canvas hover:bg-paper/90 focus-visible:outline-paper",
+  onDark:
+    "border border-paper/30 text-paper hover:border-court hover:text-court focus-visible:outline-paper",
 };
 
 export function Button({
   href,
   variant = "primary",
   children,
+  className = "",
 }: {
   href: string;
-  variant?: "primary" | "secondary" | "light" | "onDark";
+  variant?: "primary" | "secondary" | "onDark" | "light";
   children: ReactNode;
+  className?: string;
 }) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2";
+    "inline-flex items-center justify-center rounded-[3px] px-5 py-2.5 text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2";
   const styles = variantStyles[variant];
   return (
-    <Link href={href} className={`${base} ${styles}`}>
+    <Link href={href} className={`${base} ${styles} ${className}`}>
       {children}
     </Link>
   );

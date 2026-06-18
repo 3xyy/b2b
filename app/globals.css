@@ -1,25 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f7f4ec;
-  --emerald: #1f7a45;
-  --lime: #8bc53f;
-  --ink: #1a1a1a;
-  --clay: #c8632e;
-  --forest: #14532d;
-  --mint: #e7f2ea;
+  /* v3 brand palette */
+  --canvas: #0c2418;
+  --field:  #163a26;
+  --court:  #c8f04a;
+  --paper:  #f5f5ee;
+  --ink:    #0b1410;
+  --sage:   #5f7468;
+
+  /* Legacy aliases — keeps other pages compiling until they are migrated */
+  --emerald: #163a26;
+  --lime:    #c8f04a;
+  --clay:    #c8f04a;
+  --forest:  #0c2418;
+  --mint:    #f5f5ee;
 }
 
 @theme inline {
-  --color-paper: var(--paper);
+  --color-canvas:  var(--canvas);
+  --color-field:   var(--field);
+  --color-court:   var(--court);
+  --color-paper:   var(--paper);
+  --color-ink:     var(--ink);
+  --color-sage:    var(--sage);
+
+  /* Legacy aliases */
   --color-emerald: var(--emerald);
-  --color-lime: var(--lime);
-  --color-ink: var(--ink);
-  --color-clay: var(--clay);
-  --color-forest: var(--forest);
-  --color-mint: var(--mint);
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-fraunces);
+  --color-lime:    var(--lime);
+  --color-clay:    var(--clay);
+  --color-forest:  var(--forest);
+  --color-mint:    var(--mint);
+
+  --font-display: var(--font-bricolage);
+  --font-sans:    var(--font-inter);
+  --font-mono:    var(--font-dm-mono);
+}
+
+::selection {
+  background: var(--court);
+  color: var(--ink);
 }
 
 body {
@@ -30,12 +50,14 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-serif), Georgia, serif;
+  font-family: var(--font-display), system-ui, sans-serif;
+  text-wrap: balance;
+  letter-spacing: -0.02em;
 }
 
 @keyframes marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to   { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
