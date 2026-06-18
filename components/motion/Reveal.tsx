@@ -11,16 +11,12 @@ interface RevealProps {
 export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const [reduced, setReduced] = useState(false);
+  const [reduced] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (mq.matches) {
-        setReduced(true);
-        return;
-      }
-    }
+    if (reduced) return;
 
     const el = ref.current;
     if (!el) return;
@@ -38,7 +34,7 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [delay]);
+  }, [delay, reduced]);
 
   if (reduced) {
     return <div className={className}>{children}</div>;

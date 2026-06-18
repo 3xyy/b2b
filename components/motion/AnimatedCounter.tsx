@@ -26,16 +26,13 @@ function formatNum(n: number, originalValue: string): string {
 export function AnimatedCounter({ value, className = "" }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const [display, setDisplay] = useState<string>(value);
-  const [reduced, setReduced] = useState(false);
+  const [reduced] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (mq.matches) {
-        setReduced(true);
-        setDisplay(value);
-        return;
-      }
+    if (reduced) {
+      return;
     }
 
     const el = ref.current;
@@ -74,7 +71,7 @@ export function AnimatedCounter({ value, className = "" }: AnimatedCounterProps)
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [value]);
+  }, [value, reduced]);
 
   return (
     <span ref={ref} className={className}>

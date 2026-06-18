@@ -14,7 +14,9 @@ interface TestimonialSliderProps {
 
 export function TestimonialSlider({ items }: TestimonialSliderProps) {
   const [current, setCurrent] = useState(0);
-  const [reduced, setReduced] = useState(false);
+  const [reduced] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
   const [paused, setPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -27,15 +29,6 @@ export function TestimonialSlider({ items }: TestimonialSliderProps) {
 
   const prev = () => goTo(current - 1);
   const next = useCallback(() => goTo(current + 1), [current, goTo]);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (mq.matches) {
-        setReduced(true);
-      }
-    }
-  }, []);
 
   useEffect(() => {
     if (reduced || paused) return;

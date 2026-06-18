@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 
 interface LogoMarqueeProps {
@@ -9,14 +9,9 @@ interface LogoMarqueeProps {
 }
 
 export function LogoMarquee({ images, onImageClick }: LogoMarqueeProps) {
-  const [reduced, setReduced] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-      if (mq.matches) setReduced(true);
-    }
-  }, []);
+  const [reduced] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 
   if (reduced) {
     return (
