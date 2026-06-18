@@ -16,6 +16,15 @@ with one modern, coherent, warm-and-grounded design system.
 **Non-goals:** new content, new features, copy rewriting (port verbatim), CMS,
 backend, auth. This is a presentation-layer rebuild on the existing stack.
 
+**Scope decision (verified against the live source, not just docs):** the current
+deployed site has **no** cookie-consent banner, **no** analytics (GTM / Clarity /
+Meta Pixel), **no** legal pages (privacy/cookie/terms routes don't exist), and
+**no** third-party embeds (no Zeffy, Microsoft Forms, or SociableKit in `src/`).
+Those appear only in aspirational org markdown docs, not in the code. This
+redesign **matches the live site**: same content + images + behavior, just the new
+design system. Cookie/analytics/legal/embeds are explicitly **out of scope** for
+this pass (can be a later project if the org provides IDs/tokens/URLs).
+
 ## Source of truth
 
 All content and assets come from the original repo
@@ -102,6 +111,23 @@ Header: `Logo | About · Programs ▾ · Partners · Team · Events | Donate (bu
 - **Events:** event list/cards ported from the original.
 - **Donate:** focused page preserving the original's donate path/links.
 - **About:** "Our Story" hero + Mission & Vision + what-we-do, copy ported verbatim.
+
+## FreeForCharity compliance (only what's real)
+
+Verified from the original `LICENSE` and routes — keep these, ignore the unbuilt
+aspirational docs:
+- **Apache 2.0 LICENSE** file in repo root, attribution
+  "Copyright © 2024–2025 Free For Charity, EIN: 46-2471893".
+- Footer carries the **Free For Charity copyright + EIN** notice (alongside Bin to
+  Better branding).
+- Keep `robots.txt` and `sitemap.xml` routes for SEO.
+- **Drop the GitHub Pages workarounds:** the original used `output: "export"`,
+  `basePath`, `trailingSlash`, and `images: { unoptimized: true }` solely for
+  GitHub Pages. On Vercel we remove these to get real `next/image` optimization,
+  cleaner URLs, and better Lighthouse scores. The `assetPath` helper is no longer
+  needed (root-relative paths on a custom domain).
+- Note: we push to the user's own repo `3xyy/b2b`, so FFC branch-protection /
+  signed-commit / CI rules do **not** apply here.
 
 ## Tech approach
 
