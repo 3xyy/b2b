@@ -200,9 +200,9 @@ export default function Events() {
         <div className="space-y-14">
           {sponsorTiers.map((tier, ti) => (
             <Reveal key={tier.label} delay={ti * 80}>
-              <div className={`grid ${tierGridCols[tier.size]} items-center justify-items-center gap-6`}>
+              <div className={`grid ${tierGridCols[tier.size]} items-center gap-6`}>
                 {tier.sponsors.map((sponsor, si) => (
-                  <Reveal key={sponsor.name} delay={si * 60}>
+                  <Reveal key={sponsor.name} delay={si * 60} className="w-full">
                     <a
                       href={sponsor.href}
                       target="_blank"
