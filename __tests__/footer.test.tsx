@@ -3,10 +3,10 @@ import { describe, it, expect } from "vitest";
 import { Footer } from "@/components/layout/Footer";
 
 describe("Footer", () => {
-  it("shows the Free For Charity attribution", () => {
+  it("shows the Bin to Better copyright", () => {
     render(<Footer />);
-    expect(screen.getByText(/Free For Charity/)).toBeInTheDocument();
-    expect(screen.getByText(/EIN 46-2471893/)).toBeInTheDocument();
+    expect(screen.getByText(/Bin to Better/)).toBeInTheDocument();
+    expect(screen.getByText(/All rights reserved/)).toBeInTheDocument();
   });
   it("links the contact email", () => {
     render(<Footer />);

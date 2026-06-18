@@ -6,6 +6,8 @@
   --lime: #8bc53f;
   --ink: #1a1a1a;
   --clay: #c8632e;
+  --forest: #14532d;
+  --mint: #e7f2ea;
 }
 
 @theme inline {
@@ -14,6 +16,8 @@
   --color-lime: var(--lime);
   --color-ink: var(--ink);
   --color-clay: var(--clay);
+  --color-forest: var(--forest);
+  --color-mint: var(--mint);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-fraunces);
 }
@@ -27,6 +31,11 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-serif), Georgia, serif;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
