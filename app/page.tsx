@@ -19,9 +19,6 @@ export default function Home() {
       <Section className="bg-paper">
         <div className="grid items-center gap-12 md:grid-cols-2 lg:gap-16">
           <div className="flex flex-col">
-            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-widest text-emerald">
-              Nonprofit · Est. 2023
-            </span>
             <h1 className="font-serif text-4xl font-semibold leading-tight text-ink sm:text-5xl lg:text-6xl">
               Turning waste into&nbsp;opportunity.
             </h1>
@@ -114,11 +111,8 @@ export default function Home() {
       <Section className="bg-ink">
         <div className="text-center">
           <h2 className="font-serif text-3xl font-semibold text-paper sm:text-4xl">
-            Ready to make a difference?
+            Join us in turning waste into opportunity.
           </h2>
-          <p className="mt-4 text-base text-paper/70">
-            Your contribution makes a direct difference for communities, classrooms, and the planet.
-          </p>
           <div className="mt-8 flex justify-center">
             <Button href="/donate">Donate</Button>
           </div>

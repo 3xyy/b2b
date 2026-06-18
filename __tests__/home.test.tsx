@@ -5,7 +5,7 @@ import Home from "@/app/page";
 describe("Home page", () => {
   it("shows the tagline and both hero CTAs", () => {
     render(<Home />);
-    expect(screen.getByText(/Turning waste into opportunity/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Turning waste into opportunity/i).length).toBeGreaterThan(0);
     expect(screen.getByRole("link", { name: /Explore Our Projects/i })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Get Involved/i })).toBeInTheDocument();
   });
