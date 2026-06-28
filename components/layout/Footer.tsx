@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-3">
         {/* Brand */}
         <div>
-          <span className="inline-flex rounded-md bg-paper p-2">
+          <span className="inline-flex rounded-md bg-paper p-2 transition-transform duration-300 ease-[var(--ease-out-hover)] hover:scale-[1.03]">
             <Image
               src="/logo.webp"
               alt="Bin to Better"
@@ -34,7 +34,7 @@ export function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="hover:text-court transition-colors"
+                    className="link-underline inline-block transition-colors hover:text-court"
                   >
                     {l.label}
                   </Link>
@@ -53,7 +53,7 @@ export function Footer() {
             <li>
               <a
                 href={`mailto:${site.email}`}
-                className="hover:text-court transition-colors"
+                className="link-underline inline-block transition-colors hover:text-court"
               >
                 {site.email}
               </a>
@@ -63,7 +63,7 @@ export function Footer() {
                 href={site.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-court transition-colors"
+                className="link-underline inline-block transition-colors hover:text-court"
               >
                 Instagram
               </a>
@@ -73,7 +73,7 @@ export function Footer() {
                 href={site.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-court transition-colors"
+                className="link-underline inline-block transition-colors hover:text-court"
               >
                 LinkedIn
               </a>

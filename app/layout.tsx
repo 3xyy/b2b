@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk, Inter, DM_Mono } from "next/font/google";
+import { Hanken_Grotesk, Inter, DM_Mono, Geist } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin"],
@@ -35,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${hanken.variable} ${inter.variable} ${dmMono.variable}`}
+      className={cn(hanken.variable, inter.variable, dmMono.variable, "font-sans", geist.variable)}
     >
       <body>{children}</body>
     </html>

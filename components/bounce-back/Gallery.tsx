@@ -41,7 +41,7 @@ export function Gallery() {
               alt={img.alt}
               width={760}
               height={560}
-              className="h-72 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+              className="h-72 w-full object-cover transition-transform duration-500 ease-[var(--ease-out-soft)] group-hover:scale-[1.05] group-hover:rotate-[0.5deg]"
               sizes="(min-width: 640px) 50vw, 100vw"
             />
             {/* Hover overlay */}

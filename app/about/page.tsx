@@ -7,6 +7,9 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
+import { RevealWords } from "@/components/motion/RevealWords";
+import { CursorSpotlight } from "@/components/motion/CursorSpotlight";
+import { Magnetic } from "@/components/motion/Magnetic";
 import { about } from "@/content/about";
 
 export const metadata: Metadata = {
@@ -21,8 +24,9 @@ export default function About() {
       <Nav />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <Section className="bg-canvas text-paper">
-        <div className="max-w-3xl">
+      <Section className="relative overflow-hidden bg-canvas text-paper">
+        <CursorSpotlight />
+        <div className="relative z-10 max-w-3xl">
           <Reveal>
             <div className="mb-4 flex items-center gap-3">
               <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
@@ -31,12 +35,10 @@ export default function About() {
               </p>
             </div>
           </Reveal>
-          <Reveal delay={80}>
-            <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-tight tracking-tight text-paper text-balance">
-              Our Story
-            </h1>
-          </Reveal>
-          <Reveal delay={160}>
+          <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-tight tracking-tight text-paper text-balance">
+            <RevealWords text="Our Story" stagger={80} initialDelay={120} />
+          </h1>
+          <Reveal delay={360}>
             <p className="mt-5 text-lg text-paper/70 max-w-xl">
               Our mission, story, and how we work.
             </p>
@@ -155,7 +157,7 @@ export default function About() {
         <div className="grid gap-6 sm:grid-cols-3">
           {about.approaches.map((a, i) => (
             <Reveal key={a.title} delay={i * 80}>
-              <Card tone="dark" className="relative flex h-full flex-col gap-4">
+              <Card tone="dark" interactive className="relative flex h-full flex-col gap-4">
                 <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court" aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </p>
@@ -184,9 +186,11 @@ export default function About() {
           </Reveal>
           <Reveal delay={160}>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="mailto:outreach@bintobetter.org" variant="primary">
-                Get Involved
-              </Button>
+              <Magnetic>
+                <Button href="mailto:outreach@bintobetter.org" variant="primary" withArrow>
+                  Get Involved
+                </Button>
+              </Magnetic>
               <Button href="/" variant="onDark">
                 Back to Home
               </Button>

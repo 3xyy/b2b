@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
+import { DrawLine } from "@/components/motion/DrawLine";
 import {
   partnerLogos,
   whyPartner,
@@ -81,7 +82,8 @@ export default function Partners() {
         <Reveal delay={80}>
           <ul className="mt-2 flex flex-col gap-5 max-w-2xl">
             {whyPartner.map((bullet, i) => (
-              <li key={i} className="flex gap-4 border-t border-paper/10 pt-5">
+              <li key={i} className="relative flex gap-4 pt-5">
+                <DrawLine className="absolute left-0 top-0 h-px w-full bg-paper/15" delay={i * 80} />
                 <span className="font-mono text-xs font-medium tabular-nums text-court mt-0.5 shrink-0">
                   0{i + 1}
                 </span>

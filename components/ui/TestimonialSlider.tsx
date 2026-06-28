@@ -94,7 +94,7 @@ export function TestimonialSlider({ items }: TestimonialSliderProps) {
               onClick={() => goTo(i)}
               aria-label={`Go to testimonial ${i + 1}`}
               aria-current={i === current ? "true" : undefined}
-              className={`h-1.5 rounded-[2px] transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court ${
+              className={`h-1.5 rounded-[2px] transition-[width,background-color] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court hover:bg-ink/40 ${
                 i === current ? "w-6 bg-court" : "w-1.5 bg-ink/20"
               }`}
             />

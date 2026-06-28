@@ -25,7 +25,13 @@ function formatNum(n: number, originalValue: string): string {
 
 export function AnimatedCounter({ value, className = "" }: AnimatedCounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
+  const shineTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [display, setDisplay] = useState<string>(value);
+  // `shining` is transient: it flips on when the count-up finishes to flash the
+  // one-shot shine sweep, then clears itself after the sweep so the text returns
+  // to its solid `text-court` color. Keeping it on permanently would leave the
+  // span with `-webkit-text-fill-color: transparent` and hide the digits.
+  const [shining, setShining] = useState(false);
   const [reduced] = useState(
     () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
   );
@@ -60,6 +66,10 @@ export function AnimatedCounter({ value, className = "" }: AnimatedCounterProps)
               requestAnimationFrame(tick);
             } else {
               setDisplay(value);
+              // Trigger the one-shot shine, then clear it after the sweep
+              // (shine-sweep is 0.85s in globals.css) so the text goes solid.
+              setShining(true);
+              shineTimeout.current = setTimeout(() => setShining(false), 850);
             }
           };
 
@@ -70,11 +80,14 @@ export function AnimatedCounter({ value, className = "" }: AnimatedCounterProps)
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (shineTimeout.current) clearTimeout(shineTimeout.current);
+    };
   }, [value, reduced]);
 
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={`${className} ${shining ? "shine" : ""}`}>
       {reduced ? value : display}
     </span>
   );

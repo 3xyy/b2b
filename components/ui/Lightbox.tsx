@@ -32,11 +32,11 @@ export function Lightbox({ src, alt = "", onClose }: LightboxProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Image preview"
-      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80"
+      className="lightbox-fade fixed inset-0 z-50 flex items-center justify-center bg-ink/80"
       onClick={onClose}
     >
       <div
-        className="relative max-h-[90vh] max-w-[90vw]"
+        className="lightbox-pop relative max-h-[90vh] max-w-[90vw]"
         onClick={(e) => e.stopPropagation()}
       >
         <button
