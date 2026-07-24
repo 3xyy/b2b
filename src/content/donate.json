@@ -1,0 +1,30 @@
+{
+  "slug": "/donate",
+  "title": "Donate",
+  "classes": {
+    "eyebrow": "Support Our Mission",
+    "heading": "Classes",
+    "intro": "All funds go directly to Bin to Better to fund our projects. Classes are offered at reasonable prices, and a free trial is available after signing up.",
+    "items": [
+      {
+        "icon": "🏀",
+        "title": "Basketball Classes",
+        "description": "Taught by 3 coaches, MSJ varsity starters with a combined 6+ years of experience. Whether you're just starting out or looking to sharpen your skills, our coaches will help you improve your game.",
+        "note": "Sign up for a free trial. More details available in the registration form.",
+        "cta": { "label": "Register Now", "href": "https://tinyurl.com/bballclasses" }
+      },
+      {
+        "icon": "🎾",
+        "title": "Tennis Classes",
+        "description": "Taught by varsity high school tennis players ready to share their skills and passion for the sport. Great for beginners and intermediate players looking for quality instruction.",
+        "note": "Sign up for a free trial. More details available in the registration form.",
+        "cta": { "label": "Register Now", "href": "https://tinyurl.com/tennisregis" }
+      }
+    ]
+  },
+  "donate": {
+    "heading": "Donate",
+    "body": "Your support helps us turn waste into opportunity. Donations allow us to expand our collection efforts, develop new projects and reach more communities. Every contribution, no matter the size, helps build a cleaner, more sustainable future.",
+    "cta": { "label": "Donate via PledgeIt", "href": "https://charity.pledgeit.org/bintobetter" }
+  }
+}

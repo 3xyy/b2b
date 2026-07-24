@@ -1,0 +1,77 @@
+{
+  "privacy": {
+    "title": "Privacy Policy",
+    "updated": "July 2026",
+    "intro": "Bin to Better (\"we\", \"us\") is a student-run nonprofit initiative. This policy explains what information we collect through this website and how we use it.",
+    "sections": [
+      {
+        "heading": "Information we collect",
+        "paragraphs": [
+          "We collect only the information you choose to give us. If you fill out our contact form, we receive the name, email address, and message you submit. If you email us directly or reach out on social media, we receive whatever you send.",
+          "This website does not use advertising cookies or sell any personal information. Basic, aggregated traffic statistics may be collected by our hosting provider to keep the site running reliably."
+        ]
+      },
+      {
+        "heading": "How we use your information",
+        "paragraphs": [
+          "We use the information you send us solely to respond to your enquiry, coordinate donations or volunteering, and keep you updated about the specific request you contacted us about. We do not share your information with third parties except the tools we use to operate the contact form and email."
+        ]
+      },
+      {
+        "heading": "Third-party services",
+        "paragraphs": [
+          "Our contact form is processed by a third-party form service, and donations are handled by an external donation platform. When you use those features, your information is handled according to those providers' own privacy policies. Links to external sites (such as Instagram, LinkedIn, or Discord) are governed by those platforms' policies, not ours."
+        ]
+      },
+      {
+        "heading": "Your choices",
+        "paragraphs": [
+          "You can ask us to delete any personal information you've sent us at any time by emailing outreach@bintobetter.org. Because we only keep what you send, there is nothing to opt out of beyond contacting us."
+        ]
+      },
+      {
+        "heading": "Contact",
+        "paragraphs": [
+          "Questions about this policy? Email us at outreach@bintobetter.org."
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "updated": "July 2026",
+    "intro": "By using the Bin to Better website, you agree to these terms. Please read them carefully.",
+    "sections": [
+      {
+        "heading": "Use of this site",
+        "paragraphs": [
+          "This website is provided for informational purposes about Bin to Better's recycling programs, events, and volunteering opportunities. You agree to use it lawfully and not to disrupt, damage, or misuse the site or its content."
+        ]
+      },
+      {
+        "heading": "Content",
+        "paragraphs": [
+          "All text, images, and branding on this site are the property of Bin to Better or used with permission, unless otherwise noted. You may share links to our pages, but please do not republish our content as your own without permission."
+        ]
+      },
+      {
+        "heading": "Donations and classes",
+        "paragraphs": [
+          "Donations are processed through an external platform and support Bin to Better's programs. Class registrations and free trials are subject to availability and the details provided in each registration form. We are not responsible for the content or policies of external sites we link to."
+        ]
+      },
+      {
+        "heading": "No warranty",
+        "paragraphs": [
+          "This site is provided \"as is\" without warranties of any kind. We work to keep information accurate and up to date, but we do not guarantee it is complete or error-free, and we may update the site at any time."
+        ]
+      },
+      {
+        "heading": "Contact",
+        "paragraphs": [
+          "Questions about these terms? Email us at outreach@bintobetter.org."
+        ]
+      }
+    ]
+  }
+}

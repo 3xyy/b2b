@@ -1,0 +1,26 @@
+{
+  "slug": "/tech-to-treasure",
+  "title": "Tech to Treasure",
+  "eyebrow": "Project Spotlight",
+  "heading": "Tech to Treasure",
+  "subheading": "Turning e-waste into educational tools and responsible recycling.",
+  "sections": [
+    {
+      "heading": "A Device's Second Chance",
+      "body": "Millions of electronics are discarded each year, often without proper recycling, contributing to growing e-waste and environmental harm. Tech to Treasure addresses this issue while inspiring the next generation of innovators."
+    }
+  ],
+  "whatWeDo": {
+    "heading": "What We Do",
+    "items": [
+      { "title": "Collection & Education", "description": "We gather unused devices and transform them into educational tools through free, interactive workshops." },
+      { "title": "Hands-On Learning", "description": "Students disassemble devices to learn about RAM, memory, circuit boards, and power systems." },
+      { "title": "Responsible Recycling", "description": "After sessions, all parts are responsibly recycled through certified e-waste programs." }
+    ]
+  },
+  "getInvolved": {
+    "heading": "Get Involved",
+    "body": "Students interested should join our Discord to get involved for future events.",
+    "cta": { "label": "Join Discord", "href": "https://tinyurl.com/b2bdisc" }
+  }
+}

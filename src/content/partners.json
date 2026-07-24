@@ -1,0 +1,70 @@
+{
+  "slug": "/partners",
+  "title": "Partners",
+  "eyebrow": "Our Partners",
+  "heading": "Partners",
+  "intro": "Our mission wouldn't be possible without the support of our partners. We collaborate with tennis clubs, academies, schools, and animal shelters to collect materials and ensure they are put to good use.",
+  "logos": [
+    "/partners-logos/page-21-xref-82.webp",
+    "/partners-logos/page-21-xref-84.webp",
+    "/partners-logos/page-22-xref-87.webp",
+    "/partners-logos/page-22-xref-88.webp",
+    "/partners-logos/page-23-xref-91.webp",
+    "/partners-logos/page-23-xref-92.webp",
+    "/partners-logos/page-23-xref-94.webp",
+    "/partners-logos/page-24-xref-97.webp",
+    "/partners-logos/page-24-xref-99.webp",
+    "/partners-logos/page-25-xref-102.webp",
+    "/partners-logos/page-26-xref-105.webp",
+    "/partners-logos/page-26-xref-106.webp",
+    "/partners-logos/sun-dragon-computers.webp"
+  ],
+  "whyPartner": {
+    "heading": "Why partner with us",
+    "points": [
+      "Make a measurable impact by redirecting usable materials to communities in need.",
+      "Support education and sustainability through hands-on initiatives and workshops.",
+      "Increase corporate social responsibility visibility and employee engagement."
+    ]
+  },
+  "corporatePartners": {
+    "heading": "Our Corporate Partners",
+    "subheading": "Business Partners",
+    "partners": [
+      { "name": "Sun Dragon Computers", "image": "/partners-logos/sun-dragon-computers.webp" }
+    ],
+    "note": "Interested in becoming a corporate partner? Contact us at outreach@bintobetter.org to learn how your organization can support Bin to Better and be featured as a partner.",
+    "contactEmail": "outreach@bintobetter.org"
+  },
+  "partnerLists": [
+    {
+      "heading": "Tennis Clubs & Academies",
+      "items": [
+        "Mission Hills Swim and Racquet Club",
+        "Los Gatos Swim and Racquet Club",
+        "NorCal Tennis Academy",
+        "Mountain View Tennis",
+        "Lifetime Activities – Santa Clara & Sunnyvale",
+        "Kim Grant Tennis Academy",
+        "Cupertino Hills Swim & Racquet Club",
+        "Kona Kai Swim & Racquet Club",
+        "San José Swim & Racquet Club"
+      ]
+    },
+    {
+      "heading": "Animal Shelters & Pet Services",
+      "items": [
+        "Allie's Doggie Day Camp",
+        "Lucky Buddies Pet Sitting",
+        "Furrtropolis",
+        "A Pet Villa Dog Boarding and Grooming"
+      ]
+    }
+  ],
+  "cta": {
+    "heading": "Interested in partnering with us?",
+    "body": "Contact us at bintobetter@gmail.com to learn how your organization can join the movement.",
+    "contactEmail": "bintobetter@gmail.com",
+    "button": { "label": "Get in Touch", "href": "mailto:bintobetter@gmail.com" }
+  }
+}

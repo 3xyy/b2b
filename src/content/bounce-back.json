@@ -1,0 +1,33 @@
+{
+  "slug": "/bounce-back",
+  "title": "Bounce Back",
+  "eyebrow": "Project Spotlight",
+  "heading": "Bounce Back Project",
+  "subheading": "Giving used tennis balls a second life in schools, animal shelters, and assisted living.",
+  "sections": [
+    {
+      "heading": "The Focus of Our Efforts",
+      "body": "Nearly all of the 330 million tennis balls produced each year end up in landfills, where they can take more than 400 years to decompose. The Bounce Back Project reduces waste by finding creative ways to give used tennis balls a second life."
+    }
+  ],
+  "whatWeDo": {
+    "heading": "What We Do",
+    "items": [
+      { "title": "Collection", "description": "Every month our team collects between 3,000 and 5,000 used balls from local clubs." },
+      { "title": "Reuse", "description": "Balls are donated to schools (chair legs), animal shelters (enrichment toys), and assisted living centers (walker feet)." },
+      { "title": "Impact", "description": "Since launching just over a year ago we have collected more than 100,000 tennis balls and donated over 30,000 to organizations that can use them effectively." },
+      { "title": "Get Involved", "description": "Clubs interested in participating can visit the Partners page or contact us directly to arrange a pickup.", "link": { "text": "Partners page", "href": "/partners" } }
+    ]
+  },
+  "statCard": {
+    "icon": "🎾",
+    "value": "100,000+",
+    "label": "Tennis Balls Collected"
+  },
+  "gallery": [
+    "/bounce-back-logos/page-28-xref-114.webp",
+    "/bounce-back-logos/page-29-xref-117.webp",
+    "/bounce-back-logos/page-30-xref-120.webp",
+    "/bounce-back-logos/page-31-xref-123.webp"
+  ]
+}

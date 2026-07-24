@@ -1,0 +1,86 @@
+{
+  "slug": "/officers-and-team",
+  "title": "Officers & Team",
+  "heading": "Officers & Team",
+  "intro": "Our organization is led by a dedicated group of students and volunteers. The officers work together across various teams to ensure the success of each program.",
+  "applyPrompt": {
+    "text": "Interested in being an officer?",
+    "linkText": "Apply here",
+    "href": "https://forms.gle/Pf9kCT1HbYm9Nobt7"
+  },
+  "groups": [
+    {
+      "category": "Executives",
+      "members": [
+        { "name": "Lalit Batchu", "role": "Co-Founder and Co-Prez", "school": "American High School Grade 11", "fact": "My full name has 6 words!", "image": "/members/Lalit Batchu.webp" },
+        { "name": "Pradyun Kanuparthi", "role": "Co-Founder and Co-Prez", "school": "Mission San Jose High School Grade 11", "fact": "I start on varsity basketball", "image": "/members/Pradyun Kanuparthi.webp" },
+        { "name": "Hala Amer", "role": "Vice President", "school": "American High School Grade 10", "fact": "I recently built a 3D printer.", "image": "/members/Hala Amer.webp" }
+      ]
+    },
+    {
+      "category": "Outreach",
+      "members": [
+        { "name": "Harmonie Lee", "role": "Outreach Director", "school": "American High School Grade 10", "fact": "I get Chick-fil-A every week", "image": "/members/Harmony Lee.webp" },
+        { "name": "Deepam Kapadia", "role": "Outreach Director", "school": "American High School Grade 10", "fact": "I am a top 5% Tetris player.", "image": "/members/Deepam.webp" },
+        { "name": "Anika Batra", "role": "Outreach Officer", "school": "American High School Grade 10", "fact": "I have never broken a bone.", "image": "/members/Anika Batra.webp" },
+        { "name": "Anwen Li", "role": "Outreach Officer", "school": "American High Grade 9", "fact": "I can speak 4 languages", "image": "/members/Anwen Li.webp" }
+      ]
+    },
+    {
+      "category": "Eco-Filament",
+      "members": [
+        { "name": "Saket Sandru", "role": "Eco-Filament Director", "school": "American High School Grade 10", "fact": "I broke the bone in the human body thats hardest to heal", "image": "/members/Saket Sandru.webp" },
+        { "name": "Nameh Gupta", "role": "Eco-Filament Officer", "school": "American High School Grade 10", "fact": "I like gardening in my free time.", "image": "/members/Nameh Gupta.webp" },
+        { "name": "Atiksh Jain", "role": "Eco-Filament Officer", "school": "American High School Grade 9", "fact": "I have traveled to 15 countries.", "image": "/members/Atiksh Jain.webp" }
+      ]
+    },
+    {
+      "category": "Fundraising",
+      "members": [
+        { "name": "Vihaan Sanghvi", "role": "Fundraising Director", "school": "American High School Grade 10", "fact": "I love traveling", "image": "/members/Vihaan Sanghvi.webp" },
+        { "name": "Abhay Shankar", "role": "Fundraising Officer", "school": "Mission San Jose High School Grade 11", "fact": "I have a labradoodle named Milo", "image": "/members/Abhay Shankar.webp" },
+        { "name": "Yuva Chandrachood", "role": "Fundraising Officer", "school": "American High School Grade 10", "fact": "I am 6'1", "image": "/members/Yuva Chandrachood.webp", "imagePosition": "70% 25%" }
+      ]
+    },
+    {
+      "category": "Tech to Treasure",
+      "members": [
+        { "name": "Sunny Yang", "role": "Tech to Treasure Director", "school": "American High School Grade 10", "fact": "I have two cats.", "image": "/members/Sunny Yang.webp" },
+        { "name": "Clovis Zhang", "role": "Tech to Treasure Officer", "school": "American High School Grade 10", "fact": "I'm addicted to Pokémon Go", "image": "/members/Clovis Zhang.webp" },
+        { "name": "Krishan Ranjan", "role": "Tech to Treasure Officer", "school": "American High School Grade 10", "fact": "I've visited over 15 states in the US", "image": "/members/Krishan Ranjan.webp" },
+        { "name": "Deenadarrshan Sathiyamoorthi", "role": "Tech to Treasure Officer", "school": "American High School Grade 10", "fact": "I like to play basketball", "image": "/members/Deenadarrshan Sathiyamoorthi.webp" },
+        { "name": "Pranav Singh", "role": "Tech to Treasure Officer", "school": "American High School Grade 10", "fact": "I run on 3 hours of sleep!", "image": "/members/Pranav Singh.webp" }
+      ]
+    },
+    {
+      "category": "Bounce Back",
+      "members": [
+        { "name": "Clovis Zhang", "role": "Bounce Back Director", "school": "American High School Grade 10", "fact": "I'm addicted to Pokémon Go", "image": "/members/Clovis Zhang.webp" },
+        { "name": "Thomas Nguyen", "role": "Bounce Back Officer", "school": "American High School Grade 10", "fact": "I like sleeping", "image": "/members/Thomas Nguyen.webp" }
+      ]
+    },
+    {
+      "category": "Media & Administrative",
+      "members": [
+        { "name": "Pradyun Kanuparthi", "role": "Marketing Director", "school": "Mission San Jose High School Grade 11", "fact": "I start on varsity basketball", "image": "/members/Pradyun Kanuparthi.webp" },
+        { "name": "William Lam", "role": "Scriptwriter", "school": "Mission San Jose High Grade 11", "fact": "I run track and field", "image": "/members/William Lam.webp" },
+        { "name": "Zerek Kao", "role": "Scriptwriter", "school": "Mission San Jose High Grade 11", "fact": "I get no minutes on varsity basketball", "image": "/members/Zerek Kao.webp" },
+        { "name": "Shreshta Parampalli", "role": "Speaker", "school": "Mission San Jose High Grade 11", "fact": "I start on varsity basketball", "image": "/members/Shreshta Parampalli.webp" },
+        { "name": "Advaith Dhumal Rao", "role": "Video Editor", "school": "Mission San Jose Grade 11", "fact": "I was ranked number 1 in the nation for cricket in my age group last year", "image": "/members/Advaith Dhumal Rao.webp" }
+      ]
+    },
+    {
+      "category": "Other Leadership",
+      "members": [
+        { "name": "Linhan", "role": "Publicist (PR)", "school": "American High School Grade 9", "fact": "I can count to 100 in Chinese in one breath.", "image": "/members/Linhan.webp" },
+        { "name": "Ashish Swaminathan", "role": "Secretary", "school": "Mission San Jose Grade 11", "fact": "I am an eclectic person, liking academia while also liking sports and leadership.", "image": "/members/Ashish Swaminathan.webp", "imagePosition": "center 25%" }
+      ]
+    },
+    {
+      "category": "Website Management",
+      "members": [
+        { "name": "Pranav Singh", "role": "Website Manager", "school": "American High School Grade 10", "fact": "I run on 3 hours of sleep!", "image": "/members/Pranav Singh.webp" }
+      ]
+    }
+  ]
+}

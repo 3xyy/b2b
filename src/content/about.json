@@ -1,0 +1,66 @@
+{
+  "slug": "/about",
+  "title": "About",
+  "hero": {
+    "badge": "About Us",
+    "heading": "Our Story",
+    "subheading": "Our mission, story, and how we work."
+  },
+  "missionVision": {
+    "eyebrow": "Our Purpose",
+    "heading": "Mission & Vision",
+    "paragraphs": [
+      "At Bin to Better, we believe that waste isn't just trash, it's an opportunity. Countless items with value end up in landfills each year simply because they no longer serve their original purpose. We are committed to changing that narrative by promoting reuse, responsible recycling, and the circular economy.",
+      "Our goal is to empower individuals and communities to rethink waste and realize that what seems like rubbish can become a resource for someone else. By connecting people with excess to those with needs, we bridge gaps and foster a culture of giving and sustainability."
+    ],
+    "pillars": [
+      { "icon": "♻️", "label": "Circular Economy" },
+      { "icon": "🌱", "label": "Sustainability" },
+      { "icon": "🤝", "label": "Community" }
+    ],
+    "centerBadge": { "icon": "🌍", "label": "Better Future" },
+    "floatingIcons": ["🎾", "💻", "🧵", "♻️"]
+  },
+  "originStory": {
+    "eyebrow": "How It Started",
+    "heading": "Origin Story",
+    "paragraphs": [
+      "Bin to Better was founded by two high school students, Lalit Sreekar Batchu and Rohan Sashank Babbellapati, who witnessed firsthand the scale of everyday waste.",
+      "Rohan, an avid tennis player on his school team, noticed how quickly tennis balls were discarded after just a few uses, even though they remained perfectly usable in other contexts. He approached Lalit with the idea of starting an organization that could repurpose these items.",
+      "Together they launched Bin to Better to give new purpose to what others might throw away."
+    ],
+    "founders": [
+      { "name": "Lalit Sreekar Batchu", "role": "Co-Founder", "image": "/members/Lalit Batchu.webp" },
+      { "name": "Rohan Babbellapati", "role": "Co-Founder", "image": "/members/Rohan Bablupatti.webp" }
+    ]
+  },
+  "approach": {
+    "eyebrow": "How We Work",
+    "heading": "Our Approach",
+    "items": [
+      {
+        "icon": "📚",
+        "title": "Education",
+        "description": "Through workshops and outreach we teach communities about the importance of reuse, recycling, and sustainability."
+      },
+      {
+        "icon": "🤝",
+        "title": "Partnerships",
+        "description": "We collaborate with tennis clubs, schools, animal shelters, and other organizations to collect unused materials and distribute them to those in need."
+      },
+      {
+        "icon": "🔧",
+        "title": "Hands-on Initiatives",
+        "description": "Our projects provide tangible ways for volunteers to participate: collecting tennis balls, disassembling electronics, or repurposing plastic waste into building materials."
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Join Our Mission",
+    "text": "Be part of the change. Whether you want to volunteer, donate, or partner with us, there's a place for you at Bin to Better.",
+    "buttons": [
+      { "label": "Get Involved", "href": null },
+      { "label": "Back to Home", "href": "/" }
+    ]
+  }
+}

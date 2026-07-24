@@ -1,0 +1,96 @@
+{
+  "slug": "/events",
+  "title": "Events",
+  "hero": {
+    "eyebrow": "Get Involved",
+    "heading": "Events",
+    "subheading": "Join us at our upcoming hackathons, workshops, and community events."
+  },
+  "featuredEvent": {
+    "sectionHeading": "Featured Event",
+    "badge": "March 28, 2026 • San Jose, CA",
+    "title": "Tech to Treasure Hackathon",
+    "titleAccent": "Hackathon",
+    "subtitle": "Turning ideas into impact. 8 Hours. Infinite Possibilities.",
+    "facts": [
+      { "icon": "🗓️", "value": "March 28, 2026" },
+      { "icon": "⏰", "value": "10:00 AM - 6:00 PM" },
+      { "icon": "📍", "value": "Tully Library", "detail": "880 Tully Rd, San Jose, CA 95111" }
+    ],
+    "about": {
+      "heading": "About the Event",
+      "paragraphs": [
+        "Tech to Treasure Hackathon is an environmental hackathon powered by Bin to Better, where builders turn ideas into impact in 8 hours. From AI agents to data-driven platforms, participants work together to tackle sustainability challenges using technology.",
+        "Through hands-on mentorship, workshops led by industry engineers, and real startup-level tools, join us as we build what's next!"
+      ]
+    },
+    "mission": {
+      "heading": "Our Mission",
+      "items": [
+        { "icon": "🌍", "title": "Accessible Tech", "description": "Environmental innovation shouldn't be limited to experts." },
+        { "icon": "🛠️", "title": "Empower Builders", "description": "Tools, mentorship, and space to turn ideas into prototypes." },
+        { "icon": "🌱", "title": "Grow Community", "description": "Connecting creators to build lasting impact together." }
+      ]
+    },
+    "prizes": {
+      "heading": "Prizes",
+      "podium": [
+        { "place": "1st Place", "prize": "$4000+ in credits" },
+        { "place": "2nd Place", "prize": "$400+ in credits" },
+        { "place": "3rd Place", "prize": "$200+ in credits" }
+      ],
+      "additional": [
+        { "place": "4th Place", "prize": "$50+ credits" },
+        { "place": "5th Place", "prize": "$50+ credits" },
+        { "place": "Wolfram Award", "prize": "WolframOne + Scholarship Check", "icon": "🐺" }
+      ],
+      "footnote": "Plus $1000+ in platform credits & subscriptions for all participants!"
+    },
+    "keynote": {
+      "icon": "🎤",
+      "heading": "Keynote Speakers",
+      "status": "To be announced soon"
+    }
+  },
+  "sponsors": {
+    "heading": "Backed by Global Innovators",
+    "tiers": [
+      {
+        "tier": 1,
+        "sponsors": [
+          { "name": "Glid", "image": "/Sponsors for Tech TO Treasure Hackathon/image8.webp", "link": "https://www.glidtech.us/" },
+          { "name": "Wolfram", "image": "/Sponsors for Tech TO Treasure Hackathon/image12.webp", "link": "https://www.wolfram.com/" }
+        ]
+      },
+      {
+        "tier": 2,
+        "sponsors": [
+          { "name": "YRI Fellowship", "image": "/Sponsors for Tech TO Treasure Hackathon/image13.webp", "link": "https://www.yriscience.com" },
+          { "name": "Momen", "image": "/Sponsors for Tech TO Treasure Hackathon/image5.webp", "link": "https://momen.app/" },
+          { "name": "CodeCrafters", "image": "/Sponsors for Tech TO Treasure Hackathon/image10.webp", "link": "https://codecrafters.io/" },
+          { "name": "Featherless AI", "image": "/Sponsors for Tech TO Treasure Hackathon/image9.webp", "link": "https://featherless.ai/" },
+          { "name": "Mobbin", "image": "/Sponsors for Tech TO Treasure Hackathon/image4.webp", "link": "https://mobbin.com" }
+        ]
+      },
+      {
+        "tier": 3,
+        "sponsors": [
+          { "name": "CleanShot X", "image": "/Sponsors for Tech TO Treasure Hackathon/image20.webp", "link": "https://cleanshot.com/" },
+          { "name": "Relay.app", "image": "/Sponsors for Tech TO Treasure Hackathon/image19.webp", "link": "https://relay.app" },
+          { "name": "NordPass", "image": "/Sponsors for Tech TO Treasure Hackathon/image3.webp", "link": "https://nordpass.com/" },
+          { "name": "NordVPN", "image": "/Sponsors for Tech TO Treasure Hackathon/image6.webp", "link": "https://nordvpn.com/" },
+          { "name": "NordProtect", "image": "/Sponsors for Tech TO Treasure Hackathon/image14.webp", "link": "https://nordprotect.com" },
+          { "name": "Saily", "image": "/Sponsors for Tech TO Treasure Hackathon/image2.webp", "link": "https://saily.com" }
+        ]
+      },
+      {
+        "tier": 4,
+        "sponsors": [
+          { "name": "Incogni", "image": "/Sponsors for Tech TO Treasure Hackathon/image11.webp", "link": "https://incogni.com/" },
+          { "name": ".xyz", "image": "/Sponsors for Tech TO Treasure Hackathon/image16.webp", "link": "https://gen.xyz" },
+          { "name": "Nexos.ai", "image": "/Sponsors for Tech TO Treasure Hackathon/image1.webp", "link": "https://nexos.ai" }
+        ]
+      }
+    ]
+  }
+}

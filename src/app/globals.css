@@ -1,26 +1,170 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   Design tokens — Bin to Better
+   Single source of truth for the color palette.
+
+   Defined in Tailwind v4's `@theme`, so every token is available
+   two ways:
+     1. As a utility class      -> bg-brand, text-surface-900, border-brand/30
+     2. As a raw CSS variable   -> var(--color-brand)  (for inline styles,
+                                    Framer Motion props, gradients, etc.)
+
+   Opacity modifiers work on all of them: bg-surface-900/80, text-brand/60.
+   Do NOT hardcode hex values in components — add/adjust them here instead.
+   ============================================================ */
+
+@theme {
+  /* ---- Reduced palette: one dominant + one accent + one neutral ---- */
+
+  /* DOMINANT — the signature lime green + two functional tints (hover/darker) */
+  --color-brand: #8bc34a; /* primary brand green (accents, links, CTAs) */
+  --color-brand-light: #9ccc65; /* hover / raised state */
+  --color-brand-dark: #7cb342; /* pressed / darker shade */
+
+  /* NEUTRAL — dark surface scale (darkest -> lightest). Elevation + text/border
+     grays (white + opacity) come from here, not from decorative color. */
+  --color-surface-950: #0d1a14; /* page / darkest panels */
+  --color-surface-900: #1a2e23;
+  --color-surface-800: #243d32;
+  --color-surface-700: #2d4a3e;
+  --color-surface-600: #3d5a4e; /* navbar, raised surfaces */
+
+  /* ACCENT — the single sanctioned non-green accent. Maps to a real meaning
+     (award / 1st place), softened off pure neon #ffd700. Nothing else. */
+  --color-gold: #e6b93d;
+
+  /* EXTERNAL BRAND — Discord's own indigo. Use ONLY on the Discord CTA button;
+     it is not part of the site palette and must not leak into other UI. */
+  --color-discord: #5865f2;
+  --color-discord-dark: #4752c4;
+
+  /* Fonts (loaded via next/font in layout.tsx) */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Typography scale — fluid, clamp()-based for the redesign.
+     Use with text-display, text-h1 … or the raw --text-* vars. */
+  --text-display: clamp(2.75rem, 6vw, 5rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.03em;
+  --text-h1: clamp(2.25rem, 4.5vw, 3.5rem);
+  --text-h1--line-height: 1.08;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: clamp(1.75rem, 3vw, 2.5rem);
+  --text-h2--line-height: 1.15;
+  --text-h2--letter-spacing: -0.01em;
+  --text-lead: clamp(1.125rem, 1.6vw, 1.375rem);
+  --text-lead--line-height: 1.6;
+
+  /* Radius rhythm */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  /* Motion tokens */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* Base page — the site commits to a single dark theme. */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--color-surface-950);
+  --color-foreground: #ffffff;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-surface-950);
+  color: #ffffff;
+  font-family: var(--font-sans);
+}
+
+/* Anchor-nav (e.g. /#programs) should glide, not jump. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Visible keyboard focus everywhere — accessibility baseline. */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-brand) 30%, transparent);
+  color: #ffffff;
+}
+
+/* Rendered Markdown (blog posts). */
+.prose-b2b {
+  color: rgb(255 255 255 / 0.75);
+  line-height: 1.75;
+}
+.prose-b2b > * + * {
+  margin-top: 1.25rem;
+}
+.prose-b2b h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+.prose-b2b h3 {
+  margin-top: 2rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #fff;
+}
+.prose-b2b a {
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-b2b a:hover {
+  color: var(--color-brand-light);
+}
+.prose-b2b strong {
+  color: #fff;
+  font-weight: 600;
+}
+.prose-b2b ul,
+.prose-b2b ol {
+  margin-left: 1.5rem;
+  list-style: disc;
+}
+.prose-b2b ol {
+  list-style: decimal;
+}
+.prose-b2b li + li {
+  margin-top: 0.5rem;
+}
+.prose-b2b blockquote {
+  border-left: 3px solid var(--color-brand);
+  padding-left: 1rem;
+  color: rgb(255 255 255 / 0.6);
+  font-style: italic;
+}
+.prose-b2b code {
+  border-radius: 0.375rem;
+  background: rgb(255 255 255 / 0.08);
+  padding: 0.15em 0.4em;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Respect users who prefer reduced motion — neutralize the heavy
+   Framer Motion / CSS animations site-wide. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

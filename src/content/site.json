@@ -1,0 +1,45 @@
+{
+  "name": "Bin to Better",
+  "logo": {
+    "wordmark": "BIN TO BETTER",
+    "styledParts": ["bin", "to", "better"]
+  },
+  "tagline": "Turning waste into opportunity.",
+  "taglineLong": "Turning waste into opportunity. One item at a time, one community at a time.",
+  "metadata": {
+    "title": "Bin to Better | Turning Waste into Opportunity",
+    "description": "At Bin to Better, we believe that waste isn't just trash, it's opportunity. Join us in creating a more sustainable, circular future."
+  },
+  "copyright": "© 2026 Bin to Better. All rights reserved. Turning waste into opportunity.",
+  "contact": {
+    "primaryEmail": "outreach@bintobetter.org",
+    "partnersEmail": "bintobetter@gmail.com",
+    "discord": "https://tinyurl.com/b2bdisc",
+    "donate": "https://charity.pledgeit.org/bintobetter"
+  },
+  "social": {
+    "instagram": {
+      "handle": "@bintobetter",
+      "url": "https://www.instagram.com/bintobetter/"
+    },
+    "linkedin": {
+      "url": "https://www.linkedin.com/company/bin-to-better/posts/?feedView=all"
+    }
+  },
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Programs", "href": "/#programs" },
+    { "label": "Partners", "href": "/partners" },
+    { "label": "Bounce Back", "href": "/bounce-back" },
+    { "label": "Tech to Treasure", "href": "/tech-to-treasure" },
+    { "label": "Workshop", "href": "/workshop" },
+    { "label": "Eco-filament", "href": "/eco-filament" },
+    { "label": "Officers & Team", "href": "/officers-and-team" },
+    { "label": "Events", "href": "/events" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "Contact", "href": "/contact" },
+    { "label": "Donate", "href": "/donate" }
+  ],
+  "footerSocialLinks": ["Instagram", "LinkedIn"]
+}

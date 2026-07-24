@@ -1,0 +1,20 @@
+{
+  "eyebrow": "Our Impact",
+  "heading": "Measurable Change",
+  "intro": "Every item we divert is a small win for people and the planet. Here's what the Bin to Better community has achieved so far.",
+  "counters": [
+    { "value": 50000, "suffix": "+", "label": "Items Recycled" },
+    { "value": 100000, "suffix": "+", "label": "Tennis Balls Collected" },
+    { "value": 200, "suffix": "+", "label": "Partners" },
+    { "value": 15, "suffix": "", "label": "Communities Served" }
+  ],
+  "chart": {
+    "title": "Tennis Balls: Collected vs. Rehomed",
+    "caption": "Balls kept out of landfill through the Bounce Back program.",
+    "unit": "balls",
+    "series": [
+      { "label": "Collected", "value": 100000 },
+      { "label": "Rehomed to date", "value": 30000 }
+    ]
+  }
+}
