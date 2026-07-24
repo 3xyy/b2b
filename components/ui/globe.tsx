@@ -78,34 +78,37 @@ export function Globe({
   useEffect(() => {
     if (!visible) return
 
+    const canvas = canvasRef.current
+    if (!canvas) return
+
     const onResize = () => {
-      if (canvasRef.current) {
-        widthRef.current = canvasRef.current.offsetWidth
-      }
+      widthRef.current = canvas.offsetWidth
     }
 
     window.addEventListener("resize", onResize)
     onResize()
 
-    const globe = createGlobe(canvasRef.current!, {
+    const globe = createGlobe(canvas, {
       ...config,
       width: widthRef.current * 2,
       height: widthRef.current * 2,
       onRender: (state) => {
-        if (!pointerInteracting.current) phiRef.current += 0.005
+        // `=== null` rather than falsy: a pointer at clientX 0 is a real drag.
+        if (pointerInteracting.current === null) phiRef.current += 0.005
         state.phi = phiRef.current + rs.get()
         state.width = widthRef.current * 2
         state.height = widthRef.current * 2
       },
     })
 
-    setTimeout(() => {
-      if (canvasRef.current) canvasRef.current.style.opacity = "1"
+    const fadeIn = setTimeout(() => {
+      canvas.style.opacity = "1"
     }, 0)
     return () => {
+      clearTimeout(fadeIn)
       globe.destroy()
       window.removeEventListener("resize", onResize)
-      if (canvasRef.current) canvasRef.current.style.opacity = "0"
+      canvas.style.opacity = "0"
     }
   }, [rs, config, visible])
 
@@ -118,9 +121,8 @@ export function Globe({
       )}
     >
       <canvas
-        className={cn(
-          "size-full opacity-0 transition-opacity duration-500 contain-[layout_paint_size]"
-        )}
+        className="size-full opacity-0 transition-opacity duration-500"
+        style={{ contain: "layout paint size" }}
         ref={canvasRef}
         onPointerDown={(e) => {
           pointerInteracting.current = e.clientX

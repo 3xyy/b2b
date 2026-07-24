@@ -278,8 +278,10 @@ export default function TechToTreasurePage() {
           />
           <ul className="mt-2 space-y-6 max-w-3xl">
             {whatWeDo.map((item, i) => (
-              <Reveal key={item.title} delay={i * 100}>
-                <li>
+              // Reveal renders a <div>, so it has to live inside the <li> —
+              // a <div> between <ul> and <li> breaks list semantics.
+              <li key={item.title}>
+                <Reveal delay={i * 100}>
                   <Card tone="dark" className="flex items-start gap-4">
                     {/* Checkmark inline SVG instead of emoji */}
                     <svg
@@ -301,8 +303,8 @@ export default function TechToTreasurePage() {
                       {item.desc}
                     </p>
                   </Card>
-                </li>
-              </Reveal>
+                </Reveal>
+              </li>
             ))}
           </ul>
         </Reveal>

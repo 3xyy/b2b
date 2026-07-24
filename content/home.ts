@@ -1,5 +1,5 @@
 export const stats: { value: string; label: string }[] = [
-  { value: "50,000+", label: "Items" },
+  { value: "100,000+", label: "Items Recycled" },
   { value: "200+", label: "Partners" },
   { value: "15", label: "Communities Impacted" },
 ];

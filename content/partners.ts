@@ -1,25 +1,26 @@
-export const partnerLogos: string[] = [
-  "/partners-logos/page-21-xref-82.png",
-  "/partners-logos/page-21-xref-84.png",
-  "/partners-logos/page-22-xref-87.png",
-  "/partners-logos/page-22-xref-88.png",
-  "/partners-logos/page-23-xref-91.png",
-  "/partners-logos/page-23-xref-92.png",
-  "/partners-logos/page-23-xref-94.png",
-  "/partners-logos/page-24-xref-97.png",
-  "/partners-logos/page-24-xref-99.png",
-  "/partners-logos/page-25-xref-102.png",
-  "/partners-logos/page-26-xref-105.png",
-  "/partners-logos/page-26-xref-106.png",
-  "/partners-logos/sun-dragon-computers.png",
-  "/partners-logos/ewaste-direct.webp",
-];
-
-export const bounceBackLogos: string[] = [
-  "/bounce-back-logos/page-28-xref-114.png",
-  "/bounce-back-logos/page-29-xref-117.png",
-  "/bounce-back-logos/page-30-xref-120.png",
-  "/bounce-back-logos/page-31-xref-123.png",
+/**
+ * Logos in the partner wall. `name` becomes the image alt text; the extracted
+ * logos below have no confirmed organisation name yet, so they stay decorative
+ * (empty alt) rather than repeating "Partner logo" fourteen times to a screen
+ * reader. Fill in a `name` as each one is identified.
+ *
+ * Sun Dragon Computers and eWasteDirect are intentionally absent — they get a
+ * full write-up in `corporatePartners` further down this file, and listing them
+ * here rendered each logo twice on the same page.
+ */
+export const partnerLogos: { src: string; name?: string }[] = [
+  { src: "/partners-logos/page-21-xref-82.png" },
+  { src: "/partners-logos/page-21-xref-84.png" },
+  { src: "/partners-logos/page-22-xref-87.png" },
+  { src: "/partners-logos/page-22-xref-88.png" },
+  { src: "/partners-logos/page-23-xref-91.png" },
+  { src: "/partners-logos/page-23-xref-92.png" },
+  { src: "/partners-logos/page-23-xref-94.png" },
+  { src: "/partners-logos/page-24-xref-97.png" },
+  { src: "/partners-logos/page-24-xref-99.png" },
+  { src: "/partners-logos/page-25-xref-102.png" },
+  { src: "/partners-logos/page-26-xref-105.png" },
+  { src: "/partners-logos/page-26-xref-106.png" },
 ];
 
 export const whyPartner: string[] = [

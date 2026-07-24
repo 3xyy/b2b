@@ -23,7 +23,7 @@ export default function MailingList() {
               Stay in the Loop
             </p>
           </div>
-          <h1 className="font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight text-paper text-wrap-balance">
+          <h1 className="font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight text-paper text-balance">
             Mailing List
           </h1>
           <p className="mt-5 max-w-2xl text-base sm:text-lg text-paper/70 leading-relaxed">

@@ -124,7 +124,7 @@ export default function Events() {
               Get Involved
             </p>
           </div>
-          <h1 className="font-display text-[clamp(2.75rem,7vw,5rem)] font-bold leading-[0.95] tracking-tight text-paper text-wrap-balance">
+          <h1 className="font-display text-[clamp(2.75rem,7vw,5rem)] font-bold leading-[0.95] tracking-tight text-paper text-balance">
             Events
           </h1>
           <p className="mt-5 text-lg text-paper/70 max-w-2xl">
@@ -146,7 +146,7 @@ export default function Events() {
               <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court mb-6">
                 {hackathon.datePill}
               </p>
-              <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-tight text-paper text-wrap-balance">
+              <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-tight text-paper text-balance">
                 Tech to Treasure{" "}
                 <span className="text-court">Hackathon</span>
               </h2>
@@ -276,8 +276,10 @@ export default function Events() {
 
               <p className="mt-6 text-sm text-paper/50">
                 Plus{" "}
-                <span className="font-bold text-court">$1,000+</span>{" "}
-                in platform credits &amp; subscriptions for all participants!
+                <span className="font-bold text-court">
+                  {hackathon.prizes.allNoteAmount}
+                </span>{" "}
+                {hackathon.prizes.allNoteSuffix}
               </p>
 
               {/* Keynote — no emoji, minimal SVG icon */}

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { DrawLine } from "@/components/motion/DrawLine";
+import { site } from "@/content/site";
 import {
   partnerLogos,
   whyPartner,
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     "Meet the organizations and sponsors who help Bin to Better create lasting environmental impact.",
 };
 
-const CONTACT_EMAIL = "outreach@bintobetter.org";
+const CONTACT_EMAIL = site.email;
 
 export default function Partners() {
   return (
@@ -53,14 +54,14 @@ export default function Partners() {
         </Reveal>
         <Reveal delay={80}>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {partnerLogos.map((src) => (
+            {partnerLogos.map((logo) => (
               <div
-                key={src}
+                key={logo.src}
                 className="flex items-center justify-center border border-ink/10 bg-paper p-5 rounded-[3px]"
               >
                 <Image
-                  src={src}
-                  alt="Partner logo"
+                  src={logo.src}
+                  alt={logo.name ?? ""}
                   width={200}
                   height={100}
                   className="max-h-24 w-auto object-contain"
@@ -221,15 +222,15 @@ export default function Partners() {
             <p className="mt-4 text-base leading-relaxed text-paper/70">
               Contact us at{" "}
               <a
-                href="mailto:bintobetter@gmail.com"
+                href={`mailto:${site.email}`}
                 className="text-paper underline underline-offset-4 hover:text-court transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
               >
-                bintobetter@gmail.com
+                {site.email}
               </a>{" "}
               to learn how your organization can join the movement.
             </p>
             <div className="mt-8">
-              <Button href="mailto:bintobetter@gmail.com" variant="light">
+              <Button href={`mailto:${site.email}`} variant="light">
                 Get in Touch
               </Button>
             </div>

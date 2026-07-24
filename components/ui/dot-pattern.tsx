@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useId, useRef, useState } from "react";
+import React, { useEffect, useId, useMemo, useRef, useState } from "react";
 import { motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 /**
  * DotPattern — Magic UI (https://magicui.design), recolored to the brand
@@ -38,12 +39,9 @@ export function DotPattern({
   const id = useId();
   const containerRef = useRef<SVGSVGElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [reduced, setReduced] = useState(false);
+  const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
-    setReduced(
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    );
     const updateDimensions = () => {
       if (containerRef.current) {
         const { width, height } = containerRef.current.getBoundingClientRect();
@@ -57,23 +55,27 @@ export function DotPattern({
 
   const animate = glow && !reduced;
 
-  const dots = Array.from(
-    {
-      length:
-        Math.ceil(dimensions.width / width) *
-        Math.ceil(dimensions.height / height),
-    },
-    (_, i) => {
-      const col = i % Math.ceil(dimensions.width / width);
-      const row = Math.floor(i / Math.ceil(dimensions.width / width));
+  // Deterministic per-dot jitter. Math.random() ran during render, so every
+  // re-render handed each circle new timings and restarted its animation.
+  const jitter = (n: number) => {
+    const v = Math.sin(n * 12.9898) * 43758.5453;
+    return v - Math.floor(v);
+  };
+
+  const dots = useMemo(() => {
+    const cols = Math.ceil(dimensions.width / width);
+    const rows = Math.ceil(dimensions.height / height);
+    return Array.from({ length: cols * rows }, (_, i) => {
+      const col = i % cols;
+      const row = Math.floor(i / cols);
       return {
         x: col * width + cx + x,
         y: row * height + cy + y,
-        delay: Math.random() * 5,
-        duration: Math.random() * 3 + 2,
+        delay: jitter(i + 1) * 5,
+        duration: jitter(i + 101) * 3 + 2,
       };
-    }
-  );
+    });
+  }, [dimensions.width, dimensions.height, width, height, cx, cy, x, y]);
 
   return (
     <svg

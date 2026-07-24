@@ -22,9 +22,9 @@ export const about = {
       photo: "/members/Lalit Batchu.webp",
     },
     {
-      name: "Rohan Bablupatti",
+      name: "Rohan Sashank Babbellapati",
       role: "Co-Founder",
-      photo: "/members/Rohan Bablupatti.png",
+      photo: "/members/Rohan Sashank Babbellapati.png",
     },
   ],
   approachHeading: "Our Approach",

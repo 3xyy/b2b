@@ -27,7 +27,10 @@ export const hackathon = {
       { place: "5th Place", award: "$50+ credits" },
     ],
     wolfram: { title: "Wolfram Award", desc: "WolframOne + Scholarship Check" },
-    allNote: "Plus $1000+ in platform credits & subscriptions for all participants!",
+    // Rendered on the events page — the emphasised amount is split out so the
+    // page cannot drift from this figure.
+    allNoteAmount: "$1,000+",
+    allNoteSuffix: "in platform credits & subscriptions for all participants!",
   },
 };
 

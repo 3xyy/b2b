@@ -39,7 +39,7 @@ export default function OfficersAndTeam() {
               Officers &amp; Team
             </p>
           </div>
-          <h1 className="font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight text-paper text-wrap-balance">
+          <h1 className="font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight text-paper text-balance">
             Officers &amp; Team
           </h1>
           <p className="mt-5 max-w-2xl text-base sm:text-lg text-paper/70 leading-relaxed">
@@ -72,7 +72,7 @@ export default function OfficersAndTeam() {
                   </p>
                 </div>
                 <h2
-                  className={`font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-tight tracking-tight text-wrap-balance ${isDark ? "text-paper" : "text-ink"}`}
+                  className={`font-display text-[clamp(1.75rem,3.5vw,2.75rem)] font-bold leading-tight tracking-tight text-balance ${isDark ? "text-paper" : "text-ink"}`}
                 >
                   {group.category}
                 </h2>
@@ -121,7 +121,7 @@ export default function OfficersAndTeam() {
 
                       {/* Name */}
                       <h3
-                        className={`font-display text-lg font-bold leading-snug tracking-tight text-wrap-balance ${isDark ? "text-paper" : "text-ink"}`}
+                        className={`font-display text-lg font-bold leading-snug tracking-tight text-balance ${isDark ? "text-paper" : "text-ink"}`}
                       >
                         {m.name}
                       </h3>
