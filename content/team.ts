@@ -215,8 +215,8 @@ export const teamGroups: TeamGroup[] = [
       {
         name: "Aarnav Sharma",
         role: "Website Developer",
-        school: "",
-        fact: "",
+        school: "Archbishop Mitty High School Grade 9",
+        fact: "I developed this website",
         photo: "",
       },
     ],
