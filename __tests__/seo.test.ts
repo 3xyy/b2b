@@ -5,17 +5,16 @@ import sitemap from "@/app/sitemap";
 import robots from "@/app/robots";
 import { site, isProductionSite, PRODUCTION_URL } from "@/content/site";
 
-// Every directory under app/ that renders a page, minus route handlers and the
-// /workshop redirect. Derived from the filesystem so a new page that never gets
-// added to the sitemap fails this test instead of silently going unindexed.
+// Every directory under app/ that renders a page. Derived from the filesystem so
+// a new page that never gets added to the sitemap fails this test instead of
+// silently going unindexed.
 function pageRoutes(): string[] {
   const appDir = path.join(process.cwd(), "app");
   const routes = ["/"];
   for (const entry of fs.readdirSync(appDir, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
     if (!fs.existsSync(path.join(appDir, entry.name, "page.tsx"))) continue;
-    if (entry.name === "workshop") continue; // redirect, intentionally excluded
-    routes.push(`/${entry.name}`);
+    routes.push(`/${entry.name}/`);
   }
   return routes;
 }
@@ -29,9 +28,25 @@ describe("seo", () => {
     expect([...paths].sort()).toEqual([...pageRoutes()].sort());
   });
 
-  it("sitemap excludes the /workshop redirect", () => {
+  it("sitemap excludes the /workshop redirect, which is a static file", () => {
     const paths = sitemap().map((e) => new URL(e.url).pathname);
-    expect(paths).not.toContain("/workshop");
+    expect(paths).not.toContain("/workshop/");
+
+    // GitHub Pages cannot serve a 301, so /workshop is a meta-refresh page in
+    // public/ rather than an app route calling redirect() — which a static
+    // export turns into an error page.
+    const redirectFile = path.join(process.cwd(), "public", "workshop", "index.html");
+    expect(fs.existsSync(redirectFile)).toBe(true);
+    const html = fs.readFileSync(redirectFile, "utf8");
+    expect(html).toContain('http-equiv="refresh"');
+    expect(html).toContain("/tech-to-treasure/");
+    expect(fs.existsSync(path.join(process.cwd(), "app", "workshop"))).toBe(false);
+  });
+
+  it("every sitemap URL ends in a slash, matching the exported pages", () => {
+    for (const entry of sitemap()) {
+      expect(entry.url.endsWith("/")).toBe(true);
+    }
   });
 
   it("sitemap URLs are absolute and share the configured site origin", () => {
