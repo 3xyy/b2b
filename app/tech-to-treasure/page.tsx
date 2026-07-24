@@ -48,32 +48,187 @@ const workshopPhotos = [
   { src: "/workshops/hands-on.webp", alt: "Students and instructors examining device parts together" },
 ];
 
-// Past in-person workshops we've hosted. Details come straight from each
-// session's sign-up form.
+// In-person workshops we've hosted. The March 1 session details are our
+// original format; the April 19 and June 28 details come from each session's
+// sign-up form, with the stations built from the topics each form describes.
 const workshops = [
   {
-    date: "April 19, 2026",
-    title: "Circuit Boards & Components",
+    date: "March 1, 2026",
+    location: "Patterson Ranch benches outside the red barn · 5298 Rancho Del Norte Dr, Fremont, CA 94555",
     details: [
-      { label: "Time", value: "3:30 – 5:30 PM" },
-      { label: "Age Group", value: "Grades 3–8" },
-      { label: "Format", value: "In person" },
+      { label: "When", value: "March 1 · 3:30 PM – 5:30 PM" },
+      { label: "Age Group", value: "8–12 years" },
+      { label: "Duration", value: "2–3 hours" },
+      { label: "Group Size", value: "7–8 kids per group" },
     ],
-    address: "5298 Rancho Del Norte Dr, Fremont, CA 94555",
-    description:
-      "Students disassembled and reassembled circuit boards while exploring motors, Wi-Fi routers, and modems through interactive demonstrations. Every material was repurposed e-waste, responsibly recycled afterward.",
+    stations: [
+      {
+        name: "Station 1: Desktop Computer",
+        components: [
+          "RAM sticks (remove & insert)",
+          "Hard drive / SSD",
+          "Cooling fan & cables",
+          "Expansion cards & motherboard",
+        ],
+        promptLabel: "Guided prompts",
+        prompts: [
+          "Find the brain (CPU)",
+          "Find memory vs. storage",
+          "Trace a cable from power supply to part",
+          "Spin fan — why cooling matters",
+        ],
+      },
+      {
+        name: "Station 2: 3D Printer",
+        components: [
+          "Stepper motors",
+          "Belts and pulleys",
+          "Metal rods & circuit board",
+          "Connection & control cables",
+        ],
+        promptLabel: "Activities",
+        prompts: [
+          "Move print head by hand",
+          "Follow wires from motors to circuit board",
+          "Identify each motor's purpose",
+        ],
+      },
+      {
+        name: "Station 3: Monitor",
+        components: [
+          "Back casing & control buttons",
+          "Circuit boards (main & button)",
+          "Ribbon cables & ports",
+          "Screen layers (light touch only)",
+        ],
+        promptLabel: "Challenges",
+        prompts: [
+          "Display parts vs. control parts",
+          "Ribbon cables vs. power wires",
+          "Which sends signals? Which sends power?",
+        ],
+      },
+    ],
+  },
+  {
+    date: "April 19, 2026",
+    location: "5298 Rancho Del Norte Dr, Fremont, CA 94555",
+    details: [
+      { label: "When", value: "April 19 · 3:30 PM – 5:30 PM" },
+      { label: "Age Group", value: "Grades 3–8" },
+      { label: "Duration", value: "2 hours" },
+      { label: "Group Size", value: "7–8 kids per group" },
+    ],
+    stations: [
+      {
+        name: "Station 1: Circuit Boards",
+        components: [
+          "Solder points & traces",
+          "Capacitors & resistors",
+          "Chips & processors",
+          "Connectors & headers",
+        ],
+        promptLabel: "Guided prompts",
+        prompts: [
+          "Find the biggest chip — the board's brain",
+          "Trace a path between two components",
+          "Spot where power enters the board",
+          "Reassemble the board you took apart",
+        ],
+      },
+      {
+        name: "Station 2: Motors in Motion",
+        components: [
+          "DC motors",
+          "Gears & shafts",
+          "Motor driver board",
+          "Power & control leads",
+        ],
+        promptLabel: "Activities",
+        prompts: [
+          "Spin a motor by hand",
+          "Reverse the leads to change direction",
+          "Follow wires from motor to driver",
+          "Identify what each motor moved",
+        ],
+      },
+      {
+        name: "Station 3: Wi-Fi Routers & Modems",
+        components: [
+          "Antennas",
+          "Main circuit board",
+          "Ethernet & phone ports",
+          "Status LEDs",
+        ],
+        promptLabel: "Challenges",
+        prompts: [
+          "Which ports carry internet in vs. out?",
+          "Find the antenna connections",
+          "Signal path vs. power path",
+          "What does each blinking light mean?",
+        ],
+      },
+    ],
   },
   {
     date: "June 28, 2026",
-    title: "Computer Hardware & Storage",
+    location: "5298 Rancho Del Norte Dr, Fremont, CA 94555",
     details: [
-      { label: "Time", value: "4:30 – 6:30 PM" },
+      { label: "When", value: "June 28 · 4:30 PM – 6:30 PM" },
       { label: "Age Group", value: "All ages welcome" },
-      { label: "Format", value: "In person" },
+      { label: "Duration", value: "2 hours" },
+      { label: "Group Size", value: "7–8 kids per group" },
     ],
-    address: "5298 Rancho Del Norte Dr, Fremont, CA 94555",
-    description:
-      "Students explored computer hardware and storage through hands-on activities, interactive demonstrations, and device disassembly — covering data storage and processing, the evolution of storage technology, sensors, embedded systems, and the internal components of devices like Chromebooks.",
+    stations: [
+      {
+        name: "Station 1: Storage & Memory",
+        components: [
+          "Hard drive (platters & head)",
+          "SSD & flash chips",
+          "RAM sticks",
+          "SD cards & USB drives",
+        ],
+        promptLabel: "Guided prompts",
+        prompts: [
+          "Memory vs. storage — what's the difference?",
+          "Open a hard drive and find the platter",
+          "How has storage shrunk over time?",
+          "Which is faster, an HDD or an SSD?",
+        ],
+      },
+      {
+        name: "Station 2: Inside a Chromebook",
+        components: [
+          "Motherboard & CPU",
+          "Battery & power board",
+          "Keyboard & trackpad ribbons",
+          "Display connector",
+        ],
+        promptLabel: "Activities",
+        prompts: [
+          "Find the brain (CPU)",
+          "Trace power from battery to board",
+          "Follow the ribbon cables",
+          "Reassemble the layers in order",
+        ],
+      },
+      {
+        name: "Station 3: Sensors & Embedded Systems",
+        components: [
+          "Microcontroller board",
+          "Temperature & light sensors",
+          "Buttons & LEDs",
+          "Connecting wires",
+        ],
+        promptLabel: "Challenges",
+        prompts: [
+          "Which part is the 'computer' on this board?",
+          "What does each sensor measure?",
+          "Sort the parts: input vs. output",
+          "Where would this chip be used in real life?",
+        ],
+      },
+    ],
   },
 ];
 
@@ -221,36 +376,61 @@ export default function TechToTreasurePage() {
           <p className="mb-8 max-w-2xl text-base text-paper/60">
             We&apos;ve hosted several in-person workshops for local students, each
             built entirely around repurposed e-waste that&apos;s responsibly
-            recycled afterward. Here are our most recent sessions.
+            recycled afterward. Here&apos;s what each session looked like.
           </p>
         </Reveal>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="space-y-8">
           {workshops.map((w, i) => (
-            <Reveal key={w.date} delay={120 + i * 80}>
-              <div className="flex h-full flex-col border border-paper/15 bg-field p-8">
-                <p className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
-                  {w.date} &bull; Fremont, CA
-                </p>
-                <h4 className="mb-5 font-display text-xl font-bold text-paper text-balance">
-                  {w.title}
-                </h4>
+            <Reveal key={w.date} delay={120 + i * 60}>
+              <div className="border border-paper/15 bg-field overflow-hidden">
+                <div className="p-8 md:p-12">
+                  <div className="mb-8">
+                    <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage mb-4">
+                      {w.date} &bull; Fremont, CA
+                    </p>
+                    <p className="text-paper/60 max-w-2xl text-base">
+                      {w.location}
+                    </p>
+                  </div>
 
-                <div className="mb-5 grid grid-cols-3 gap-3">
-                  {w.details.map((d) => (
-                    <div key={d.label} className="border border-paper/15 bg-canvas p-3">
-                      <div className="mb-1 font-mono text-[10px] uppercase tracking-[0.12em] text-paper/40">
-                        {d.label}
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                    {w.details.map((d) => (
+                      <div key={d.label} className="border border-paper/15 bg-canvas p-4">
+                        <div className="font-mono text-xs text-paper/40 uppercase tracking-[0.12em] mb-1">
+                          {d.label}
+                        </div>
+                        <div className="text-sm font-semibold text-paper">{d.value}</div>
                       </div>
-                      <div className="text-sm font-semibold text-paper">{d.value}</div>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
 
-                <p className="mb-4 text-sm leading-relaxed text-paper/70">
-                  {w.description}
-                </p>
-                <p className="mt-auto text-xs text-paper/50">{w.address}</p>
+                  <h4 className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage mb-4">
+                    Stations &amp; Activities
+                  </h4>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    {w.stations.map((station) => (
+                      <div key={station.name} className="border border-paper/15 bg-canvas p-5">
+                        <h5 className="font-semibold text-paper mb-3 text-sm">
+                          {station.name}
+                        </h5>
+                        <ul className="list-disc ml-4 text-sm text-paper/60 space-y-1 mb-3">
+                          {station.components.map((c) => (
+                            <li key={c}>{c}</li>
+                          ))}
+                        </ul>
+                        <div className="font-mono text-xs text-paper/40 font-medium uppercase tracking-[0.12em] mb-1">
+                          {station.promptLabel}
+                        </div>
+                        <ul className="list-disc ml-4 text-xs text-paper/50 space-y-1">
+                          {station.prompts.map((p) => (
+                            <li key={p}>{p}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </Reveal>
           ))}
