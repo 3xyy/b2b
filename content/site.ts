@@ -1,9 +1,12 @@
 export const site = {
   name: "Bin to Better",
   // Single source of truth for absolute URLs (metadataBase, sitemap, robots).
-  // Set NEXT_PUBLIC_SITE_URL in the deployment env to point at the live domain
-  // — e.g. https://bintobetter.org — without touching code.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://bin2b.vercel.app",
+  //
+  // Defaults to the production domain deliberately: if the env var is ever
+  // missing, canonical URLs and the sitemap still point at production instead
+  // of sending crawlers to a test deployment. The test site
+  // (bin2b.vercel.app) sets NEXT_PUBLIC_SITE_URL to its own origin.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://bintobetter.org",
   tagline:
     "Turning waste into opportunity. One item at a time, one community at a time.",
   email: "outreach@bintobetter.org",
