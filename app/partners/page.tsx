@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     "Meet the organizations and sponsors who help Bin to Better create lasting environmental impact.",
 };
 
+const CONTACT_EMAIL = "outreach@bintobetter.org";
+
 export default function Partners() {
   return (
     <>
@@ -125,14 +127,22 @@ export default function Partners() {
                   {partner.name}
                 </h3>
                 <p className="mt-4 text-sm leading-relaxed text-ink/60 italic">
-                  {partner.note.split("outreach@bintobetter.org")[0]}
-                  <a
-                    href="mailto:outreach@bintobetter.org"
-                    className="text-ink underline underline-offset-4 hover:text-canvas transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
-                  >
-                    outreach@bintobetter.org
-                  </a>
-                  {partner.note.split("outreach@bintobetter.org")[1]}
+                  {/* Linkify the contact email only when the note actually
+                      mentions it — otherwise render the note verbatim. */}
+                  {partner.note.includes(CONTACT_EMAIL) ? (
+                    <>
+                      {partner.note.split(CONTACT_EMAIL)[0]}
+                      <a
+                        href={`mailto:${CONTACT_EMAIL}`}
+                        className="text-ink underline underline-offset-4 hover:text-canvas transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+                      >
+                        {CONTACT_EMAIL}
+                      </a>
+                      {partner.note.split(CONTACT_EMAIL)[1]}
+                    </>
+                  ) : (
+                    partner.note
+                  )}
                 </p>
               </div>
             </div>

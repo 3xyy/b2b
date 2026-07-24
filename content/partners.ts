@@ -12,6 +12,7 @@ export const partnerLogos: string[] = [
   "/partners-logos/page-26-xref-105.png",
   "/partners-logos/page-26-xref-106.png",
   "/partners-logos/sun-dragon-computers.png",
+  "/partners-logos/ewaste-direct.webp",
 ];
 
 export const bounceBackLogos: string[] = [
@@ -32,6 +33,11 @@ export const corporatePartners: { name: string; logo: string; note: string }[] =
     name: "Sun Dragon Computers",
     logo: "/partners-logos/sun-dragon-computers.png",
     note: "Interested in becoming a corporate partner? Contact us at outreach@bintobetter.org to learn how your organization can support Bin to Better and be featured as a partner.",
+  },
+  {
+    name: "eWasteDirect.com",
+    logo: "/partners-logos/ewaste-direct.webp",
+    note: "eWaste Direct partners with us on Tech to Treasure, making sure every device that passes through our workshops is recycled responsibly through certified e-waste channels.",
   },
 ];
 
