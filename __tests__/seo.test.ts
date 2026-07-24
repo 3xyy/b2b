@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import sitemap from "@/app/sitemap";
 import robots from "@/app/robots";
-import { site } from "@/content/site";
+import { site, isProductionSite, PRODUCTION_URL } from "@/content/site";
 
 // Every directory under app/ that renders a page, minus route handlers and the
 // /workshop redirect. Derived from the filesystem so a new page that never gets
@@ -40,8 +40,20 @@ describe("seo", () => {
     }
   });
 
-  it("robots allows crawling and references the sitemap", () => {
+  it("defaults to the production origin so a missing env var cannot mispoint production", () => {
+    expect(site.url).toBe(PRODUCTION_URL);
+    expect(isProductionSite()).toBe(true);
+  });
+
+  it("robots allows crawling and references the sitemap on production", () => {
     const r = robots();
     expect(r.sitemap).toBe(`${site.url}/sitemap.xml`);
+    expect(r.rules).toMatchObject({ allow: "/" });
+  });
+
+  it("treats any non-production origin as a test deployment", () => {
+    expect(isProductionSite("https://bin2b.vercel.app")).toBe(false);
+    expect(isProductionSite("https://b2b-git-preview.vercel.app")).toBe(false);
+    expect(isProductionSite(PRODUCTION_URL)).toBe(true);
   });
 });
