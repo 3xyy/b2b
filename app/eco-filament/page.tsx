@@ -5,10 +5,19 @@ import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
 import { DiscordButton } from "@/components/ui/DiscordButton";
-import { PhotoSlot } from "@/components/ui/PhotoSlot";
+import Image from "next/image";
 
-// Google Photos album with park-cleanup photos (to embed once downloaded).
+// Google Photos album with the full set of park-cleanup photos.
 const CLEANUP_ALBUM = "https://photos.app.goo.gl/Gv7Gx5vsJinbyADB9";
+
+const cleanupPhotos = [
+  { src: "/cleanups/check-in.webp", alt: "Volunteers signing in at the cleanup check-in table" },
+  { src: "/cleanups/supplies.webp", alt: "A volunteer handing out trash bags from the supply bin" },
+  { src: "/cleanups/picking-litter.webp", alt: "A volunteer using a grabber to collect litter from the brush" },
+  { src: "/cleanups/bagging-litter.webp", alt: "Two volunteers bagging litter collected along the creek" },
+  { src: "/cleanups/trailside.webp", alt: "Volunteers clearing trash from bushes beside the trail" },
+  { src: "/cleanups/full-bag.webp", alt: "A volunteer carrying a full bag of collected litter down the path" },
+];
 
 export const metadata: Metadata = {
   title: "Eco-Filament | Bin to Better",
@@ -95,9 +104,19 @@ export default function EcoFilamentPage() {
             </a>
           </div>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-            {[0, 1, 2, 3, 4, 5].map((i) => (
-              <div key={i} className="aspect-[4/3] overflow-hidden border border-paper/15">
-                <PhotoSlot alt={`Park cleanup photo ${i + 1}`} className="h-full w-full" />
+            {cleanupPhotos.map((photo) => (
+              <div
+                key={photo.src}
+                className="aspect-[3/4] overflow-hidden border border-paper/15"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={900}
+                  height={1200}
+                  sizes="(min-width: 640px) 33vw, 50vw"
+                  className="h-full w-full object-cover"
+                />
               </div>
             ))}
           </div>

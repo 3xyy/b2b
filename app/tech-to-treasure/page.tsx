@@ -8,7 +8,6 @@ import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/motion/Reveal";
 import { DiscordButton } from "@/components/ui/DiscordButton";
 import { Button } from "@/components/ui/Button";
-import { PhotoSlot } from "@/components/ui/PhotoSlot";
 
 export const metadata: Metadata = {
   title: "Tech to Treasure | Bin to Better",
@@ -37,8 +36,17 @@ const bootcampStats = [
   { value: "10", label: "Challenges tackled" },
 ];
 
-// Google Photos album with workshop & impact photos (to embed once downloaded).
+// Google Photos album with the full set of workshop & impact photos.
 const WORKSHOP_ALBUM = "https://photos.app.goo.gl/792VDJk4aGh9V7M86";
+
+const workshopPhotos = [
+  { src: "/workshops/group-photo.webp", alt: "Workshop participants gathered in front of the red barn under the Tech to Treasure banner" },
+  { src: "/workshops/motors.webp", alt: "An instructor walking students through the Motors in Motion poster" },
+  { src: "/workshops/hands-up.webp", alt: "Students raising their hands to answer a question at the workshop table" },
+  { src: "/workshops/instructing.webp", alt: "An instructor showing a group of students how a component works" },
+  { src: "/workshops/stations.webp", alt: "Students seated at the station tables during the workshop" },
+  { src: "/workshops/hands-on.webp", alt: "Students and instructors examining device parts together" },
+];
 
 const eventDetails = [
   { label: "When", value: "March 1 · 3:30 PM – 5:30 PM" },
@@ -325,9 +333,19 @@ export default function TechToTreasurePage() {
               </a>
             </div>
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-              {[0, 1, 2, 3, 4, 5].map((i) => (
-                <div key={i} className="aspect-[4/3] overflow-hidden border border-paper/15">
-                  <PhotoSlot alt={`Tech to Treasure workshop photo ${i + 1}`} className="h-full w-full" />
+              {workshopPhotos.map((photo) => (
+                <div
+                  key={photo.src}
+                  className="aspect-[4/3] overflow-hidden border border-paper/15"
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    width={1200}
+                    height={900}
+                    sizes="(min-width: 640px) 33vw, 50vw"
+                    className="h-full w-full object-cover"
+                  />
                 </div>
               ))}
             </div>
