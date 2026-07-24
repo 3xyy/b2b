@@ -89,20 +89,34 @@ export default function OfficersAndTeam() {
                           : "border-ink/10 bg-paper"
                       }`}
                     >
-                      {/* Large circular photo */}
+                      {/* Large circular photo (initials fallback when no photo) */}
                       <div className="relative mb-5 h-44 w-44 overflow-hidden rounded-full self-center shrink-0">
-                        <Image
-                          src={m.photo}
-                          alt={m.name}
-                          width={176}
-                          height={176}
-                          className="h-full w-full object-cover"
-                          style={
-                            m.imagePosition
-                              ? { objectPosition: m.imagePosition }
-                              : { objectPosition: "center top" }
-                          }
-                        />
+                        {m.photo ? (
+                          <Image
+                            src={m.photo}
+                            alt={m.name}
+                            width={176}
+                            height={176}
+                            className="h-full w-full object-cover"
+                            style={
+                              m.imagePosition
+                                ? { objectPosition: m.imagePosition }
+                                : { objectPosition: "center top" }
+                            }
+                          />
+                        ) : (
+                          <div
+                            role="img"
+                            aria-label={m.name}
+                            className="flex h-full w-full items-center justify-center bg-field font-display text-4xl font-bold text-court"
+                          >
+                            {m.name
+                              .split(" ")
+                              .map((w) => w[0])
+                              .slice(0, 2)
+                              .join("")}
+                          </div>
+                        )}
                       </div>
 
                       {/* Name */}
@@ -112,8 +126,12 @@ export default function OfficersAndTeam() {
                         {m.name}
                       </h3>
 
-                      {/* Role — DM Mono uppercase court */}
-                      <p className="mt-1 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-court">
+                      {/* Role — DM Mono uppercase; court on dark bands, sage on
+                          light bands so the label stays legible (bright lime on
+                          near-white paper is too low-contrast to read). */}
+                      <p
+                        className={`mt-1 font-mono text-[11px] font-medium uppercase tracking-[0.12em] ${isDark ? "text-court" : "text-sage"}`}
+                      >
                         {m.role}
                       </p>
 

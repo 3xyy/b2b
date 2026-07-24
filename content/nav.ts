@@ -1,8 +1,7 @@
 export const programLinks: { label: string; href: string }[] = [
   { label: "Bounce Back", href: "/bounce-back" },
   { label: "Tech to Treasure", href: "/tech-to-treasure" },
-  { label: "Eco-filament", href: "/eco-filament" },
-  { label: "Workshop", href: "/workshop" },
+  { label: "Eco-Filament", href: "/eco-filament" },
 ];
 
 export const navLinks: { label: string; href: string }[] = [
@@ -10,4 +9,6 @@ export const navLinks: { label: string; href: string }[] = [
   { label: "Partners", href: "/partners" },
   { label: "Team", href: "/officers-and-team" },
   { label: "Events", href: "/events" },
+  { label: "Mailing List", href: "/mailing-list" },
+  { label: "Chapter", href: "/chapter" },
 ];

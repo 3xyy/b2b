@@ -8,9 +8,9 @@ describe("Nav", () => {
     expect(screen.getByAltText(/bin to better/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /donate/i })).toHaveAttribute("href", "/donate");
   });
-  it("lists all four programs", () => {
+  it("lists the three programs", () => {
     render(<Nav />);
-    for (const p of ["Bounce Back", "Tech to Treasure", "Eco-filament", "Workshop"]) {
+    for (const p of ["Bounce Back", "Tech to Treasure", "Eco-Filament"]) {
       expect(screen.getByRole("link", { name: p })).toBeInTheDocument();
     }
   });

@@ -1,13 +1,6 @@
 export const donate = {
   classesIntro:
     "All funds go directly to Bin to Better to fund our projects. Classes are offered at reasonable prices, and a free trial is available after signing up.",
-  basketball: {
-    title: "Basketball Classes",
-    description:
-      "Taught by 3 coaches, MSJ varsity starters with a combined 6+ years of experience. Whether you're just starting out or looking to sharpen your skills, our coaches will help you improve your game.",
-    note: "Sign up for a free trial. More details available in the registration form.",
-    href: "https://tinyurl.com/bballclasses",
-  },
   tennis: {
     title: "Tennis Classes",
     description:

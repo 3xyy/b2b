@@ -1,7 +1,7 @@
 export const stats: { value: string; label: string }[] = [
   { value: "50,000+", label: "Items" },
   { value: "200+", label: "Partners" },
-  { value: "15", label: "Communities" },
+  { value: "15", label: "Communities Impacted" },
 ];
 
 export const programsPreview: {
@@ -26,7 +26,7 @@ export const programsPreview: {
   },
   {
     slug: "eco-filament",
-    title: "Eco-filament",
+    title: "Eco-Filament",
     blurb: "Repurposing plastic waste into 3D printer filament for tools and toys.",
     href: "/eco-filament",
   },

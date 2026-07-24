@@ -261,7 +261,7 @@ export default function Home() {
         <Reveal>
           <SectionHeading
             eyebrow="Community Voice"
-            title="What People Say"
+            title="Testimonials"
             tone="light"
             align="left"
           />
@@ -315,21 +315,21 @@ export default function Home() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
               {/* Email */}
               <a
-                href="mailto:outreach@bintobetter.org"
+                href="mailto:bintobetter@gmail.com"
                 className="group flex flex-col gap-1.5 rounded-[3px] border border-paper/15 px-6 py-5 transition-[transform,border-color,box-shadow] duration-200 ease-[var(--ease-out-hover)] will-change-transform hover:-translate-y-[2px] hover:border-court hover:shadow-[var(--shadow-glow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
               >
                 <span className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
                   Email
                 </span>
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-paper transition-colors group-hover:text-court">
-                  outreach@bintobetter.org
+                  bintobetter@gmail.com
                   <ArrowRight className="size-4 opacity-0 transition-[opacity,transform] duration-200 ease-[var(--ease-out-hover)] group-hover:opacity-100 group-hover:translate-x-[3px]" />
                 </span>
               </a>
 
               {/* Instagram */}
               <a
-                href="https://instagram.com/bintobetter"
+                href="https://www.instagram.com/_bintobetter"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-col gap-1.5 rounded-[3px] border border-paper/15 px-6 py-5 transition-[transform,border-color,box-shadow] duration-200 ease-[var(--ease-out-hover)] will-change-transform hover:-translate-y-[2px] hover:border-court hover:shadow-[var(--shadow-glow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
@@ -338,7 +338,7 @@ export default function Home() {
                   Instagram
                 </span>
                 <span className="inline-flex items-center gap-2 text-sm font-medium text-paper transition-colors group-hover:text-court">
-                  @bintobetter
+                  @_bintobetter
                   <ArrowRight className="size-4 opacity-0 transition-[opacity,transform] duration-200 ease-[var(--ease-out-hover)] group-hover:opacity-100 group-hover:translate-x-[3px]" />
                 </span>
               </a>

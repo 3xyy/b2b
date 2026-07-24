@@ -14,27 +14,6 @@ export const metadata: Metadata = {
 };
 
 // Inline SVG icons — decorative, aria-hidden
-function BasketballIcon() {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="10" />
-      <path d="M4.93 4.93C7.24 7.24 8 10 8 12s-.76 4.76-3.07 7.07" />
-      <path d="M19.07 4.93C16.76 7.24 16 10 16 12s.76 4.76 3.07 7.07" />
-      <line x1="2" y1="12" x2="22" y2="12" />
-    </svg>
-  );
-}
-
 function TennisIcon() {
   return (
     <svg
@@ -98,35 +77,9 @@ export default function Donate() {
           tone="dark"
         />
 
-        <div className="mt-4 grid gap-8 md:grid-cols-2">
-          {/* Basketball */}
-          <Reveal delay={0}>
-            <Card tone="dark" className="flex flex-col">
-              <div className="mb-4 flex items-center gap-3">
-                <span className="text-court">
-                  <BasketballIcon />
-                </span>
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
-                  Basketball
-                </p>
-              </div>
-              <h3 className="font-display text-2xl font-bold text-paper">
-                {donate.basketball.title}
-              </h3>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-paper/70">
-                {donate.basketball.description}
-              </p>
-              <p className="mt-3 text-xs italic text-paper/50">
-                {donate.basketball.note}
-              </p>
-              <div className="mt-6">
-                <ExternalButton href={donate.basketball.href}>Register Now</ExternalButton>
-              </div>
-            </Card>
-          </Reveal>
-
+        <div className="mt-4 grid gap-8 md:max-w-xl">
           {/* Tennis */}
-          <Reveal delay={80}>
+          <Reveal delay={0}>
             <Card tone="dark" className="flex flex-col">
               <div className="mb-4 flex items-center gap-3">
                 <span className="text-court">

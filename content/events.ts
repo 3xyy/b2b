@@ -1,9 +1,9 @@
 export const hackathon = {
-  datePill: "March 28, 2026 • San Jose, CA",
+  datePill: "Date undecided • San Jose, CA",
   title: "Tech to Treasure Hackathon",
   tagline: "Turning ideas into impact. 8 Hours. Infinite Possibilities.",
   infoPills: [
-    { label: "March 28, 2026", sublabel: undefined as string | undefined },
+    { label: "Date undecided", sublabel: undefined as string | undefined },
     { label: "10:00 AM - 6:00 PM", sublabel: undefined as string | undefined },
     { label: "Tully Library", sublabel: "880 Tully Rd, San Jose, CA 95111" },
   ],
@@ -84,7 +84,7 @@ export const sponsorTiers: SponsorTier[] = [
 export const events: { title: string; date?: string; description: string }[] = [
   {
     title: "Tech to Treasure Hackathon",
-    date: "March 28, 2026",
+    date: "Undecided",
     description:
       "Tech to Treasure Hackathon is an environmental hackathon powered by Bin to Better, where builders turn ideas into impact in 8 hours. From AI agents to data-driven platforms, participants work together to tackle sustainability challenges using technology. Through hands-on mentorship, workshops led by industry engineers, and real startup-level tools, join us as we build what's next!",
   },

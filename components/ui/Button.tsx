@@ -29,12 +29,35 @@ export function Button({
   const base =
     "group/btn inline-flex items-center justify-center gap-2 rounded-[3px] px-5 py-2.5 text-sm font-medium transition-[transform,background-color,border-color,box-shadow,color,filter] duration-200 ease-[var(--ease-out-hover)] will-change-transform hover:-translate-y-[1px] active:translate-y-[1px] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2";
   const styles = variantStyles[variant];
-  return (
-    <Link href={href} className={`${base} ${styles} ${className}`}>
+  const inner = (
+    <>
       <span>{children}</span>
       {withArrow ? (
         <ArrowRight className="size-4 translate-x-0 transition-transform duration-200 ease-[var(--ease-out-hover)] group-hover/btn:translate-x-[3px]" />
       ) : null}
+    </>
+  );
+
+  // next/link is for in-app routes only. mailto:, tel:, and http(s) links must
+  // render a plain <a> or the browser never handles them (dead buttons).
+  const isExternal = /^(https?:|mailto:|tel:)/.test(href);
+  if (isExternal) {
+    const isHttp = href.startsWith("http");
+    return (
+      <a
+        href={href}
+        target={isHttp ? "_blank" : undefined}
+        rel={isHttp ? "noopener noreferrer" : undefined}
+        className={`${base} ${styles} ${className}`}
+      >
+        {inner}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={`${base} ${styles} ${className}`}>
+      {inner}
     </Link>
   );
 }
