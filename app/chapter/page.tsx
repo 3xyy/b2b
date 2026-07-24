@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
 
 export const metadata: Metadata = {
-  title: "Chapter | Bin to Better",
+  title: "Chapter Applications | Bin to Better",
   description:
     "Bring Bin to Better to your community — apply to become a Chapter Director and start a chapter in your area.",
 };
@@ -24,7 +24,7 @@ export default function Chapter() {
             </p>
           </div>
           <h1 className="font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight text-paper text-wrap-balance">
-            Chapter
+            Chapter Applications
           </h1>
           <p className="mt-5 max-w-2xl text-base sm:text-lg text-paper/70 leading-relaxed">
             Want to bring Bin to Better to your own community? Become a Chapter

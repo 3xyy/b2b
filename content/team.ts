@@ -130,6 +130,13 @@ export const teamGroups: TeamGroup[] = [
         fact: "I like sleeping",
         photo: "/members/Thomas Nguyen.png",
       },
+      {
+        name: "Shlok Patani",
+        role: "Bounce Back Officer",
+        school: "Mission San Jose High School Grade 10",
+        fact: "I enjoy playing basketball and giving back to the community, beyond Fremont",
+        photo: "/members/Shlok Patani.png",
+      },
     ],
   },
   {

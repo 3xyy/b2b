@@ -10,5 +10,5 @@ export const navLinks: { label: string; href: string }[] = [
   { label: "Team", href: "/officers-and-team" },
   { label: "Events", href: "/events" },
   { label: "Mailing List", href: "/mailing-list" },
-  { label: "Chapter", href: "/chapter" },
+  { label: "Chapter Applications", href: "/chapter" },
 ];
