@@ -43,13 +43,6 @@ export const teamGroups: TeamGroup[] = [
     category: "Outreach",
     members: [
       {
-        name: "Harmonie Lee",
-        role: "Outreach Director",
-        school: "American High School Grade 11",
-        fact: "I get Chick-fil-A every week",
-        photo: "/members/Harmony Lee.png",
-      },
-      {
         name: "Deepam Kapadia",
         role: "Outreach Director",
         school: "American High School Grade 11",
