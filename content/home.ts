@@ -76,6 +76,3 @@ export const projectsBlurb =
 
 export const contactPara =
   "We would love to hear from you! Whether you have questions, want to donate materials or are interested in volunteering, please get in touch.";
-
-export const contactFootnote =
-  "You can also fill out our contact form on the website for specific inquiries.";

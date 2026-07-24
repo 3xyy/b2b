@@ -1,11 +1,10 @@
 export const about = {
   missionHeading: "Mission & Vision",
   missionPara1:
-    "At Bin to Better, we believe that waste isn't just trash, it's an opportunity. Countless items with value end up in landfills each year simply because they no longer serve their original purpose. We are committed to changing that narrative by promoting reuse, responsible recycling, and the circular economy.",
+    "At Bin to Better, we believe that waste isn't just trash, it's an opportunity. Countless items with value end up in landfills each year simply because they no longer serve their original purpose. We are committed to changing that narrative by promoting reuse and responsible recycling.",
   missionPara2:
     "Our goal is to empower individuals and communities to rethink waste and realize that what seems like rubbish can become a resource for someone else. By connecting people with excess to those with needs, we bridge gaps and foster a culture of giving and sustainability.",
   badges: [
-    { label: "Circular Economy" },
     { label: "Sustainability" },
     { label: "Community" },
   ],

@@ -8,7 +8,6 @@ const IMAGES = [
   { src: "/bounce-back-logos/page-28-xref-114.png", alt: "Bounce Back Project photo 1" },
   { src: "/bounce-back-logos/page-29-xref-117.png", alt: "Bounce Back Project photo 2" },
   { src: "/bounce-back-logos/page-30-xref-120.png", alt: "Bounce Back Project photo 3" },
-  { src: "/bounce-back-logos/page-31-xref-123.png", alt: "Bounce Back Project photo 4" },
 ];
 
 export function Gallery() {

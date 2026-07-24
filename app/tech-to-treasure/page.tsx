@@ -48,59 +48,32 @@ const workshopPhotos = [
   { src: "/workshops/hands-on.webp", alt: "Students and instructors examining device parts together" },
 ];
 
-const eventDetails = [
-  { label: "When", value: "March 1 · 3:30 PM – 5:30 PM" },
-  { label: "Age Group", value: "8–12 years" },
-  { label: "Duration", value: "2–3 hours" },
-  { label: "Group Size", value: "7–8 kids per group" },
-];
-
-const stations = [
+// Past in-person workshops we've hosted. Details come straight from each
+// session's sign-up form.
+const workshops = [
   {
-    name: "Station 1: Desktop Computer",
-    components: [
-      "RAM sticks (remove & insert)",
-      "Hard drive / SSD",
-      "Cooling fan & cables",
-      "Expansion cards & motherboard",
+    date: "April 19, 2026",
+    title: "Circuit Boards & Components",
+    details: [
+      { label: "Time", value: "3:30 – 5:30 PM" },
+      { label: "Age Group", value: "Grades 3–8" },
+      { label: "Format", value: "In person" },
     ],
-    promptLabel: "Guided prompts",
-    prompts: [
-      "Find the brain (CPU)",
-      "Find memory vs. storage",
-      "Trace a cable from power supply to part",
-      "Spin fan — why cooling matters",
-    ],
+    address: "5298 Rancho Del Norte Dr, Fremont, CA 94555",
+    description:
+      "Students disassembled and reassembled circuit boards while exploring motors, Wi-Fi routers, and modems through interactive demonstrations. Every material was repurposed e-waste, responsibly recycled afterward.",
   },
   {
-    name: "Station 2: 3D Printer",
-    components: [
-      "Stepper motors",
-      "Belts and pulleys",
-      "Metal rods & circuit board",
-      "Connection & control cables",
+    date: "June 28, 2026",
+    title: "Computer Hardware & Storage",
+    details: [
+      { label: "Time", value: "4:30 – 6:30 PM" },
+      { label: "Age Group", value: "All ages welcome" },
+      { label: "Format", value: "In person" },
     ],
-    promptLabel: "Activities",
-    prompts: [
-      "Move print head by hand",
-      "Follow wires from motors to circuit board",
-      "Identify each motor's purpose",
-    ],
-  },
-  {
-    name: "Station 3: Monitor",
-    components: [
-      "Back casing & control buttons",
-      "Circuit boards (main & button)",
-      "Ribbon cables & ports",
-      "Screen layers (light touch only)",
-    ],
-    promptLabel: "Challenges",
-    prompts: [
-      "Display parts vs. control parts",
-      "Ribbon cables vs. power wires",
-      "Which sends signals? Which sends power?",
-    ],
+    address: "5298 Rancho Del Norte Dr, Fremont, CA 94555",
+    description:
+      "Students explored computer hardware and storage through hands-on activities, interactive demonstrations, and device disassembly — covering data storage and processing, the evolution of storage technology, sensors, embedded systems, and the internal components of devices like Chromebooks.",
   },
 ];
 
@@ -230,24 +203,6 @@ export default function TechToTreasurePage() {
           </div>
         </Reveal>
 
-        <Reveal delay={200}>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 max-w-3xl">
-            {[
-              { src: "/bootcamp/bootcamp-flyer.webp", alt: "Tech to Treasure Environmental Bootcamp — 6-week camp flyer" },
-              { src: "/bootcamp/bootcamp-results.webp", alt: "Environmental Bootcamp results — 50 students, 10 challenges tackled" },
-            ].map((img) => (
-              <div key={img.src} className="overflow-hidden border border-ink/10">
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  width={900}
-                  height={1160}
-                  className="h-auto w-full"
-                />
-              </div>
-            ))}
-          </div>
-        </Reveal>
       </Section>
 
       {/* Workshops — dark canvas band (merged from the former Workshop page) */}
@@ -256,64 +211,50 @@ export default function TechToTreasurePage() {
           <SectionHeading
             eyebrow="Workshops"
             title="Hands-On Tech Workshops"
-            subtitle="A hands-on stations workshop for kids to touch parts, see how things work, and hear instructors explain each component."
+            subtitle="Free, hands-on sessions where kids touch real parts, see how things work, and hear instructors explain each component."
             align="left"
             tone="dark"
           />
         </Reveal>
 
         <Reveal delay={100}>
-          <div className="border border-paper/15 bg-field overflow-hidden">
-            <div className="p-8 md:p-12">
-              <div className="mb-8">
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage mb-4">
-                  March 1, 2026 &bull; Fremont, CA
-                </p>
-                <p className="text-paper/60 max-w-2xl text-base">
-                  Patterson Ranch benches outside the red barn · 5298 Rancho Del
-                  Norte Dr, Fremont, CA 94555
-                </p>
-              </div>
-
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                {eventDetails.map((d) => (
-                  <div key={d.label} className="border border-paper/15 bg-canvas p-4">
-                    <div className="font-mono text-xs text-paper/40 uppercase tracking-[0.12em] mb-1">
-                      {d.label}
-                    </div>
-                    <div className="text-sm font-semibold text-paper">{d.value}</div>
-                  </div>
-                ))}
-              </div>
-
-              <h4 className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage mb-4">
-                Stations &amp; Activities
-              </h4>
-              <div className="grid md:grid-cols-3 gap-6">
-                {stations.map((station) => (
-                  <div key={station.name} className="border border-paper/15 bg-canvas p-5">
-                    <h5 className="font-semibold text-paper mb-3 text-sm">
-                      {station.name}
-                    </h5>
-                    <ul className="list-disc ml-4 text-sm text-paper/60 space-y-1 mb-3">
-                      {station.components.map((c) => (
-                        <li key={c}>{c}</li>
-                      ))}
-                    </ul>
-                    <div className="font-mono text-xs text-paper/40 font-medium uppercase tracking-[0.12em] mb-1">
-                      {station.promptLabel}
-                    </div>
-                    <ul className="list-disc ml-4 text-xs text-paper/50 space-y-1">
-                      {station.prompts.map((p) => (
-                        <li key={p}>{p}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <p className="mb-8 max-w-2xl text-base text-paper/60">
+            We&apos;ve hosted several in-person workshops for local students, each
+            built entirely around repurposed e-waste that&apos;s responsibly
+            recycled afterward. Here are our most recent sessions.
+          </p>
         </Reveal>
+
+        <div className="grid gap-6 lg:grid-cols-2">
+          {workshops.map((w, i) => (
+            <Reveal key={w.date} delay={120 + i * 80}>
+              <div className="flex h-full flex-col border border-paper/15 bg-field p-8">
+                <p className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
+                  {w.date} &bull; Fremont, CA
+                </p>
+                <h4 className="mb-5 font-display text-xl font-bold text-paper text-balance">
+                  {w.title}
+                </h4>
+
+                <div className="mb-5 grid grid-cols-3 gap-3">
+                  {w.details.map((d) => (
+                    <div key={d.label} className="border border-paper/15 bg-canvas p-3">
+                      <div className="mb-1 font-mono text-[10px] uppercase tracking-[0.12em] text-paper/40">
+                        {d.label}
+                      </div>
+                      <div className="text-sm font-semibold text-paper">{d.value}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="mb-4 text-sm leading-relaxed text-paper/70">
+                  {w.description}
+                </p>
+                <p className="mt-auto text-xs text-paper/50">{w.address}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
 
         {/* Workshop & impact photo gallery — drop images into the slots below.
             Source album: WORKSHOP_ALBUM (Google Photos). */}

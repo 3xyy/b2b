@@ -81,9 +81,9 @@ export default function OfficersAndTeam() {
               {/* Member grid */}
               <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
                 {group.members.map((m) => (
-                  <Reveal key={`${group.category}-${m.name}`} delay={80}>
+                  <Reveal key={`${group.category}-${m.name}`} delay={80} className="h-full">
                     <div
-                      className={`flex flex-col items-start border p-5 rounded-[3px] ${
+                      className={`flex h-full flex-col items-start border p-5 rounded-[3px] ${
                         isDark
                           ? "border-paper/15 bg-canvas/40"
                           : "border-ink/10 bg-paper"
@@ -136,27 +136,33 @@ export default function OfficersAndTeam() {
                       </p>
 
                       {/* School */}
-                      <p
-                        className={`mt-1 text-sm leading-snug ${isDark ? "text-paper/55" : "text-ink/55"}`}
-                      >
-                        {m.school}
-                      </p>
+                      {m.school && (
+                        <p
+                          className={`mt-1 text-sm leading-snug ${isDark ? "text-paper/55" : "text-ink/55"}`}
+                        >
+                          {m.school}
+                        </p>
+                      )}
 
-                      {/* Fun fact — no emoji; hairline divider + "FACT" mono label */}
-                      <div
-                        className={`mt-4 w-full border-t pt-4 ${isDark ? "border-paper/10" : "border-ink/8"}`}
-                      >
-                        <p
-                          className={`font-mono text-[10px] uppercase tracking-[0.12em] mb-1 ${isDark ? "text-court/70" : "text-sage"}`}
+                      {/* Fun fact — no emoji; hairline divider + "FACT" mono
+                          label. Pinned to the card bottom (mt-auto) so every
+                          card in a row lines up regardless of name/school length. */}
+                      {m.fact && (
+                        <div
+                          className={`mt-auto w-full border-t pt-4 ${isDark ? "border-paper/10" : "border-ink/8"}`}
                         >
-                          Fact
-                        </p>
-                        <p
-                          className={`text-sm italic leading-snug ${isDark ? "text-paper/60" : "text-ink/55"}`}
-                        >
-                          {m.fact}
-                        </p>
-                      </div>
+                          <p
+                            className={`font-mono text-[10px] uppercase tracking-[0.12em] mb-1 ${isDark ? "text-court/70" : "text-sage"}`}
+                          >
+                            Fact
+                          </p>
+                          <p
+                            className={`text-sm italic leading-snug ${isDark ? "text-paper/60" : "text-ink/55"}`}
+                          >
+                            {m.fact}
+                          </p>
+                        </div>
+                      )}
                     </div>
                   </Reveal>
                 ))}

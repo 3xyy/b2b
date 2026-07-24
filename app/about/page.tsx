@@ -7,8 +7,6 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
-import { RevealWords } from "@/components/motion/RevealWords";
-import { CursorSpotlight } from "@/components/motion/CursorSpotlight";
 import { Magnetic } from "@/components/motion/Magnetic";
 import { about } from "@/content/about";
 
@@ -22,33 +20,6 @@ export default function About() {
   return (
     <>
       <Nav />
-
-      {/* ── Hero ─────────────────────────────────────────────── */}
-      {/* Compact padding (not the default Section py) so the hero doesn't leave
-          a large empty band above the "Our Purpose" heading that follows. */}
-      <section className="relative overflow-hidden bg-canvas pt-16 pb-10 text-paper sm:pt-24 sm:pb-12">
-        <div className="mx-auto w-full max-w-6xl px-6">
-          <CursorSpotlight />
-          <div className="relative z-10 max-w-3xl">
-            <Reveal>
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
-                <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
-                  About Us
-                </p>
-              </div>
-            </Reveal>
-            <h1 className="font-display text-[clamp(2.75rem,6vw,5rem)] font-bold leading-tight tracking-tight text-paper text-balance">
-              <RevealWords text="Our Story" stagger={80} initialDelay={120} />
-            </h1>
-            <Reveal delay={360}>
-              <p className="mt-5 text-lg text-paper/70 max-w-xl">
-                Our mission, story, and how we work.
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </section>
 
       {/* ── Mission & Vision ─────────────────────────────────── */}
       <Section className="bg-field">
