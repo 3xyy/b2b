@@ -52,8 +52,12 @@ jobs:
       - name: Add .nojekyll
         run: touch ./out/.nojekyll
 
+      # enablement: true lets the workflow create the Pages site itself (source:
+      # GitHub Actions) instead of requiring someone to switch it on by hand.
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
