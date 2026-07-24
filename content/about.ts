@@ -20,7 +20,7 @@ export const about = {
     {
       name: "Lalit Batchu",
       role: "Co-Founder",
-      photo: "/members/Lalit Batchu.png",
+      photo: "/members/Lalit Batchu.webp",
     },
     {
       name: "Rohan Bablupatti",
