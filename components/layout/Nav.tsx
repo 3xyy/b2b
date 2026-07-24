@@ -2,13 +2,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { navLinks, programLinks } from "@/content/nav";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const [programsOpen, setProgramsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const programsButtonRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -28,8 +30,13 @@ export function Nav() {
     };
   }, []);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(href + "/");
+  // usePathname is typed `string` but yields null outside a router context.
+  const isActive = (href: string) => {
+    if (!pathname) return false;
+    return href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(href + "/");
+  };
 
   const linkClass = (href: string) =>
     `link-underline text-sm font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas ${
@@ -63,21 +70,51 @@ export function Nav() {
             About
           </Link>
 
-          {/* Programs dropdown */}
-          <div className="group/dd relative">
+          {/* Programs dropdown — opens on hover *and* on click/focus, so it is
+              reachable without a pointer. Closing is handled by Escape, by
+              focus leaving the group, and by navigation. */}
+          <div
+            className="relative"
+            onMouseEnter={() => setProgramsOpen(true)}
+            onMouseLeave={() => setProgramsOpen(false)}
+            onFocus={() => setProgramsOpen(true)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                setProgramsOpen(false);
+              }
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Escape" && programsOpen) {
+                setProgramsOpen(false);
+                programsButtonRef.current?.focus();
+              }
+            }}
+          >
             <button
+              ref={programsButtonRef}
+              type="button"
               className="link-underline inline-flex items-center gap-1 text-sm font-medium text-ink transition-colors hover:text-canvas focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas"
               aria-haspopup="true"
+              aria-expanded={programsOpen}
+              onClick={() => setProgramsOpen((v) => !v)}
             >
               Programs
               <span
                 aria-hidden="true"
-                className="inline-block text-[10px] transition-transform duration-200 ease-[var(--ease-out-hover)] group-hover/dd:rotate-180"
+                className={`inline-block text-[10px] transition-transform duration-200 ease-[var(--ease-out-hover)] ${
+                  programsOpen ? "rotate-180" : ""
+                }`}
               >
                 ▾
               </span>
             </button>
-            <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-[opacity,transform] duration-200 ease-[var(--ease-out-hover)] translate-y-1 group-hover/dd:visible group-hover/dd:opacity-100 group-hover/dd:translate-y-0">
+            <div
+              className={`absolute left-0 top-full pt-2 transition-[opacity,transform] duration-200 ease-[var(--ease-out-hover)] ${
+                programsOpen
+                  ? "visible translate-y-0 opacity-100"
+                  : "invisible translate-y-1 opacity-0"
+              }`}
+            >
               <div className="w-52 rounded-[3px] border border-ink/10 bg-paper p-2 shadow-lg">
                 {programLinks.map((p, i) => (
                   <Link
@@ -85,6 +122,7 @@ export function Nav() {
                     href={p.href}
                     className="block rounded-[2px] px-3 py-2 text-sm text-ink transition-all duration-200 ease-[var(--ease-out-hover)] hover:bg-canvas/5 hover:text-canvas hover:translate-x-[2px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas"
                     style={{ transitionDelay: `${i * 30}ms` }}
+                    onClick={() => setProgramsOpen(false)}
                   >
                     {p.label}
                   </Link>
@@ -114,6 +152,7 @@ export function Nav() {
           className="relative flex h-10 w-10 items-center justify-center md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas"
           aria-label="Toggle menu"
           aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
         >
           <span
@@ -131,8 +170,12 @@ export function Nav() {
         </button>
       </nav>
 
-      {/* Mobile panel */}
+      {/* Mobile panel. `inert` while collapsed: the panel is only visually
+          hidden (0fr rows + opacity), so without it every link inside stays in
+          the tab order and keyboard users tab into an invisible menu. */}
       <div
+        id="mobile-menu"
+        inert={!open}
         className="grid overflow-hidden border-t border-ink/10 transition-[grid-template-rows] duration-300 ease-[var(--ease-out-hover)] md:hidden"
         style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
       >

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 interface TestimonialItem {
   quote: string;
@@ -14,11 +15,7 @@ interface TestimonialSliderProps {
 
 export function TestimonialSlider({ items }: TestimonialSliderProps) {
   const [current, setCurrent] = useState(0);
-  const [reduced] = useState(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
+  const reduced = usePrefersReducedMotion();
   const [paused, setPaused] = useState(false);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 

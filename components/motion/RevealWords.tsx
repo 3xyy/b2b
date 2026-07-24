@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 interface RevealWordsProps {
   text: string;
@@ -26,11 +27,7 @@ export function RevealWords({
 }: RevealWordsProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const [visible, setVisible] = useState(false);
-  const [reduced] = useState(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
+  const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
     if (reduced) return;
@@ -60,14 +57,9 @@ export function RevealWords({
     };
   }, [reduced]);
 
-  if (reduced) {
-    return (
-      <span className={className}>
-        {text}
-        {highlight ? <span className="text-court"> {highlight}</span> : null}
-      </span>
-    );
-  }
+  // Reduced motion keeps the same per-word markup — only the transition is
+  // skipped — so the tree still hydrates cleanly. See lib/usePrefersReducedMotion.
+  const shown = reduced || visible;
 
   const buildTokens = (input: string, isHighlight: boolean, offset: number) => {
     const parts = input.split(/(\s+)/);
@@ -95,8 +87,8 @@ export function RevealWords({
         key={key}
         className="inline-block"
         style={{
-          opacity: visible ? 1 : 0,
-          transform: visible ? "translateY(0)" : "translateY(0.5em)",
+          opacity: shown ? 1 : 0,
+          transform: shown ? "translateY(0)" : "translateY(0.5em)",
           transition: `opacity 600ms var(--ease-out-soft) ${delay}ms, transform 600ms var(--ease-out-soft) ${delay}ms`,
           color: t.isHighlight ? "var(--court)" : undefined,
         }}

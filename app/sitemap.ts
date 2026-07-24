@@ -1,16 +1,21 @@
 import type { MetadataRoute } from "next";
+import { site } from "@/content/site";
 
-const base = "https://bin2b.vercel.app";
-const routes = [
+const base = site.url;
+
+// Every indexable page. /workshop is deliberately absent — it is a redirect to
+// /tech-to-treasure, and listing a redirect in the sitemap is a soft error.
+export const routes = [
   "",
   "/about",
   "/bounce-back",
   "/tech-to-treasure",
   "/eco-filament",
-  "/workshop",
   "/partners",
   "/officers-and-team",
   "/events",
+  "/mailing-list",
+  "/chapter",
   "/donate",
 ];
 

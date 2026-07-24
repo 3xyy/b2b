@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hanken_Grotesk, Inter, DM_Mono, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { site } from "@/content/site";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   title: "Bin to Better | Turning Waste into Opportunity",
   description:
     "At Bin to Better, we believe that waste isn't just trash, it's opportunity. Join us in creating a more sustainable, circular future.",
-  metadataBase: new URL("https://bin2b.vercel.app"),
+  metadataBase: new URL(site.url),
 };
 
 export default function RootLayout({

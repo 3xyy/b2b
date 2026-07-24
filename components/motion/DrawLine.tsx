@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 interface DrawLineProps {
   className?: string;
@@ -16,11 +17,7 @@ interface DrawLineProps {
 export function DrawLine({ className = "", origin = "left", delay = 0 }: DrawLineProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const [reduced] = useState(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
+  const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
     if (reduced) return;

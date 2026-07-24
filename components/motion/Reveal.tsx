@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 interface RevealProps {
   children: React.ReactNode;
@@ -11,9 +12,7 @@ interface RevealProps {
 export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const [reduced] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
+  const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
     if (reduced) return;
@@ -57,17 +56,18 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
     };
   }, [delay, reduced]);
 
-  if (reduced) {
-    return <div className={className}>{children}</div>;
-  }
+  // The markup is identical either way — only the style values differ — so the
+  // tree still hydrates cleanly for reduced-motion visitors, who simply start
+  // out revealed.
+  const shown = reduced || visible;
 
   return (
     <div
       ref={ref}
       className={className}
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(1rem)",
+        opacity: shown ? 1 : 0,
+        transform: shown ? "translateY(0)" : "translateY(1rem)",
         transition: "opacity 0.6s ease, transform 0.6s ease",
       }}
     >

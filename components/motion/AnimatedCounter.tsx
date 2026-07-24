@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 interface AnimatedCounterProps {
   value: string;
@@ -32,9 +33,7 @@ export function AnimatedCounter({ value, className = "" }: AnimatedCounterProps)
   // to its solid `text-court` color. Keeping it on permanently would leave the
   // span with `-webkit-text-fill-color: transparent` and hide the digits.
   const [shining, setShining] = useState(false);
-  const [reduced] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  );
+  const reduced = usePrefersReducedMotion();
 
   useEffect(() => {
     if (reduced) {

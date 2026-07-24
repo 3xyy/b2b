@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
@@ -7,7 +8,6 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
-import { Gallery } from "@/components/bounce-back/Gallery";
 
 export const metadata: Metadata = {
   title: "Bounce Back Project | Bin to Better",
@@ -28,6 +28,23 @@ const whatWeDo = [
     title: "Impact",
     desc: "Since launching just over a year ago we have collected more than 100,000 tennis balls and donated over 30,000 to organizations that can use them effectively.",
   },
+];
+
+// Google Photos albums with the full sets of collection & donation photos.
+const ALBUMS = [
+  { label: "Shelter drop-offs", href: "https://photos.app.goo.gl/jUviwYsVCJvxj58V9" },
+  { label: "School drop-offs", href: "https://photos.app.goo.gl/iqMFCXFXN2S3SBaGA" },
+  { label: "Club pickups", href: "https://photos.app.goo.gl/L71iBGJFoewJBT316" },
+];
+
+// Two photos pulled from each album above.
+const projectPhotos = [
+  { src: "/bounce-back/club-court-pickup.webp", alt: "A volunteer tying off a bag of used tennis balls collected courtside at a tennis club" },
+  { src: "/bounce-back/club-clubhouse-pickup.webp", alt: "A volunteer carrying a full bag of collected tennis balls out of a club clubhouse" },
+  { src: "/bounce-back/shelter-collected-bag.webp", alt: "A volunteer holding a bag of collected tennis balls before an animal shelter drop-off" },
+  { src: "/bounce-back/shelter-intake-bin.webp", alt: "Bags of tennis balls being unloaded into an intake bin at an animal shelter front desk" },
+  { src: "/bounce-back/school-teacher-box.webp", alt: "A volunteer handing a box of tennis balls to a teacher at an elementary school" },
+  { src: "/bounce-back/school-classroom-handoff.webp", alt: "A volunteer and a teacher with a bag of tennis balls delivered to her classroom" },
 ];
 
 export default function BounceBackPage() {
@@ -170,7 +187,41 @@ export default function BounceBackPage() {
           />
         </Reveal>
         <Reveal delay={80}>
-          <Gallery />
+          <div className="mb-4 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
+            <h3 className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
+              Pickups &amp; Drop-offs
+            </h3>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              {ALBUMS.map((album) => (
+                <a
+                  key={album.href}
+                  href={album.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-medium text-ink underline underline-offset-4 transition-colors hover:text-canvas focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+                >
+                  {album.label}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {projectPhotos.map((photo) => (
+              <div
+                key={photo.src}
+                className="aspect-[3/4] overflow-hidden border border-ink/10"
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  width={1200}
+                  height={1600}
+                  sizes="(min-width: 640px) 33vw, 50vw"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </Reveal>
       </Section>
 
