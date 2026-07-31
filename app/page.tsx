@@ -15,7 +15,6 @@ import { Magnetic } from "@/components/motion/Magnetic";
 import { DrawLine } from "@/components/motion/DrawLine";
 import { AnimatedCounter } from "@/components/motion/AnimatedCounter";
 import { DotPattern } from "@/components/ui/dot-pattern";
-import { Ripple } from "@/components/ui/ripple";
 import { Globe } from "@/components/ui/globe";
 import { ArrowRight } from "@/components/ui/icons";
 import { TestimonialSlider } from "@/components/ui/TestimonialSlider";
@@ -65,6 +64,24 @@ const missionPhotos = [
   },
 ];
 
+const recentMilestones = [
+  {
+    date: "March 1, 2026",
+    title: "Tech to Treasure Workshop",
+    detail: "Students explored real device parts through hands-on stations in Fremont.",
+  },
+  {
+    date: "March 28, 2026",
+    title: "Environmental Hackathon",
+    detail: "Students built technology-based responses to environmental challenges in San Jose.",
+  },
+  {
+    date: "2026",
+    title: "CRRA Recognition",
+    detail: "Bin to Better received the 2026 Outstanding School Recycling Program Award.",
+  },
+];
+
 export default function Home() {
   const [lead, ...missionRest] = mission;
 
@@ -80,7 +97,6 @@ export default function Home() {
           height={26}
           className="[mask-image:radial-gradient(70%_70%_at_50%_30%,black,transparent)]"
         />
-        <Ripple className="opacity-70" />
         <div className="grain pointer-events-none absolute inset-0 z-0" aria-hidden="true" />
         <CursorSpotlight />
         <div
@@ -116,7 +132,7 @@ export default function Home() {
                   Explore Our Projects
                 </Button>
               </Magnetic>
-              <Button href="mailto:outreach@bintobetter.org" variant="onDark">
+              <Button href="/get-involved" variant="onDark">
                 Get Involved
               </Button>
             </div>
@@ -253,6 +269,64 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+      </Section>
+
+      <Section className="bg-paper">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Proof of Impact"
+            title="Recent Momentum"
+            tone="light"
+            align="left"
+          />
+        </Reveal>
+        <div className="mt-6 grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
+          <Reveal delay={60}>
+            <Card tone="light" className="h-full">
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
+                Award
+              </p>
+              <h3 className="mt-3 font-display text-2xl font-bold text-ink">
+                2026 Outstanding School Recycling Program Award
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink/65">
+                Presented by the California Resource Recovery Association
+                (CRRA), recognizing student-led reuse, recycling, and community
+                education work.
+              </p>
+            </Card>
+          </Reveal>
+          <div className="grid gap-3">
+            {recentMilestones.map((item, i) => (
+              <Reveal key={item.title} delay={100 + i * 60}>
+                <div className="border border-ink/10 p-5">
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
+                    {item.date}
+                  </p>
+                  <h3 className="mt-2 font-display text-xl font-bold text-ink">
+                    {item.title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-ink/65">
+                    {item.detail}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+        <Reveal delay={220}>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/events" variant="secondary" withArrow>
+              View Impact & Events
+            </Button>
+            <Button href="/donate" variant="secondary">
+              Support the Work
+            </Button>
+            <Button href="/donate#tennis-lessons" variant="secondary">
+              Tennis Lessons Fundraiser
+            </Button>
+          </div>
+        </Reveal>
       </Section>
 
       {/* ── Testimonials ──────────────────────────────────────── */}

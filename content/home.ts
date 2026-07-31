@@ -1,7 +1,7 @@
 export const stats: { value: string; label: string }[] = [
-  { value: "100,000+", label: "Items Recycled" },
-  { value: "200+", label: "Partners" },
-  { value: "15", label: "Communities Impacted" },
+  { value: "100,000+", label: "Tennis Balls Collected" },
+  { value: "30,000+", label: "Tennis Balls Donated" },
+  { value: "15", label: "Chapters Internationally" },
 ];
 
 export const programsPreview: {
@@ -21,13 +21,13 @@ export const programsPreview: {
     slug: "tech-to-treasure",
     title: "Tech to Treasure",
     blurb:
-      "Collects old devices and turns them into educational tools before responsibly recycling all parts through an e-waste program.",
+      "Transforms old devices into educational tools before responsibly recycling remaining parts through e-waste channels.",
     href: "/tech-to-treasure",
   },
   {
     slug: "eco-filament",
     title: "Eco-Filament",
-    blurb: "Repurposing plastic waste into 3D printer filament for tools and toys.",
+    blurb: "Repurposes suitable plastic waste into 3D printer filament for tools and toys.",
     href: "/eco-filament",
   },
 ];
@@ -35,7 +35,7 @@ export const programsPreview: {
 export const testimonials: { quote: string; author: string; role: string }[] = [
   {
     quote:
-      "Thank you very much for your donation of 140 gently used tennis balls to my third grade Spanish immersion classroom at Blacow Elementary School. Cutting each individual ball so that it can fit each student leg chair must have been a lot of work! We are so appreciative of your time and effort in giving the tennis balls a new second life instead of throwing then into the landfill. Your donation has been well received by my students. Their chairs are way gentler on the waxed floors and is saving the floors from being scratched. Most importantly classroom activity transitions are so much more quiet as the students get up from or come to sit in their chairs.",
+      "Thank you very much for your donation of 140 gently used tennis balls to my third grade Spanish immersion classroom at Blacow Elementary School. Cutting each individual ball so that it can fit each student leg chair must have been a lot of work! We are so appreciative of your time and effort in giving the tennis balls a new second life instead of throwing them into the landfill. Your donation has been well received by my students. The tennis-ball chair covers are gentler on the waxed floors and are helping prevent scratches. Most importantly, classroom activity transitions are so much quieter as the students get up from or come to sit in their chairs.",
     author: "Andrea MacKenzie",
     role: "3rd grade Spanish Immersion Teacher, Blacow Elementary",
   },
@@ -66,13 +66,13 @@ export const testimonials: { quote: string; author: string; role: string }[] = [
 ];
 
 export const mission: string[] = [
-  "At Bin to Better, we believe that waste isn’t just trash, it’s opportunity. Every year, countless items with value and potential end up in landfills simply because they no longer serve their original purpose. Our mission is to change that narrative.",
+  "At Bin to Better, we believe that waste is not just trash. It is an opportunity. Every year, countless items with value and potential end up in landfills simply because they no longer serve their original purpose. Our mission is to change that narrative.",
   "We’re driven by a simple yet powerful idea: that one person’s excess can be another’s solution. Whether it’s used tennis balls, old electronics, or other overlooked resources, we aim to connect those who have with those who need. By building bridges between individuals, communities, and organizations, we promote a culture of reuse and responsible recycling.",
-  "Through education, partnerships, and hands-on initiatives, Bin to Better empowers people to rethink waste and become part of a more sustainable, circular future. Together, we can turn what would’ve been thrown away into something better—for people, for communities, and for the planet.",
+  "Through education, partnerships, and hands-on initiatives, Bin to Better empowers people to rethink waste and become part of a more sustainable, circular future. Together, we can turn what would have been thrown away into something better for people, communities, and the planet.",
 ];
 
 export const projectsBlurb =
-  'Below are snapshots of our three main projects. Click “View More” on each card to dive deeper into the details.';
+  "Below are snapshots of our three main projects. Click View More on each card to dive deeper into the details.";
 
 export const contactPara =
-  "We would love to hear from you! Whether you have questions, want to donate materials or are interested in volunteering, please get in touch.";
+  "We would love to hear from you. Whether you have questions, want to donate materials, or are interested in volunteering, please get in touch. We typically respond within a few school days.";

@@ -29,7 +29,44 @@ export default function Chapter() {
           <p className="mt-5 max-w-2xl text-base sm:text-lg text-paper/70 leading-relaxed">
             Want to bring Bin to Better to your own community? Become a Chapter
             Director and lead local collection drives, workshops, and outreach.
-            We&apos;ll help you get started.
+            We&apos;ll help you get started with onboarding, templates, impact
+            tracking, partner outreach materials, and regular check-ins.
+          </p>
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Eligibility",
+                body: "Students should have guardian or school-advisor support when required locally.",
+              },
+              {
+                title: "Commitment",
+                body: "Chapters coordinate projects, report impact, follow logo/name rules, and communicate monthly during active periods.",
+              },
+              {
+                title: "Application",
+                body: "The Google Form asks about location, team, program interests, advisor support, and expected launch timeline.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="border border-paper/15 p-5">
+                <h2 className="font-display text-xl font-bold text-paper">
+                  {item.title}
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-paper/65">
+                  {item.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 max-w-2xl text-sm leading-relaxed text-paper/55">
+            Applications are currently open. Reviews are handled by the Bin to
+            Better leadership team. If you cannot use Google Forms, email us at{" "}
+            <a
+              href="mailto:outreach@bintobetter.org"
+              className="text-paper underline underline-offset-4 hover:text-court focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
+            >
+              outreach@bintobetter.org
+            </a>
+            .
           </p>
           <div className="mt-8">
             <a

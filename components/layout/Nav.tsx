@@ -96,6 +96,7 @@ export function Nav() {
               className="link-underline inline-flex items-center gap-1 text-sm font-medium text-ink transition-colors hover:text-canvas focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas"
               aria-haspopup="true"
               aria-expanded={programsOpen}
+              aria-controls="programs-menu"
               onClick={() => setProgramsOpen((v) => !v)}
             >
               Programs
@@ -105,10 +106,11 @@ export function Nav() {
                   programsOpen ? "rotate-180" : ""
                 }`}
               >
-                ▾
+                v
               </span>
             </button>
             <div
+              id="programs-menu"
               className={`absolute left-0 top-full pt-2 transition-[opacity,transform] duration-200 ease-[var(--ease-out-hover)] ${
                 programsOpen
                   ? "visible translate-y-0 opacity-100"
@@ -143,7 +145,7 @@ export function Nav() {
             href="/donate"
             className="inline-flex items-center rounded-[3px] bg-court px-4 py-2 text-sm font-medium text-ink shadow-[0_1px_2px_rgba(0,0,0,0.08)] transition-[transform,box-shadow,filter] duration-200 ease-[var(--ease-out-hover)] hover:-translate-y-[1px] hover:brightness-95 hover:shadow-[0_6px_14px_-4px_rgba(0,0,0,0.18)] active:translate-y-[1px] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas"
           >
-            Donate
+            Support Us
           </Link>
         </div>
 
@@ -205,7 +207,7 @@ export function Nav() {
                 href="/donate"
                 className="inline-flex items-center rounded-[3px] bg-court px-4 py-2 text-sm font-medium text-ink transition-[transform,filter] duration-200 ease-[var(--ease-out-hover)] hover:-translate-y-[1px] hover:brightness-95 active:translate-y-[1px] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-canvas"
               >
-                Donate
+                Support Us
               </Link>
             </div>
           </div>

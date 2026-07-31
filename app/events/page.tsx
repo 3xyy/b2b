@@ -5,12 +5,12 @@ import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
-import { hackathon, sponsorTiers } from "@/content/events";
+import { hackathon, impactTimeline, sponsorTiers } from "@/content/events";
 
 export const metadata: Metadata = {
-  title: "Events | Bin to Better",
+  title: "Impact & Events | Bin to Better",
   description:
-    "Join Bin to Better at our upcoming hackathons, workshops, and community events. See the Tech to Treasure Hackathon and our sponsors.",
+    "Explore Bin to Better's impact timeline, past events, awards, and community supporters.",
 };
 
 /* Inline SVG icons — decorative, aria-hidden */
@@ -74,25 +74,6 @@ function PinIcon() {
   );
 }
 
-function MicIcon() {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="9" y="2" width="6" height="11" rx="3" />
-      <path d="M5 10a7 7 0 0 0 14 0M12 19v3M9 22h6" />
-    </svg>
-  );
-}
-
 const infoIcons = [<CalendarIcon key="cal" />, <ClockIcon key="clk" />, <PinIcon key="pin" />];
 
 const tierGridCols: Record<string, string> = {
@@ -125,10 +106,11 @@ export default function Events() {
             </p>
           </div>
           <h1 className="font-display text-[clamp(2.75rem,7vw,5rem)] font-bold leading-[0.95] tracking-tight text-paper text-balance">
-            Events
+            Impact &amp; Events
           </h1>
           <p className="mt-5 text-lg text-paper/70 max-w-2xl">
-            Join us at our upcoming hackathons, workshops, and community events.
+            Explore upcoming opportunities, past workshops, hackathons, awards,
+            and community impact.
           </p>
         </Reveal>
       </Section>
@@ -282,24 +264,59 @@ export default function Events() {
                 {hackathon.prizes.allNoteSuffix}
               </p>
 
-              {/* Keynote — no emoji, minimal SVG icon */}
-              <div className="mt-10 border border-dashed border-paper/10 bg-paper/[0.02] p-8 rounded-sm">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
-                  <span className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
-                    Keynote Speakers
-                  </span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MicIcon />
-                  <p className="font-display text-xl font-bold text-paper">
-                    To be announced soon
-                  </p>
-                </div>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <a
+                  href="/get-involved"
+                  className="inline-flex items-center rounded-[3px] bg-court px-5 py-2.5 text-sm font-medium text-ink transition-[filter] hover:brightness-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
+                >
+                  Join Interest List
+                </a>
+                <a
+                  href="mailto:outreach@bintobetter.org?subject=Event%20Sponsorship"
+                  className="inline-flex items-center rounded-[3px] border border-paper/30 px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:border-court hover:text-court focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
+                >
+                  Sponsor or Volunteer
+                </a>
               </div>
             </div>
           </div>
         </Reveal>
+      </Section>
+
+      <Section className="bg-paper">
+        <SectionHeading
+          eyebrow="Archive"
+          title="Impact Timeline"
+          tone="light"
+          align="left"
+        />
+        <div className="mt-6 grid gap-4">
+          {impactTimeline.map((item, i) => (
+            <Reveal key={`${item.date}-${item.title}`} delay={i * 60}>
+              <div className="grid gap-4 border border-ink/10 p-5 md:grid-cols-[12rem_1fr]">
+                <div>
+                  <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
+                    {item.date}
+                  </p>
+                  <p className="mt-2 inline-flex border border-ink/15 px-2 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-ink/60">
+                    {item.category}
+                  </p>
+                </div>
+                <div>
+                  <h2 className="font-display text-2xl font-bold text-ink">
+                    {item.title}
+                  </h2>
+                  <p className="mt-1 font-mono text-xs uppercase tracking-[0.12em] text-sage">
+                    {item.location}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-ink/65">
+                    {item.result}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </Section>
 
       {/* ── Sponsors ── */}

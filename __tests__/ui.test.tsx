@@ -14,8 +14,8 @@ describe("ui primitives", () => {
     expect(screen.getByRole("link", { name: "X" }).className).toContain("border");
   });
   it("Stat shows value and label", () => {
-    render(<Stat value="50K+" label="Items Recycled" />);
+    render(<Stat value="50K+" label="Tennis Balls Collected" />);
     expect(screen.getByText("50K+")).toBeInTheDocument();
-    expect(screen.getByText("Items Recycled")).toBeInTheDocument();
+    expect(screen.getByText("Tennis Balls Collected")).toBeInTheDocument();
   });
 });

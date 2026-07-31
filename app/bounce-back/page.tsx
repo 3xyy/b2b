@@ -18,17 +18,19 @@ export const metadata: Metadata = {
 const whatWeDo = [
   {
     title: "Collection",
-    desc: "Every month our team collects between 3,000 and 5,000 used balls from local clubs.",
+    desc: "During active collection months, our team collects used balls from local clubs and academies.",
   },
   {
     title: "Reuse",
-    desc: "Balls are donated to schools (chair legs), animal shelters (enrichment toys), and assisted living centers (walker feet).",
+    desc: "Usable balls are prepared for schools as chair-leg covers, animal shelters as enrichment toys, and assisted living centers as walker-leg covers.",
   },
   {
     title: "Impact",
-    desc: "Since launching just over a year ago we have collected more than 100,000 tennis balls and donated over 30,000 to organizations that can use them effectively.",
+    desc: "The project has collected more than 100,000 tennis balls and donated more than 30,000 to organizations that can use them effectively.",
   },
 ];
+
+const processSteps = ["Collect", "Sort and Clean", "Prepare", "Donate"];
 
 // Google Photos albums with the full sets of collection & donation photos.
 const ALBUMS = [
@@ -73,10 +75,10 @@ export default function BounceBackPage() {
                   The Focus of Our Efforts
                 </h2>
                 <p className="text-paper/70 leading-relaxed">
-                  Nearly all of the 330 million tennis balls produced each year
-                  end up in landfills, where they can take more than 400 years to
-                  decompose. The Bounce Back Project reduces waste by finding
-                  creative ways to give used tennis balls a second life.
+                  Tennis balls are often discarded while they still have useful
+                  life left in them. The Bounce Back Project reduces waste by
+                  collecting used balls, sorting them, and donating usable
+                  materials to organizations that can put them to work.
                 </p>
               </div>
             </Reveal>
@@ -153,15 +155,31 @@ export default function BounceBackPage() {
             </Reveal>
 
             <Reveal delay={280}>
-              <Button href="/partners" variant="light">
-                Become a Partner
-              </Button>
+              <div className="flex flex-wrap gap-3">
+                <Button href="mailto:outreach@bintobetter.org?subject=Bounce%20Back%20Pickup%20Request" variant="light">
+                  Request a Pickup
+                </Button>
+                <Button href="mailto:outreach@bintobetter.org?subject=Tennis%20Ball%20Recipient%20Request" variant="onDark">
+                  Request Tennis Balls
+                </Button>
+              </div>
             </Reveal>
           </div>
 
-          {/* Right — stat box */}
+          {/* Right - lead image and stat box */}
           <Reveal delay={300}>
-            <div className="border border-paper/15 bg-field rounded-[3px] p-12 text-center flex flex-col items-center justify-center gap-4">
+            <div className="grid gap-4">
+              <div className="relative aspect-[4/5] overflow-hidden border border-paper/15">
+                <Image
+                  src="/bounce-back/collection-bags.png"
+                  alt="A volunteer holding a large clear bag filled with collected tennis balls"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="border border-paper/15 bg-field rounded-[3px] p-8 text-center flex flex-col items-center justify-center gap-4">
               <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
                 Impact to Date
               </p>
@@ -171,8 +189,47 @@ export default function BounceBackPage() {
               <p className="font-mono text-sm font-medium uppercase tracking-[0.1em] text-paper/70">
                 Tennis Balls Collected
               </p>
+              <div className="mt-5 grid w-full grid-cols-2 gap-3 text-left">
+                {[
+                  ["30,000+", "Donated"],
+                  ["4", "Recipient types"],
+                ].map(([value, label]) => (
+                  <div key={label} className="border border-paper/10 p-3">
+                    <p className="font-mono text-lg text-court">{value}</p>
+                    <p className="mt-1 text-xs uppercase tracking-[0.1em] text-paper/50">
+                      {label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              </div>
             </div>
           </Reveal>
+        </div>
+      </Section>
+
+      <Section className="bg-field">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Process"
+            title="How a Ball Moves Through the Program"
+            tone="dark"
+            align="left"
+          />
+        </Reveal>
+        <div className="mt-6 grid gap-3 sm:grid-cols-4">
+          {processSteps.map((step, i) => (
+            <Reveal key={step} delay={i * 60}>
+              <div className="border border-paper/15 p-5">
+                <p className="font-mono text-xs font-medium tabular-nums text-court">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h2 className="mt-3 font-display text-xl font-bold text-paper">
+                  {step}
+                </h2>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </Section>
 

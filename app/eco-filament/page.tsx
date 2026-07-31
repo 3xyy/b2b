@@ -43,40 +43,76 @@ export default function EcoFilamentPage() {
         </Reveal>
       </Section>
 
-      {/* The New Building Blocks of Society — light paper band */}
+      {/* Program overview */}
       <Section className="bg-paper">
         <Reveal>
           <div className="max-w-3xl">
             <h2 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-tight tracking-tight text-ink mb-5 text-balance">
-              The New Building Blocks of Society
+              From Plastic Waste to Useful Products
             </h2>
             <p className="text-ink/70 leading-relaxed text-base sm:text-lg mb-8">
-              Eco-Filament repurposes plastic waste (collected from trash
-              cleanups in local parks) into 3D printer filament used to
-              develop toys and tools for kids with special needs. It&apos;s a
-              simple yet effective way to keep plastic out of landfills and
-              give it a second life.
+              Eco-Filament repurposes suitable, cleaned, and sorted plastic
+              waste into 3D printer filament used to develop toys and tools for
+              students with sensory needs. Plastic that is not safe or suitable
+              for filament is handled through appropriate cleanup and recycling
+              channels instead of being presented as filament-ready material.
             </p>
 
             {/* Discord callout — bordered block, no pill */}
             <div className="border border-ink/10 bg-paper p-6 mb-8">
               <p className="text-ink/80 text-base">
-                If you are interested in attending volunteering events (you
-                will get volunteer hours) to clean up our parks, please join
-                our Discord:{" "}
-                <a
-                  href="https://tinyurl.com/b2bdisc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-ink underline underline-offset-2 hover:text-canvas"
-                >
-                  https://tinyurl.com/b2bdisc
-                </a>
+                Volunteers can help with cleanups, sorting, and outreach.
+                Volunteer-hour documentation is available for eligible,
+                supervised activities after participation is confirmed. Parents
+                and guardians can use the Get Involved page or email us.
+                Discord is only for participants age 13 and older.
               </p>
             </div>
 
-            <DiscordButton href="https://tinyurl.com/b2bdisc" />
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/get-involved"
+                className="inline-flex items-center rounded-[3px] border border-ink/25 px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink/[0.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+              >
+                View Volunteer Options
+              </a>
+              <DiscordButton href="https://tinyurl.com/b2bdisc">
+                Join Discord, 13+
+              </DiscordButton>
+            </div>
           </div>
+        </Reveal>
+      </Section>
+
+      <Section className="bg-canvas">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Process"
+            title="How Eco-Filament Works"
+            align="left"
+            tone="dark"
+          />
+        </Reveal>
+        <div className="mt-6 grid gap-3 sm:grid-cols-4">
+          {["Collect Safely", "Sort and Clean", "Test Material", "Print Tools"].map((step, i) => (
+            <Reveal key={step} delay={i * 60}>
+              <div className="border border-paper/15 p-5">
+                <p className="font-mono text-xs font-medium tabular-nums text-court">
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h2 className="mt-3 font-display text-xl font-bold text-paper">
+                  {step}
+                </h2>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal delay={220}>
+          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-paper/60">
+            Cleanup work can involve sharp litter, heat, and machinery.
+            Participants follow event-specific safety instructions, PPE
+            guidance, and adult-supervision requirements.
+          </p>
         </Reveal>
       </Section>
 
@@ -87,7 +123,7 @@ export default function EcoFilamentPage() {
           <SectionHeading
             eyebrow="From the Cleanups"
             title="Out in the Parks"
-            subtitle="Photos from our park cleanups — collecting the plastic that becomes new filament."
+            subtitle="Photos from park cleanups that collect and sort candidate material for reuse."
             align="left"
             tone="dark"
           />

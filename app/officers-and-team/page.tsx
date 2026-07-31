@@ -90,7 +90,7 @@ export default function OfficersAndTeam() {
                       }`}
                     >
                       {/* Large circular photo (initials fallback when no photo) */}
-                      <div className="relative mb-5 h-44 w-44 overflow-hidden rounded-full self-center shrink-0">
+                      <div className="relative mb-5 aspect-square w-full max-w-40 overflow-hidden rounded-full self-center shrink-0">
                         {m.photo ? (
                           <Image
                             src={m.photo}
@@ -147,22 +147,20 @@ export default function OfficersAndTeam() {
                       {/* Fun fact — no emoji; hairline divider + "FACT" mono
                           label. Pinned to the card bottom (mt-auto) so every
                           card in a row lines up regardless of name/school length. */}
-                      {m.fact && (
-                        <div
-                          className={`mt-auto w-full border-t pt-4 ${isDark ? "border-paper/10" : "border-ink/8"}`}
+                      <div
+                        className={`mt-auto min-h-24 w-full border-t pt-4 ${isDark ? "border-paper/10" : "border-ink/8"}`}
+                      >
+                        <p
+                          className={`font-mono text-[10px] uppercase tracking-[0.12em] mb-1 ${isDark ? "text-court/70" : "text-sage"}`}
                         >
-                          <p
-                            className={`font-mono text-[10px] uppercase tracking-[0.12em] mb-1 ${isDark ? "text-court/70" : "text-sage"}`}
-                          >
-                            Fact
-                          </p>
-                          <p
-                            className={`text-sm italic leading-snug ${isDark ? "text-paper/60" : "text-ink/55"}`}
-                          >
-                            {m.fact}
-                          </p>
-                        </div>
-                      )}
+                          Fact
+                        </p>
+                        <p
+                          className={`text-sm italic leading-snug ${isDark ? "text-paper/60" : "text-ink/55"}`}
+                        >
+                          {m.fact || "Profile update coming soon."}
+                        </p>
+                      </div>
                     </div>
                   </Reveal>
                 ))}

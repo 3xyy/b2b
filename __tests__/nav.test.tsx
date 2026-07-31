@@ -9,11 +9,11 @@ import { programLinks } from "@/content/nav";
 const desktopNav = () => screen.getByRole("navigation");
 
 describe("Nav", () => {
-  it("renders the brand logo and a Donate link", () => {
+  it("renders the brand logo and a Support Us link", () => {
     render(<Nav />);
     expect(screen.getByAltText(/bin to better/i)).toBeInTheDocument();
     expect(
-      within(desktopNav()).getByRole("link", { name: /donate/i })
+      within(desktopNav()).getByRole("link", { name: /support us/i })
     ).toHaveAttribute("href", "/donate");
   });
 

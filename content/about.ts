@@ -1,9 +1,9 @@
 export const about = {
-  missionHeading: "Mission & Vision",
+  missionHeading: "Mission and Vision",
   missionPara1:
-    "At Bin to Better, we believe that waste isn't just trash, it's an opportunity. Countless items with value end up in landfills each year simply because they no longer serve their original purpose. We are committed to changing that narrative by promoting reuse and responsible recycling.",
+    "Our mission is to give discarded materials a practical second life through reuse, responsible recycling, education, and community partnerships.",
   missionPara2:
-    "Our goal is to empower individuals and communities to rethink waste and realize that what seems like rubbish can become a resource for someone else. By connecting people with excess to those with needs, we bridge gaps and foster a culture of giving and sustainability.",
+    "Our vision is a community where usable materials are not treated as trash, but as resources that can support classrooms, shelters, students, and local sustainability work.",
   badges: [
     { label: "Sustainability" },
     { label: "Community" },
@@ -42,7 +42,7 @@ export const about = {
     {
       title: "Hands-on Initiatives",
       description:
-        "Our projects provide tangible ways for volunteers to participate: collecting tennis balls, disassembling electronics, or repurposing plastic waste into building materials.",
+        "Our projects provide tangible ways for volunteers to participate: collecting tennis balls, disassembling electronics, or repurposing suitable plastic into recycled filament, sensory tools, and toys.",
     },
   ],
   ctaHeading: "Join Our Mission",

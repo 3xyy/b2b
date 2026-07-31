@@ -29,8 +29,27 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "Bin to Better | Turning Waste into Opportunity",
   description:
-    "At Bin to Better, we believe that waste isn't just trash, it's opportunity. Join us in creating a more sustainable, circular future.",
+    "At Bin to Better, we believe that waste is not just trash. It is an opportunity. Join us in creating a more sustainable, circular future.",
   metadataBase: new URL(site.url),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Bin to Better | Turning Waste into Opportunity",
+    description:
+      "Student-led programs turning discarded materials into resources for schools, shelters, and communities.",
+    url: site.url,
+    siteName: site.name,
+    images: [{ url: "/logo.webp", width: 1200, height: 630, alt: "Bin to Better" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bin to Better | Turning Waste into Opportunity",
+    description:
+      "Student-led programs turning discarded materials into resources for schools, shelters, and communities.",
+    images: ["/logo.webp"],
+  },
   // Belt and braces alongside robots.txt: a noindex header on every page of a
   // test deployment, which also covers crawlers that ignore robots.txt.
   ...(isProductionSite() ? {} : { robots: { index: false, follow: false } }),

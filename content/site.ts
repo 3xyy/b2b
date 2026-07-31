@@ -15,7 +15,7 @@ export const site = {
   email: "outreach@bintobetter.org",
   instagram: "https://www.instagram.com/_bintobetter",
   linkedin: "https://www.linkedin.com/company/bin-to-better/posts/?feedView=all",
-  copyright: "© 2026 Bin to Better. All rights reserved. Turning waste into opportunity.",
+  copyright: "Copyright 2026 Bin to Better. All rights reserved. Turning waste into opportunity.",
 };
 
 /**

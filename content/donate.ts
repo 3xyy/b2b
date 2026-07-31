@@ -1,16 +1,16 @@
 export const donate = {
   classesIntro:
-    "All funds go directly to Bin to Better to fund our projects. Classes are offered at reasonable prices, and a free trial is available after signing up.",
+    "Community tennis lessons help fund collection supplies, workshop materials, and recycling costs. Complete the registration form to schedule a free trial lesson.",
   tennis: {
     title: "Tennis Classes",
     description:
-      "Taught by varsity high school tennis players ready to share their skills and passion for the sport. Great for beginners and intermediate players looking for quality instruction.",
-    note: "Sign up for a free trial. More details available in the registration form.",
+      "Taught by varsity high school tennis players for beginner and intermediate players. Families receive scheduling, location, price, supervision, and cancellation details through the registration form before confirming a lesson.",
+    note: "A parent or guardian should complete the form for younger students.",
     href: "https://tinyurl.com/tennisregis",
   },
-  donateHeading: "Donate",
+  donateHeading: "Support Us",
   donatePara:
-    "Your support helps us turn waste into opportunity. Donations allow us to expand our collection efforts, develop new projects and reach more communities. Every contribution, no matter the size, helps build a cleaner, more sustainable future.",
+    "Your support helps us turn waste into opportunity. Donations allow us to expand collection efforts, run workshops, purchase supplies, and reach more communities. Donations are processed through PledgeIt; the checkout page may show Ecologistics as the fiscal sponsor or payment recipient. Please review the checkout and receipt language for tax details before completing a donation.",
   donateHref: "https://charity.pledgeit.org/bintobetter",
   donateLinkText: "Donate via PledgeIt",
 };

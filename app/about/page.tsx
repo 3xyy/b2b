@@ -21,6 +21,24 @@ export default function About() {
     <>
       <Nav />
 
+      <Section className="bg-canvas">
+        <Reveal>
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+              About
+            </p>
+          </div>
+          <h1 className="font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.95] tracking-tight text-paper text-balance">
+            About Bin to Better
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-paper/70 sm:text-lg">
+            Student-led programs that collect, repurpose, educate, and donate
+            useful materials back into the community.
+          </p>
+        </Reveal>
+      </Section>
+
       {/* ── Mission & Vision ─────────────────────────────────── */}
       <Section className="bg-field">
         <Reveal>
@@ -58,12 +76,18 @@ export default function About() {
             </Reveal>
           </div>
 
-          {/* Decorative column — large rule accent */}
-          <Reveal delay={120} className="hidden lg:flex items-start justify-end pt-2">
-            <div className="flex flex-col gap-4">
-              <div className="h-1 w-20 bg-court" aria-hidden="true" />
-              <div className="h-1 w-12 bg-court/40" aria-hidden="true" />
-              <div className="h-1 w-8 bg-court/20" aria-hidden="true" />
+          <Reveal delay={120}>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {["Collect", "Repurpose", "Educate and Donate"].map((step, i) => (
+                <div key={step} className="border border-paper/15 p-5">
+                  <p className="font-mono text-xs font-medium tabular-nums text-court">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <p className="mt-3 font-display text-xl font-bold text-paper">
+                    {step}
+                  </p>
+                </div>
+              ))}
             </div>
           </Reveal>
         </div>
@@ -80,7 +104,7 @@ export default function About() {
           />
         </Reveal>
 
-        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 items-start">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 items-start">
           <Reveal delay={80}>
             <div className="space-y-5 text-base leading-relaxed text-ink/75">
               <p>{about.originPara1}</p>
@@ -91,10 +115,13 @@ export default function About() {
 
           {/* Founder portraits — large and prominent */}
           <Reveal delay={160}>
-            <div className="flex flex-wrap gap-10 lg:justify-end">
+            <div className="grid gap-5 sm:grid-cols-2">
               {about.founders.map((founder) => (
-                <div key={founder.name} className="flex flex-col items-center gap-4">
-                  <div className="relative h-52 w-52 overflow-hidden rounded-full ring-4 ring-court/60 ring-offset-4 ring-offset-paper sm:h-64 sm:w-64">
+                <div
+                  key={founder.name}
+                  className="flex h-full flex-col items-center border border-ink/10 p-5 text-center"
+                >
+                  <div className="relative aspect-square w-full max-w-44 overflow-hidden rounded-full ring-4 ring-court/60 ring-offset-4 ring-offset-paper">
                     <Image
                       src={founder.photo}
                       alt={founder.name}
@@ -103,7 +130,7 @@ export default function About() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="text-center">
+                  <div className="mt-4">
                     <p className="font-display text-lg font-semibold text-ink">
                       {founder.name}
                     </p>
@@ -162,7 +189,7 @@ export default function About() {
           <Reveal delay={160}>
             <div className="mt-8 flex flex-wrap gap-4">
               <Magnetic>
-                <Button href="mailto:outreach@bintobetter.org" variant="primary" withArrow>
+                <Button href="/get-involved" variant="primary" withArrow>
                   Get Involved
                 </Button>
               </Magnetic>

@@ -42,7 +42,6 @@ export default function Partners() {
         </Reveal>
       </Section>
 
-      {/* ── Partner logo grid ─────────────────────────────────── */}
       <Section className="bg-paper">
         <Reveal>
           <div className="mb-8 flex items-center gap-3">
@@ -57,43 +56,25 @@ export default function Partners() {
             {partnerLogos.map((logo) => (
               <div
                 key={logo.src}
-                className="flex items-center justify-center border border-ink/10 bg-paper p-5 rounded-[3px]"
+                className="flex flex-col items-center justify-between gap-4 border border-ink/10 bg-paper p-5 rounded-[3px]"
               >
-                <Image
-                  src={logo.src}
-                  alt={logo.name ?? ""}
-                  width={200}
-                  height={100}
-                  className="max-h-24 w-auto object-contain"
-                />
+                <div className="flex h-24 items-center justify-center">
+                  <Image
+                    src={logo.src}
+                    alt={logo.name ?? ""}
+                    width={200}
+                    height={100}
+                    className="max-h-24 w-auto object-contain"
+                  />
+                </div>
+                {logo.name ? (
+                  <p className="text-center text-xs font-medium leading-snug text-ink/65">
+                    {logo.name}
+                  </p>
+                ) : null}
               </div>
             ))}
           </div>
-        </Reveal>
-      </Section>
-
-      {/* ── Why partner with us ───────────────────────────────── */}
-      <Section className="bg-field">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Why Partner"
-            title="Why partner with us"
-            tone="dark"
-            align="left"
-          />
-        </Reveal>
-        <Reveal delay={80}>
-          <ul className="mt-2 flex flex-col gap-5 max-w-2xl">
-            {whyPartner.map((bullet, i) => (
-              <li key={i} className="relative flex gap-4 pt-5">
-                <DrawLine className="absolute left-0 top-0 h-px w-full bg-paper/15" delay={i * 80} />
-                <span className="font-mono text-xs font-medium tabular-nums text-court mt-0.5 shrink-0">
-                  0{i + 1}
-                </span>
-                <p className="text-base leading-relaxed text-paper/80">{bullet}</p>
-              </li>
-            ))}
-          </ul>
         </Reveal>
       </Section>
 
@@ -204,6 +185,30 @@ export default function Partners() {
             </div>
           </Reveal>
         </div>
+      </Section>
+
+      <Section className="bg-field">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Why Partner"
+            title="Why partner with us"
+            tone="dark"
+            align="left"
+          />
+        </Reveal>
+        <Reveal delay={80}>
+          <ul className="mt-2 flex flex-col gap-5 max-w-2xl">
+            {whyPartner.map((bullet, i) => (
+              <li key={i} className="relative flex gap-4 pt-5">
+                <DrawLine className="absolute left-0 top-0 h-px w-full bg-paper/15" delay={i * 80} />
+                <span className="font-mono text-xs font-medium tabular-nums text-court mt-0.5 shrink-0">
+                  0{i + 1}
+                </span>
+                <p className="text-base leading-relaxed text-paper/80">{bullet}</p>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </Section>
 
       {/* ── CTA ───────────────────────────────────────────────── */}

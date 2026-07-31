@@ -18,9 +18,13 @@ export const routes = [
   "/partners",
   "/officers-and-team",
   "/events",
+  "/achievements",
+  "/get-involved",
   "/mailing-list",
   "/chapter",
   "/donate",
+  "/privacy",
+  "/accessibility",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

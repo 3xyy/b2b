@@ -22,11 +22,11 @@ const whatWeDo = [
   },
   {
     title: "Hands‑On Learning",
-    desc: "Students disassemble devices to learn about RAM, memory, circuit boards, and power systems.",
+    desc: "Students disassemble devices to learn about CPU, RAM, storage, circuit boards, cooling, and power systems.",
   },
   {
     title: "Responsible Recycling",
-    desc: "After sessions, all parts are responsibly recycled through certified e‑waste programs.",
+    desc: "After sessions, remaining parts are responsibly recycled through e-waste channels with our recycling partners.",
   },
 ];
 
@@ -339,19 +339,17 @@ export default function TechToTreasurePage() {
         <Reveal delay={140}>
           <div className="max-w-3xl space-y-4 text-ink/70 leading-relaxed text-base sm:text-lg">
             <p>
-              50 students, 6 weeks, and 10 massive environmental challenges
-              tackled! Our Tech to Treasure Environmental Bootcamp has wrapped
-              up, and we couldn&apos;t be prouder of the real-world solutions
-              these students built.
+              Our Tech to Treasure Environmental Bootcamp brought students
+              together to build real-world solutions for 10 environmental
+              challenges, with mentorship and project support across six weeks.
             </p>
             <p>
-              Dive into the code and view all student projects — including our
-              top 3 winning projects — on GitHub.
+              Dive into the code and view all student projects on GitHub.
             </p>
           </div>
           <div className="mt-6">
             <Button
-              href="https://github.com/MasterAI33/Bin-to-Better-6-Week-Bootcamp-Final-Projects"
+              href="https://github.com/achavali33/Bin-to-Better-6-Week-Bootcamp-Final-Projects"
               variant="secondary"
               withArrow
             >
@@ -389,7 +387,7 @@ export default function TechToTreasurePage() {
                 <div className="p-8 md:p-12">
                   <div className="mb-8">
                     <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage mb-4">
-                      {w.date} &bull; Fremont, CA
+                      Past Event &bull; {w.date} &bull; Fremont, CA
                     </p>
                     <p className="text-paper/60 max-w-2xl text-base">
                       {w.location}
@@ -400,7 +398,7 @@ export default function TechToTreasurePage() {
                     {w.details.map((d) => (
                       <div key={d.label} className="border border-paper/15 bg-canvas p-4">
                         <div className="font-mono text-xs text-paper/40 uppercase tracking-[0.12em] mb-1">
-                          {d.label}
+                          {d.label === "Group Size" ? "Station Group Size" : d.label}
                         </div>
                         <div className="text-sm font-semibold text-paper">{d.value}</div>
                       </div>
@@ -484,10 +482,18 @@ export default function TechToTreasurePage() {
               Get Involved
             </h2>
             <p className="text-ink/70 mb-6 text-base sm:text-lg">
-              Students interested should join our Discord to get involved for
-              future events.
+              Parents and guardians can email us or join the mailing list for
+              workshop updates. Discord is only for participants age 13 and
+              older.
             </p>
-            <DiscordButton href="https://tinyurl.com/b2bdisc" />
+            <div className="flex flex-wrap gap-3">
+              <Button href="/get-involved" variant="secondary">
+                View Signup Options
+              </Button>
+              <DiscordButton href="https://tinyurl.com/b2bdisc">
+                Join Discord, 13+
+              </DiscordButton>
+            </div>
           </div>
         </Reveal>
       </Section>

@@ -29,18 +29,22 @@ export function Footer() {
             Explore
           </h4>
           <ul className="space-y-2 text-sm text-paper/70">
-            {[...navLinks, ...programLinks, { label: "Donate", href: "/donate" }].map(
-              (l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="link-underline inline-block transition-colors hover:text-court"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              )
-            )}
+            {[
+              ...navLinks,
+              ...programLinks,
+              { label: "Support Us", href: "/donate" },
+              { label: "Privacy", href: "/privacy" },
+              { label: "Accessibility", href: "/accessibility" },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="link-underline inline-block transition-colors hover:text-court"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

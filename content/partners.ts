@@ -9,31 +9,31 @@
  * here rendered each logo twice on the same page.
  */
 export const partnerLogos: { src: string; name?: string }[] = [
-  { src: "/partners-logos/page-21-xref-82.png" },
-  { src: "/partners-logos/page-21-xref-84.png" },
-  { src: "/partners-logos/page-22-xref-87.png" },
-  { src: "/partners-logos/page-22-xref-88.png" },
-  { src: "/partners-logos/page-23-xref-91.png" },
-  { src: "/partners-logos/page-23-xref-92.png" },
-  { src: "/partners-logos/page-23-xref-94.png" },
-  { src: "/partners-logos/page-24-xref-97.png" },
-  { src: "/partners-logos/page-24-xref-99.png" },
-  { src: "/partners-logos/page-25-xref-102.png" },
-  { src: "/partners-logos/page-26-xref-105.png" },
-  { src: "/partners-logos/page-26-xref-106.png" },
+  { src: "/partners-logos/page-21-xref-82.png", name: "Partner logo pending confirmation" },
+  { src: "/partners-logos/page-21-xref-84.png", name: "Los Gatos Swim and Racquet Club" },
+  { src: "/partners-logos/page-22-xref-87.png", name: "NorCal Tennis Academy" },
+  { src: "/partners-logos/page-22-xref-88.png", name: "Mountain View Tennis" },
+  { src: "/partners-logos/page-23-xref-91.png", name: "Lifetime Activities" },
+  { src: "/partners-logos/page-23-xref-92.png", name: "Kim Grant Tennis Academy" },
+  { src: "/partners-logos/page-23-xref-94.png", name: "Cupertino Hills Swim and Racquet Club" },
+  { src: "/partners-logos/page-24-xref-97.png", name: "Partner logo pending confirmation" },
+  { src: "/partners-logos/page-24-xref-99.png", name: "Kona Kai Swim and Racquet Club" },
+  { src: "/partners-logos/page-25-xref-102.png", name: "Allie's Doggie Day Camp" },
+  { src: "/partners-logos/page-26-xref-105.png", name: "Lucky Buddies Pet Sitting" },
+  { src: "/partners-logos/page-26-xref-106.png", name: "Furrtropolis" },
 ];
 
 export const whyPartner: string[] = [
   "Make a measurable impact by redirecting usable materials to communities in need.",
   "Support education and sustainability through hands-on initiatives and workshops.",
-  "Increase corporate social responsibility visibility and employee engagement.",
+  "Demonstrate community commitment through measurable reuse and education outcomes.",
 ];
 
 export const corporatePartners: { name: string; logo: string; note: string }[] = [
   {
     name: "Sun Dragon Computers",
     logo: "/partners-logos/sun-dragon-computers.png",
-    note: "Interested in becoming a corporate partner? Contact us at outreach@bintobetter.org to learn how your organization can support Bin to Better and be featured as a partner.",
+    note: "Sun Dragon Computers supports Bin to Better's technology reuse work. Contact outreach@bintobetter.org if your organization can provide devices, repair support, mentorship, recycling support, or workshop materials.",
   },
   {
     name: "eWasteDirect.com",

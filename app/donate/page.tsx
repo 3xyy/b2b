@@ -8,9 +8,9 @@ import { Reveal } from "@/components/motion/Reveal";
 import { donate } from "@/content/donate";
 
 export const metadata: Metadata = {
-  title: "Donate | Bin to Better",
+  title: "Support Us | Bin to Better",
   description:
-    "Support Bin to Better by donating or registering for our sports classes — every dollar fuels our programs.",
+    "Support Bin to Better by donating or registering for community tennis lessons. Contributions fund collection supplies, workshops, and recycling costs.",
 };
 
 // Inline SVG icons — decorative, aria-hidden
@@ -68,17 +68,45 @@ export default function Donate() {
     <>
       <Nav />
 
-      {/* ── Classes ── */}
       <Section className="bg-canvas">
+        <Reveal>
+          <div className="max-w-2xl">
+            <div className="mb-3 flex items-center gap-3">
+              <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
+              <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+                Make a Difference
+              </p>
+            </div>
+            <h1 className="text-balance font-display text-[clamp(2.75rem,7vw,5rem)] font-bold leading-tight tracking-tight text-paper">
+              {donate.donateHeading}
+            </h1>
+            <p className="mt-5 text-base leading-relaxed text-paper/70 sm:text-lg">
+              {donate.donatePara}
+            </p>
+            <div className="mt-8">
+              <ExternalButton href={donate.donateHref} variant="onDark">
+                {donate.donateLinkText}
+              </ExternalButton>
+            </div>
+            <p className="mt-4 text-xs leading-relaxed text-paper/50">
+              External donation platform. Opens in a new tab. Confirm the
+              checkout page, receipt issuer, and any tax language before
+              completing your contribution.
+            </p>
+          </div>
+        </Reveal>
+      </Section>
+
+      <Section id="tennis-lessons" className="bg-field">
         <SectionHeading
-          eyebrow="Support Our Mission"
-          title="Classes"
+          eyebrow="Tennis Lessons Fundraiser"
+          title="Fund Projects Through Community Tennis Lessons"
           subtitle={donate.classesIntro}
           tone="dark"
+          align="left"
         />
 
         <div className="mt-4 grid gap-8 md:max-w-xl">
-          {/* Tennis */}
           <Reveal delay={0}>
             <Card tone="dark" className="flex flex-col">
               <div className="mb-4 flex items-center gap-3">
@@ -104,31 +132,6 @@ export default function Donate() {
             </Card>
           </Reveal>
         </div>
-      </Section>
-
-      {/* ── Donate ── */}
-      <Section className="bg-field">
-        <Reveal>
-          <div className="max-w-2xl">
-            <div className="mb-3 flex items-center gap-3">
-              <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
-              <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
-                Make a Difference
-              </p>
-            </div>
-            <h2 className="text-balance font-display text-[clamp(2rem,4vw,3.25rem)] font-bold leading-tight tracking-tight text-paper">
-              {donate.donateHeading}
-            </h2>
-            <p className="mt-5 text-base leading-relaxed text-paper/70 sm:text-lg">
-              {donate.donatePara}
-            </p>
-            <div className="mt-8">
-              <ExternalButton href={donate.donateHref} variant="onDark">
-                {donate.donateLinkText}
-              </ExternalButton>
-            </div>
-          </div>
-        </Reveal>
       </Section>
 
       <Footer />
