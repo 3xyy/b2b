@@ -294,6 +294,12 @@ export default function Home() {
                 (CRRA), recognizing student-led reuse, recycling, and community
                 education work.
               </p>
+              <Link
+                href="/achievements"
+                className="mt-5 inline-flex font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage underline underline-offset-4 transition-colors hover:text-canvas focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+              >
+                View Awards
+              </Link>
             </Card>
           </Reveal>
           <div className="grid gap-3">

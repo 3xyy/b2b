@@ -1,7 +1,6 @@
 export const stats: { value: string; label: string }[] = [
-  { value: "100,000+", label: "Tennis Balls Collected" },
-  { value: "30,000+", label: "Tennis Balls Donated" },
-  { value: "15", label: "Chapters Internationally" },
+  { value: "100,000+", label: "Items Repurposed" },
+  { value: "15+", label: "Chapters Internationally" },
 ];
 
 export const programsPreview: {

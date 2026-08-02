@@ -6,7 +6,6 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/motion/Reveal";
-import { DrawLine } from "@/components/motion/DrawLine";
 import { site } from "@/content/site";
 import {
   partnerLogos,
@@ -188,59 +187,65 @@ export default function Partners() {
       </Section>
 
       <Section className="bg-field">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Why Partner"
-            title="Why partner with us"
-            tone="dark"
-            align="left"
-          />
-        </Reveal>
-        <Reveal delay={80}>
-          <ul className="mt-2 flex flex-col gap-5 max-w-2xl">
-            {whyPartner.map((bullet, i) => (
-              <li key={i} className="relative flex gap-4 pt-5">
-                <DrawLine className="absolute left-0 top-0 h-px w-full bg-paper/15" delay={i * 80} />
-                <span className="font-mono text-xs font-medium tabular-nums text-court mt-0.5 shrink-0">
-                  0{i + 1}
-                </span>
-                <p className="text-base leading-relaxed text-paper/80">{bullet}</p>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </Section>
-
-      {/* ── CTA ───────────────────────────────────────────────── */}
-      <Section className="bg-field">
-        <Reveal>
-          <div className="border border-paper/10 rounded-[3px] p-10 max-w-2xl">
-            <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
-              <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
-                Get Involved
-              </p>
-            </div>
-            <h2 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-paper leading-tight text-balance">
-              Interested in partnering with us?
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-paper/70">
-              Contact us at{" "}
-              <a
-                href={`mailto:${site.email}`}
-                className="text-paper underline underline-offset-4 hover:text-court transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
-              >
-                {site.email}
-              </a>{" "}
-              to learn how your organization can join the movement.
-            </p>
-            <div className="mt-8">
-              <Button href={`mailto:${site.email}`} variant="light">
-                Get in Touch
-              </Button>
-            </div>
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+          <div>
+            <Reveal>
+              <SectionHeading
+                eyebrow="Why Partner"
+                title="Why partner with us"
+                tone="dark"
+                align="left"
+              />
+            </Reveal>
+            <Reveal delay={80}>
+              <ul className="mt-2 flex max-w-2xl flex-col gap-4">
+                {whyPartner.map((bullet, i) => (
+                  <li
+                    key={i}
+                    className="grid grid-cols-[2rem_1fr] gap-4 border-t border-paper/15 pt-4"
+                  >
+                    <span className="mt-1 font-mono text-xs font-medium tabular-nums text-court">
+                      0{i + 1}
+                    </span>
+                    <p className="text-base leading-relaxed text-paper/80">
+                      {bullet}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
-        </Reveal>
+
+          <Reveal delay={120}>
+            <div className="border border-paper/10 rounded-[3px] p-8">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-px w-6 shrink-0 bg-court" aria-hidden="true" />
+                <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-court">
+                  Get Involved
+                </p>
+              </div>
+              <h2 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] font-bold text-paper leading-tight text-balance">
+                Become a partner
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-paper/70">
+                Email{" "}
+                <a
+                  href={`mailto:${site.email}`}
+                  className="text-paper underline underline-offset-4 transition-colors hover:text-court focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
+                >
+                  {site.email}
+                </a>{" "}
+                to coordinate collections, donations, workshops, or reuse
+                opportunities.
+              </p>
+              <div className="mt-8">
+                <Button href={`mailto:${site.email}`} variant="light">
+                  Get in Touch
+                </Button>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </Section>
 
       <Footer />

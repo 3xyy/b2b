@@ -24,9 +24,9 @@ export const partnerLogos: { src: string; name?: string }[] = [
 ];
 
 export const whyPartner: string[] = [
-  "Make a measurable impact by redirecting usable materials to communities in need.",
-  "Support education and sustainability through hands-on initiatives and workshops.",
-  "Demonstrate community commitment through measurable reuse and education outcomes.",
+  "Redirect usable materials to schools, shelters, and community organizations.",
+  "Support education through hands-on sustainability projects and workshops.",
+  "Show visible community commitment through collection and reuse programs.",
 ];
 
 export const corporatePartners: { name: string; logo: string; note: string }[] = [

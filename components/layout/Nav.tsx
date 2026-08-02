@@ -66,10 +66,6 @@ export function Nav() {
 
         {/* Desktop links */}
         <div className="hidden items-center gap-6 md:flex">
-          <Link href="/about" className={linkClass("/about")}>
-            About
-          </Link>
-
           {/* Programs dropdown — opens on hover *and* on click/focus, so it is
               reachable without a pointer. Closing is handled by Escape, by
               focus leaving the group, and by navigation. */}
@@ -133,13 +129,11 @@ export function Nav() {
             </div>
           </div>
 
-          {navLinks
-            .filter((l) => l.href !== "/about")
-            .map((l) => (
-              <Link key={l.href} href={l.href} className={linkClass(l.href)}>
-                {l.label}
-              </Link>
-            ))}
+          {navLinks.map((l) => (
+            <Link key={l.href} href={l.href} className={linkClass(l.href)}>
+              {l.label}
+            </Link>
+          ))}
 
           <Link
             href="/donate"
@@ -184,9 +178,8 @@ export function Nav() {
         <div className="min-h-0">
           <div className="bg-paper px-6 py-4">
             {[
-              { label: "About", href: "/about" },
               ...programLinks,
-              ...navLinks.filter((l) => l.href !== "/about"),
+              ...navLinks,
             ].map((l, i) => (
               <Link
                 key={l.href}

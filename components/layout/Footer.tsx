@@ -32,9 +32,9 @@ export function Footer() {
             {[
               ...navLinks,
               ...programLinks,
+              { label: "Awards", href: "/achievements" },
               { label: "Support Us", href: "/donate" },
               { label: "Privacy", href: "/privacy" },
-              { label: "Accessibility", href: "/accessibility" },
             ].map((l) => (
               <li key={l.href}>
                 <Link

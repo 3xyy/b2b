@@ -11,7 +11,6 @@ const base = site.url;
 // sitemap is a soft error.
 export const routes = [
   "",
-  "/about",
   "/bounce-back",
   "/tech-to-treasure",
   "/eco-filament",
@@ -24,7 +23,6 @@ export const routes = [
   "/chapter",
   "/donate",
   "/privacy",
-  "/accessibility",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

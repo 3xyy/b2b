@@ -30,8 +30,6 @@ const whatWeDo = [
   },
 ];
 
-const processSteps = ["Collect", "Sort and Clean", "Prepare", "Donate"];
-
 // Google Photos albums with the full sets of collection & donation photos.
 const ALBUMS = [
   { label: "Shelter drop-offs", href: "https://photos.app.goo.gl/jUviwYsVCJvxj58V9" },
@@ -166,20 +164,9 @@ export default function BounceBackPage() {
             </Reveal>
           </div>
 
-          {/* Right - lead image and stat box */}
+          {/* Right - impact summary */}
           <Reveal delay={300}>
-            <div className="grid gap-4">
-              <div className="relative aspect-[4/5] overflow-hidden border border-paper/15">
-                <Image
-                  src="/bounce-back/collection-bags.png"
-                  alt="A volunteer holding a large clear bag filled with collected tennis balls"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              <div className="border border-paper/15 bg-field rounded-[3px] p-8 text-center flex flex-col items-center justify-center gap-4">
+            <div className="border border-paper/15 bg-field rounded-[3px] p-8 text-center flex min-h-80 flex-col items-center justify-center gap-4">
               <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-sage">
                 Impact to Date
               </p>
@@ -202,34 +189,8 @@ export default function BounceBackPage() {
                   </div>
                 ))}
               </div>
-              </div>
             </div>
           </Reveal>
-        </div>
-      </Section>
-
-      <Section className="bg-field">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Process"
-            title="How a Ball Moves Through the Program"
-            tone="dark"
-            align="left"
-          />
-        </Reveal>
-        <div className="mt-6 grid gap-3 sm:grid-cols-4">
-          {processSteps.map((step, i) => (
-            <Reveal key={step} delay={i * 60}>
-              <div className="border border-paper/15 p-5">
-                <p className="font-mono text-xs font-medium tabular-nums text-court">
-                  {String(i + 1).padStart(2, "0")}
-                </p>
-                <h2 className="mt-3 font-display text-xl font-bold text-paper">
-                  {step}
-                </h2>
-              </div>
-            </Reveal>
-          ))}
         </div>
       </Section>
 

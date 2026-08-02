@@ -100,7 +100,7 @@ export default function Donate() {
       <Section id="tennis-lessons" className="bg-field">
         <SectionHeading
           eyebrow="Tennis Lessons Fundraiser"
-          title="Fund Projects Through Community Tennis Lessons"
+          title="Community Tennis Lessons"
           subtitle={donate.classesIntro}
           tone="dark"
           align="left"
