@@ -347,12 +347,6 @@ export default function Home() {
         </Reveal>
         <Reveal delay={80}>
           <div className="relative rounded-md border border-ink/10 bg-paper p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] sm:p-8">
-            <span
-              className="pointer-events-none absolute -top-6 left-4 select-none font-display text-[7rem] leading-none text-court/25"
-              aria-hidden="true"
-            >
-              &ldquo;
-            </span>
             <div className="relative">
               <TestimonialSlider items={testimonials} />
             </div>
