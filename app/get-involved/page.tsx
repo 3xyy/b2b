@@ -6,7 +6,8 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Reveal } from "@/components/motion/Reveal";
-import { site } from "@/content/site";
+import { FormGate } from "@/components/ui/FormGate";
+import { site, MIN_UNSUPERVISED_AGE } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Get Involved | Bin to Better",
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
     "Volunteer, join the mailing list, donate materials, partner with Bin to Better, or start a chapter.",
 };
 
+// `gated` marks destinations that collect personal information off-site. Those
+// render through FormGate so an under-13 visitor is routed to a
+// guardian-completed path instead — see components/ui/FormGate.tsx.
 const actions = [
   {
     title: "Join the Mailing List",
@@ -21,13 +25,15 @@ const actions = [
     href: "https://forms.gle/LAmkFyZFdhJC49z77",
     label: "Open Google Form",
     external: true,
+    gated: "the mailing list form",
   },
   {
     title: "Volunteer or Attend",
-    body: "Students under 13 should ask a parent or guardian to contact us or complete forms. Discord is only for participants age 13 and older.",
+    body: `Students under ${MIN_UNSUPERVISED_AGE} should ask a parent or guardian to contact us or complete forms. Discord is only for participants age ${MIN_UNSUPERVISED_AGE} and older.`,
     href: "https://tinyurl.com/b2bdisc",
-    label: "Join Discord, 13+",
+    label: `Join Discord, ${MIN_UNSUPERVISED_AGE}+`,
     external: true,
+    gated: "our Discord server",
   },
   {
     title: "Donate Materials",
@@ -102,7 +108,15 @@ export default function GetInvolved() {
                   {action.body}
                 </p>
                 <div className="mt-6">
-                  {action.external || action.href.startsWith("mailto:") ? (
+                  {action.gated ? (
+                    <FormGate
+                      href={action.href}
+                      what={action.gated}
+                      className="inline-flex items-center rounded-[3px] border border-ink/25 px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-ink/[0.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+                    >
+                      {action.label}
+                    </FormGate>
+                  ) : action.external || action.href.startsWith("mailto:") ? (
                     <a
                       href={action.href}
                       target={action.external ? "_blank" : undefined}
@@ -134,10 +148,19 @@ export default function GetInvolved() {
             </h2>
             <p className="mt-4 text-base leading-relaxed text-paper/70">
               Some opportunities use Google Forms, Discord, GitHub, Google
-              Photos, or donation platforms outside this website. Parents and
-              guardians should complete forms for younger students. Discord is
-              only for participants age 13 and older. For privacy questions,
-              unsubscribe requests, or photo removal, email{" "}
+              Photos, or donation platforms outside this website, each under its
+              own privacy policy. A parent or guardian must complete forms for
+              students under {MIN_UNSUPERVISED_AGE}, and we ask you to confirm
+              that before we send you onward; Discord is for participants aged{" "}
+              {MIN_UNSUPERVISED_AGE} and older only. Our{" "}
+              <Link
+                href="/privacy-policy"
+                className="text-paper underline underline-offset-4 hover:text-court focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
+              >
+                Privacy Policy
+              </Link>{" "}
+              sets out the rest. For privacy questions, unsubscribe requests, or
+              photo removal, email{" "}
               <a
                 href={`mailto:${site.email}`}
                 className="text-paper underline underline-offset-4 hover:text-court focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"

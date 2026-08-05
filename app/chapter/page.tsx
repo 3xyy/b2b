@@ -3,6 +3,7 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
+import { FormGate } from "@/components/ui/FormGate";
 
 export const metadata: Metadata = {
   title: "Chapter Applications | Bin to Better",
@@ -69,14 +70,13 @@ export default function Chapter() {
             .
           </p>
           <div className="mt-8">
-            <a
+            <FormGate
               href="https://forms.gle/uYgLC6x7NCxwbada9"
-              target="_blank"
-              rel="noopener noreferrer"
+              what="the chapter application"
               className="inline-flex items-center rounded-[3px] bg-court px-5 py-2.5 text-sm font-medium text-ink shadow-[0_1px_2px_rgba(0,0,0,0.08)] transition-[transform,box-shadow,filter] duration-200 ease-[var(--ease-out-hover)] hover:-translate-y-[1px] hover:brightness-95 hover:shadow-[0_6px_14px_-4px_rgba(0,0,0,0.18)] active:translate-y-[1px] active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
             >
               Apply to lead a chapter
-            </a>
+            </FormGate>
           </div>
         </Reveal>
       </Section>

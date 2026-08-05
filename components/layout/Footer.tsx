@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { site } from "@/content/site";
+import { site, fiscalSponsor } from "@/content/site";
 import { navLinks, programLinks } from "@/content/nav";
 
 export function Footer() {
@@ -34,7 +34,6 @@ export function Footer() {
               ...programLinks,
               { label: "Awards", href: "/achievements" },
               { label: "Support Us", href: "/donate" },
-              { label: "Privacy", href: "/privacy" },
             ].map((l) => (
               <li key={l.href}>
                 <Link
@@ -86,8 +85,51 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-paper/10 px-6 py-6 text-center font-mono text-xs text-paper/40 tracking-wide">
-        {site.copyright}
+      {/*
+        Policy links live in their own row rather than the Explore column so
+        they are present in every footer regardless of how Explore is edited.
+        The Free For Charity post-deploy smoke asserts a footer containing
+        /privacy-policy and /terms-of-service — see post-deploy-smoke.yml.
+      */}
+      <div className="border-t border-paper/10 px-6 py-6">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 text-center font-mono text-xs tracking-wide text-paper/40">
+          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            {[
+              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Terms of Service", href: "/terms-of-service" },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link
+                  href={l.href}
+                  className="transition-colors hover:text-court focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <p>{site.copyright}</p>
+
+          {/*
+            Bin to Better has no IRS determination of its own, so a bare EIN
+            here would misread as ours. Naming the sponsor is what actually
+            lets a donor verify tax-deductible status.
+          */}
+          <p className="max-w-xl leading-relaxed">
+            A fiscally sponsored project of{" "}
+            <a
+              href={fiscalSponsor.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 transition-colors hover:text-court focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-court"
+            >
+              {fiscalSponsor.name}
+            </a>
+            , a 501(c)(3) nonprofit. EIN {fiscalSponsor.ein}. Donations are
+            received and receipted by {fiscalSponsor.name}.
+          </p>
+        </div>
       </div>
     </footer>
   );

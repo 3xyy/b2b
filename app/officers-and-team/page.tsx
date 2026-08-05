@@ -4,6 +4,7 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
+import { FormGate } from "@/components/ui/FormGate";
 import { teamGroups } from "@/content/team";
 
 export const metadata: Metadata = {
@@ -22,14 +23,13 @@ export default function OfficersAndTeam() {
         <Reveal>
           <p className="mb-6 font-mono text-xs uppercase tracking-[0.12em] text-paper/60">
             Interested in being an officer?{" "}
-            <a
+            <FormGate
               href="https://forms.gle/Pf9kCT1HbYm9Nobt7"
-              target="_blank"
-              rel="noopener noreferrer"
+              what="the officer application"
               className="text-court underline underline-offset-4 hover:brightness-90 transition-[filter]"
             >
               Apply here
-            </a>
+            </FormGate>
           </p>
 
           {/* Eyebrow hairline + h1 */}

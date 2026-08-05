@@ -43,6 +43,21 @@ describe("seo", () => {
     expect(fs.existsSync(path.join(process.cwd(), "app", "workshop"))).toBe(false);
   });
 
+  // /privacy moved to /privacy-policy so the footer satisfies the Free For
+  // Charity compliance smoke. Inbound links to the old path must still land.
+  it("keeps /privacy alive as a stub pointing at /privacy-policy", () => {
+    const paths = sitemap().map((e) => new URL(e.url).pathname);
+    expect(paths).toContain("/privacy-policy/");
+    expect(paths).not.toContain("/privacy/");
+
+    const stub = path.join(process.cwd(), "public", "privacy", "index.html");
+    expect(fs.existsSync(stub)).toBe(true);
+    const html = fs.readFileSync(stub, "utf8");
+    expect(html).toContain('http-equiv="refresh"');
+    expect(html).toContain("/privacy-policy/");
+    expect(fs.existsSync(path.join(process.cwd(), "app", "privacy"))).toBe(false);
+  });
+
   it("every sitemap URL ends in a slash, matching the exported pages", () => {
     for (const entry of sitemap()) {
       expect(entry.url.endsWith("/")).toBe(true);

@@ -6,9 +6,9 @@ export const dynamic = "force-static";
 
 const base = site.url;
 
-// Every indexable page. /workshop is deliberately absent — it is a redirect to
-// /tech-to-treasure (public/workshop/index.html), and listing a redirect in the
-// sitemap is a soft error.
+// Every indexable page. /workshop and /privacy are deliberately absent — both
+// are meta-refresh stubs in public/ (to /tech-to-treasure and /privacy-policy
+// respectively), and listing a redirect in the sitemap is a soft error.
 export const routes = [
   "",
   "/bounce-back",
@@ -22,7 +22,8 @@ export const routes = [
   "/mailing-list",
   "/chapter",
   "/donate",
-  "/privacy",
+  "/privacy-policy",
+  "/terms-of-service",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
