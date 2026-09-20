@@ -158,7 +158,7 @@ export const bootcampCourseSchema = {
   "@type": "Course",
   name: "Tech to Treasure Environmental Bootcamp",
   description:
-    "A six-week bootcamp where students build technology projects against ten environmental challenges, with mentorship throughout. Final projects are published publicly.",
+    "A six-session bootcamp where students build technology projects for environmental challenges, with mentorship throughout. Two bootcamps have reached 150 students, and the projects are published publicly.",
   provider: { "@id": ORG_ID },
   url: absoluteUrl("/tech-to-treasure/"),
   inLanguage: "en-US",
