@@ -68,7 +68,7 @@ export const techToTreasureFaq: { question: string; answer: string }[] = [
   {
     question: "What is the Tech to Treasure Environmental Bootcamp?",
     answer:
-      "We have run two bootcamps, each with six sessions. Fifty students joined the first and 100 joined the second, building 35+ sustainability projects in total with mentorship running the whole way. The projects are public, so the code students wrote can be read and built on by anyone.",
+      "We have run two bootcamps, each with six sessions. Fifty students joined the first and 100 joined the second, building 35+ sustainability projects in total with mentorship running the whole way. The first bootcamp's projects are published in a public GitHub repository, so the code students wrote can be read and built on by anyone, and we will link the second bootcamp's repository once it is ready.",
   },
 ];
 

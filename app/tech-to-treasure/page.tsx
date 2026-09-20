@@ -61,8 +61,8 @@ const bootcampOutcomes = [
     desc: "Fifty students joined the first bootcamp and 100 joined the second. Each ran six sessions, with consistent attendance throughout.",
   },
   {
-    title: "Every project is public",
-    desc: "The first bootcamp built 10+ projects and the second built 25+ sustainability projects. All of them are public, so the code students wrote can be read, run, and built on by anyone.",
+    title: "The projects are public",
+    desc: "The first bootcamp built 10+ projects, published in an open GitHub repository so the code students wrote can be read, run, and built on by anyone. The second bootcamp built 25+ sustainability projects, and we will link their repository here once it is ready.",
   },
   {
     title: "Mentorship ran the whole way",
